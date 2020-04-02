@@ -53,20 +53,35 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Industria 4.0\Documents\Ingenieria Web\Django\Variables_Sistema\Proyectos\Proyecto_IW\Proyecto2_IW" />
+    </key>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="WindowStateProjectService">
-    <state x="462" y="138" key="FileChooserDialogImpl" timestamp="1585839782479">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="275" y="22" key="#Notifications" timestamp="1585844617213">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="275" y="22" key="#Notifications/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585844617213" />
+    <state x="221" y="0" key="CommitChangelistDialog2" timestamp="1585844684847">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="221" y="0" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585844684847" />
+    <state x="462" y="131" key="FileChooserDialogImpl" timestamp="1585843970584">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="131" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585843970584" />
     <state x="462" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1585839782479" />
-    <state x="184" y="26" key="SettingsEditor" timestamp="1585839790239">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="184" y="13" key="SettingsEditor" timestamp="1585844183717">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="184" y="13" key="SettingsEditor/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585844183717" />
     <state x="184" y="26" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1585839790239" />
   </component>
 </project>
