@@ -2,32 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebae304a-89bd-4fce-8521-0fe9e0f37e31" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Entregable E2_ Proyecto web colaborativo(1).pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../Entregable E2_ Proyecto web colaborativo(1).pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParteVisual/CSS/CSS.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ParteVisual/CSS/CSS.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParteVisual/HTML/HTML.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ParteVisual/HTML/HTML.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ParteVisual/PV.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ParteVisual/PV.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/proyecto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/.idea/proyecto.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoAPP/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/ProyectoAPP/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoAPP/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/ProyectoAPP/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoAPP/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/ProyectoAPP/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoAPP/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/ProyectoAPP/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoAPP/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/ProyectoAPP/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoAPP/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/ProyectoAPP/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoAPP/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/ProyectoAPP/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoAPP/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/ProyectoAPP/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/proyecto/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/proyecto/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/proyecto/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/proyecto/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proyecto/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/proyecto/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../proyecto/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../proyecto/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/proyecto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +31,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -78,10 +55,10 @@
     </state>
     <state x="462" y="131" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585843970584" />
     <state x="462" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1585839782479" />
-    <state x="184" y="13" key="SettingsEditor" timestamp="1585844183717">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="184" y="26" key="SettingsEditor" timestamp="1585845909529">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585844183717" />
-    <state x="184" y="26" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1585839790239" />
+    <state x="184" y="26" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1585845909529" />
   </component>
 </project>
