@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>INFOPROYECT</title>
+	<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+<body background = "./Imgs/fondo.jpg">
+	<!-- Encabezado de la página Web -->
+	<header>		
+
+		<img alt="logo de la empresa" id="logoempresa" src="./Imgs/DLogo.jfif">
+		<h1>INFO-PROYECT</h1>		
+
+		<!-- Barra de botones para navegar entre las páginas -->
+		<div class="botones">
+			<!-- Creamos asi los botones para poder utilizarlos como enlace en vez de utilizar enlaces directos -->
+			<a href="./Registrate.html"><input type="button" value="Registrate"></a>
+			<!-- <input type="button" value="Nuevo Proyecto" onclick="window.open('https://www.google.com/')"> -->
+			<a href="./InforPag.html"><input type="button" value="Informacion sobre la página"></a>
+			<div class="derecha-botones">
+				<!-- Enlace para sacar una ventan en medio y hacer login -->
+				<a href="https://www.google.com/">Log in</a>
+				<!-- La imagen también lleva a la ventana de login -->
+				<img alt="logo de inicio de sesion" id="inicio-sesion" onclick="window.open('https://www.google.com/')" src="./Imgs/InicioSesion.jpg">
+			</div>
+		</div>
+
+	</header>
+
+	<!-- Cuerpo central de la pagina -->
+
+		<!-- Lado izquierdo de la página, muestra noticias sobre la empresa -->
+		<aside id="lado-izquierda">
+
+			<h2><b><u>NOTICIAS INTERNAS</u></b></h2>
+
+			<hr>
+
+			<!-- Noticia -->
+			<div class="noticia">
+				<h3>Ascenso de tecnico</h3>
+				<hr>
+				<div>
+					<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500...</p>
+					<img alt="imagen representando ascenso" src="./Imgs/ascenso.jpg">
+				</div>
+				<!-- Enlace para acceder a la noticia (futuro desarrollo) -->
+				<a href="">Leer más...</a>
+			</div>
+
+			<!-- Noticia -->
+			<div class="noticia">
+				<h3>Cambio de convenio</h3>
+				<hr>
+				<div>
+					<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500...</p>
+					<img alt="imagen representando cambio" src="./Imgs/cambioc.jpg">
+				</div>
+				<!-- Enlace para acceder a la noticia (futuro desarrollo) -->
+				<a href="">Leer más...</a>
+			</div>
+
+			<!-- Noticia -->
+			<div class="noticia">
+				<h3>Finaliza el proyecto VHC20</h3>
+				<hr>
+				<div>
+					<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500...</p>
+					<img alt="imagen representando fin de proyecto" src="./Imgs/finalizap.jpg">
+				</div>
+				<!-- Enlace para acceder a la noticia (futuro desarrollo) -->
+				<a href="">Leer más...</a>
+			</div>				
+
+			<!-- Noticia -->
+			<div class="noticia">
+				<h3>Nueva incorporación</h3>
+				<hr>
+				<div>
+					<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500...</p>
+					<img alt="imagen respresentando nueva incoporacion" src="./Imgs/nuevai.jpg">
+				</div>
+				<!-- Enlace para acceder a la noticia (futuro desarrollo) -->			
+				<a href="">Leer más...</a>
+			</div>
+
+			<!-- Noticia -->
+			<div class="noticia">
+				<h3>Comienza nuevo proyecto</h3>
+				<hr>
+				<div>
+					<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500...</p>
+					<img alt="imagen representando inicio de proyecto" src="./Imgs/nuevop.jpg">
+				</div>
+				<!-- Enlace para acceder a la noticia (futuro desarrollo) -->
+				<a href="">Leer más...</a>
+			</div>
+		</aside>
+
+		<!-- Lado derecho de la página central. Muestra en una tabla los proyectos en curso -->
+		<section id="lado-derecha">
+
+			<h2><b><u>PROYECTOS EN CURSO</u></b></h2>
+
+			<!-- Barra de navegación para realizar busquedas -->
+			<nav>
+				<label>Nombre del proyecto:</label> <input type="text" name="nombre">
+				<label>Fecha de inicio: </label> <input type="date" name="fecha">
+				<button type="button">BUSCAR</button>
+			</nav>
+
+			<br>
+			<br>
+
+			<!-- Tabla. Se encuentra dentro de div para poder insertar una scrollbar -->
+			<div id="tabla"> 
+				<table border="1">
+					<!-- Cabecera de la tabla -->
+					<thead>
+						<tr>
+							<td><b>NOMBRE DEL PROYETO</b></td>
+							<td><b>FECHA DE INICIO</b></td>
+							<td><b>FECHA DE FIN</b></td>
+							<td><b>ENLACE AL PROYECTO</b></td>
+						</tr>
+					</thead>
+
+					<!-- A partir de aqui se encuentran los datos de la tabla -->
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>	
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>	
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>	
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td>VHC-21</td>
+						<td>20/2/2019</td>
+						<td>--/--/----</td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+				
+				</table>
+			</div>
+
+		
+		</section>
+
+
+	
+	<!-- Saltos de linea para separar el cuerpo del pie de página -->
+	<br>	
+	<br>
+
+	<!-- Aqui comienza el pie de página -->
+	
+		
+	<!-- Div general para centrar el contenido -->
+	<div id="pie-de-pagina">
+
+		<!-- Primera sección donde se muestran fotos -->
+		<div id="fotos-empresa">
+			<img alt="imagen representado foto de la empresa" src="./Imgs/img1.png">
+			<img alt="imagen representado foto de la empresa" src="./Imgs/img2.jpg">
+			<img alt="imagen representado foto de la empresa" src="./Imgs/img3.jpg">
+			<br>
+			<img alt="imagen respresentando foto de la emrpesa" src="./Imgs/img4.jpg">
+			<img alt="imagen respresentando foto de la emrpesa" src="./Imgs/img5.jpg">
+			<img alt="imagen respresentando foto de la emrpesa" src="./Imgs/img6.jpg">
+				
+		</div>
+
+		<!-- Segunda sección donde se muestra la geolocalización  -->
+		<div id="sitio">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1229.5035817896974!2d-2.6771600834279314!3d42.86717002903784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fc24a2f4d4c95%3A0x7cded83857c813f4!2sEgibide%20-%20Arriaga!5e0!3m2!1ses!2ses!4v1583606260971!5m2!1ses!2ses"></iframe>
+		</div>
+
+		<!-- Última sección donde se muestran datos de contacto -->
+		<div id="contacto">
+			<br>
+			<label>Teléfono: </label>945 32 21 13<br>
+			<label>Email: </label>email.contacto@infoproyect.com<br><br>
+			<label>Redes sociales: </label>
+			<br>
+			<br>
+			<!-- Las imagenes dan enlace en otra pestaña a las redes sociales -->
+			<img alt="logo de twitter" id="primera" src="./Imgs/twitter.png" onclick="window.open('https://twitter.com/?lang=es')">
+			<img alt="logo de instagram" src="./Imgs/instagram.jpg" onclick="window.open('https://www.instagram.com/?hl=es')">
+			<img alt="logo de facebook" src="./Imgs/facebook.png" onclick="window.open('https://es-es.facebook.com/')">
+		</div>
+			
+	</div>
+	
+</div>
+
+</body>
+</html>
+
+<!-- onclick="window.open('https://twitter.com/?lang=es')"   onclick="window.open('https://www.instagram.com/')" onclick="window.open('https://es-es.facebook.com/')" -->

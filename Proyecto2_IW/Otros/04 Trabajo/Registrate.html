@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REGISTRATE</title>
+	<link rel="stylesheet" type="text/css" href="./stylesheet.css">
+</head>
+<body background = "./Imgs/fondo.jpg">
+	<!-- Encabezado de la página Web -->
+	<header>		
+
+		<img alt="logo de la emrpesa" id="logoempresa" src="./Imgs/DLogo.jfif">
+		<h1>INFO-PROYECT</h1>		
+
+		<!-- Barra de botones para navegar entre las páginas -->
+		<div class="botones">
+			<!-- Creamos asi los botones para poder utilizarlos como enlace en vez de utilizar enlaces directos -->
+			<a href="./PaginaPrincipal.html"><input type="button" class="pagina-principal" value="Página principal"></a>
+<!-- 			<input type="button" value="Nuevo Proyecto" onclick="window.open('https://www.google.com/')">
+			<input type="button" value="Informacion sobre la página" onclick="window.open('https://www.google.com/')"> -->
+
+		</div>
+
+	</header>
+
+	<!-- Cuerpo central de la pagina -->
+	<section id="formulario">
+
+		<br>
+		<br>
+		<br>
+
+		<!-- Titulo del formulario -->
+		<h2><b><u>REGISTRO DE USUSARIO</u></b></h2>
+
+		<br>
+		<br>
+
+		<div class="primeros-datos">
+			<img alt="imagen de añadir usuario" src="./Imgs/usuarion.png">
+			<div>
+				<label>Nombre: </label><input type="text">
+				<br>
+				<br>
+				<label>Apellidos: </label><input type="text">
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="segundos-datos">
+			<label>Email: </label><input type="email">
+			<br>
+			<br>
+			<label>Departamento: </label>
+			<select>
+				<option>Recursos Humanos</option>
+				<option>Ingeniería</option>
+				<option>Administración</option>
+				<option>Logística</option>
+				<option>TIC</option>
+				<option>Dirección</option>
+				<option>Comercial</option>
+			</select>
+			<label id="puesto">Puesto: </label>
+			<select>
+				<option>Técnico</option>
+				<option>Ingeniero</option>
+				<option>Encargado</option>
+				<option>Responsable de departamento</option>
+			</select>
+
+			<br>
+			<br>
+
+			<div id=botones-form>
+				<button>ENVIAR</button>
+				<button>LIMPIAR</button>
+			</div>
+		</div>
+	</section>
+
+	
+	<!-- Saltos de linea para separar el cuerpo del pie de página -->
+	<br>	
+	<br>
+
+	<!-- Aqui comienza el pie de página -->
+
+
+			<!-- Div general para centrar el contenido -->
+			<div id="pie-de-pagina">
+
+				<!-- Primera sección donde se muestran fotos -->
+				<div id="fotos-empresa">
+					<img alt="imagen representado foto de la empresa" src="./Imgs/img1.png">
+					<img alt="imagen representado foto de la empresa" src="./Imgs/img2.jpg">
+					<img alt="imagen representado foto de la empresa" src="./Imgs/img3.jpg">
+					<br>
+					<img alt="imagen representado foto de la empresa" src="./Imgs/img4.jpg">
+					<img alt="imagen representado foto de la empresa" src="./Imgs/img5.jpg">
+					<img alt="imagen representado foto de la empresa" src="./Imgs/img6.jpg">
+				
+				</div>
+
+				<!-- Segunda sección donde se muestra la geolocalización  -->
+				<div id="sitio">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1229.5035817896974!2d-2.6771600834279314!3d42.86717002903784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fc24a2f4d4c95%3A0x7cded83857c813f4!2sEgibide%20-%20Arriaga!5e0!3m2!1ses!2ses!4v1583606260971!5m2!1ses!2ses"></iframe>
+				</div>
+
+				<!-- Última sección donde se muestran datos de contacto -->
+				<div id="contacto">
+					<br>
+					<label>Teléfono: </label>945 32 21 13<br>
+					<label>Email: </label>email.contacto@infoproyect.com<br><br>
+					<label>Redes sociales: </label>
+					<br>
+					<br>
+					<!-- Las imagenes dan enlace en otra pestaña a las redes sociales -->
+					<img alt="logo de twitter" id="primera" src="./Imgs/twitter.png" onclick="window.open('https://twitter.com/?lang=es')">
+					<img alt="logo de instagram" src="./Imgs/instagram.jpg" onclick="window.open('https://www.instagram.com/')">
+					<img alt="logo de facebook" src="./Imgs/facebook.png" onclick="window.open('https://es-es.facebook.com/')">
+				</div>
+			
+			</div>
+
+</div>
+
+</body>
+</html>

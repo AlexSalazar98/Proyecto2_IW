@@ -10,17 +10,24 @@ class Clientes(models.Model):
     telefono = models.IntegerField(max_length=9)
     numero_cuenta = models.CharField()
 
+
 # Clase para categoria usuario
-class Categoria (models.Model):
+class Categoria(models.Model):
     nombre = models.CharField()
+
+
+# Clase para departamentos
+class Departamento(models.Model):
+    nombre = models.CharField()
+
 
 # Clase para la creacion de Usuarios
 class Usuarios(models.Model):
     nombre = models.CharField(max_length=10)
     apellido = models.CharField(max_length=10)
     email = models.EmailField()
-    departamento = models.CharField()
-    categoria = models.ForeignKey(Categoria)
+    departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
+    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
 
 
 # Clase para la creacion de Empleados
@@ -53,4 +60,5 @@ class Proyectos(models.Model):
     presupuesto = models.IntegerField()
     cliente = models.ForeignKey(Clientes, on_delete=models.CASCADE)
     tareas_a_realizar = models.ManyToManyField(Tareas)
-    empleados = models.ManyToManyField(Empleados)
+    empleados = models.ManyToManyField(Empleados, on_delete=models.CASCADE)
+    departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
