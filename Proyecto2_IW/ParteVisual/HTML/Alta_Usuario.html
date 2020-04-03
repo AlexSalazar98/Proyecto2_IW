@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" href="../CSS/Estilos.css">
+</head>
+
+<body>
+    <main>
+        <form>
+            <div class="Titulo_mas_Logo">
+                <h1>Registrate</h1>
+            </div>
+            <fieldset>
+                <legend><strong>Datos del Usuario</strong></legend>
+                <div class="Registro_Personales">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" name="Nombre" id="Nombre" required>
+                    <br>
+                    <label for="Apellidos">Apellidos</label>
+                    <input type="text" name="Apellidos" id="Apellidos" required>
+                    <br>
+                    Sexo: <label for="Hombre">Hombre</label>
+                    <input type="radio" name="Sexo" id="Hombre">
+                    <label for="Mujer">Mujer</label>
+                    <input type="radio" name="Sexo" id="Mujer">
+                    <label for="Otro">Otro</label>
+                    <input type="radio" name="Sexo" id="Otro">
+                    <br>
+                    <label for="DNI">DNI</label>
+                    <input type="text" name="DNI" id="DNI" required>
+                    <br>
+                    <label for="Fecha_Nacimiento">Fecha Nacimiento</label>
+                    <input type="date" name="Fecha_Nacimiento" id="Fecha_Nacimiento" required>
+                    <br>
+                    <label for="Direccion">Direccion</label>
+                    <input type="text" name="Direccion" id="Direccion" required>
+                    <br>
+                    <label for="CP">CP</label>
+                    <input type="text" name="CP" id="CP" required>
+                    <br>
+                    Tipo de Empresa: <select name="Tipo_de_Empresa">
+                        <option value="Aeronautica">Aeronautica</option>
+                        <option value="Automocion">Automocion</option>
+                        <option value="Automatizacion">Automatizacion</option>
+                        <option value="Construccion">Construccion</option>
+                        <option value="Mecanica">Mecanica</option>
+                        <option value="Naval">Naval</option>
+                        <option value="Viniticultura">Viniticultura</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend><strong>Datos de Cuenta</strong></legend>
+                <div class="Registro_Cuenta">
+                    <label for="User">Usuario</label>
+                    <input type="text" name="User" id="User">
+                    <br>
+                    <label for="Contraseña">Contraseña</label>
+                    <input type="password" name="Contraseña" id="Contraseña">
+                    <br>
+                    <label for="Repetir_Contraseña">Repetir Contraseña</label>
+                    <input type="password" name="Contraseña" id="Contraseña">
+                    <br>
+                    <label for="Correo_Electronico">Correo Electronico</label>
+                    <input type="email" name="Correo_Electronico" id="Correo_Electronico">
+                </div>
+            </fieldset>
+            <div class="Acepto_Condiciones">
+                <label for="Acepto_Condiciones">Acepto Condiciones</label>
+                <input type="checkbox" name="Acepto_Condiciones" id="Acepto_Condiciones">
+            </div>
+                <a href="Mi_Carro.html"><button type="button" class="Entrar">Entrar</button></a>
+        </form>
+    </main>
+</body>
+
+</html>

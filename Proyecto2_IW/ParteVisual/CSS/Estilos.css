@@ -1,26 +1,174 @@
 body{
-    margin: 0, auto;
+    margin: 0 auto;
+    background-color:blue;
     max-width: 100%;
-    background-color: #04e0fd;
 }
 
 header{
-    margin: 50px;
-    background-color: orange;
+    margin: 30px;
+    background: linear-gradient(45deg, #ffe259, #ffa751 );
+    max-width: 100%;
+    height: 200px;
+    padding: 20px;
+    border-radius: 20px;
 }
 
-.Foto_Titulo{
-    display: inline-block;
+.General{
+    display: inline-flex;
 }
 
-.Acceso_Registrar{
-    display: inline-block;
+.Logo{
+
+}
+
+.Acceso{
+    margin-left: 430px;
+    margin-top: 140px;
 }
 
 .Entrar{
-    display: inline-block;
+    float: left;
+    margin: 10px;
 }
 
 .Registrar{
+    float: right;
+    margin: 10px;
+}
+
+
+/*-------- Main --------*/
+
+.main{
+    background-color: chartreuse;
+}
+
+/*-------- Inicio de sesion --------*/
+fieldset{
+    border-radius: 20px;
+}
+
+form{
+  box-sizing:border-box;
+  font-family:arial;
+  width:450px;
+  padding:15px;
+  background:#eee;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 35%;
+}
+
+.Titulo_mas_Logo h1{
+  color:#999999;
+  text-align:center;
+  font-family: 'Vibur', cursive;
+  font-size: 50px
+}
+
+form .Usuario{
+    position: relative;
+    margin:10px 15px;
+}
+
+form .Contraseña{
+    position: relative;
+    margin:10px 15px;
+}
+
+.Control{
+    width:358px;
+    height:50px;
+    border:none;
+    padding:5px 7px 5px 15px;
+    background:#fff;
+    color:#666;
+    border:2px solid #ddd;
+    border-radius: 30px;
+}
+
+.Usuario .user, .Contraseña .lock{
+    position: absolute;
+    right:15px;
+    top:17px;
+    color:#999;
+}
+
+.Unido{
+    margin-bottom: 10px;
+}
+.Entrar{
+  background:#0AC986;
+  display:inline-block;
+  width:375px;
+  font-size:16px;
+  height:50px;
+  color:#fff;
+  text-decoration:none;
+  border:none;
+  border-radius:4px;
+}
+
+.Resto{
+    margin: 20px;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.link{
+    text-decoration:none;
+    color:#073ef5;
+    float:right;
+    font-size:12px;
+    margin-bottom:15px;
+}
+
+.link:hover{
+    text-decoration: underline;
+    color:orange;
+}
+
+/*-------- Registrarse --------*/
+.Registro_Personales, .Registro_Cuenta{
+    margin: 10px;
+}
+
+label{
+    margin-top: 5px;
+}
+
+.Registro_Personales label{
     display: inline-block;
+    width: 80px;
+}
+
+.Registro_Cuenta label{
+    display: inline-block;
+    width: 150px;
+}
+
+.Registro_Personales input, .Registro_Cuenta input{
+    border-radius: 10px;
+}
+
+legend{
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.Acepto_Condiciones{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Boton_Entrar{
+    background:#0AC986;
+    display:inline-block;
+    width:421px;
+    font-size:16px;
+    height:50px;
+    color:#fff;
+    text-decoration:none;
+    border:none;
+    border-radius:4px;
 }
