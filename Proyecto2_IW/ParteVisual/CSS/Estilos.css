@@ -1,0 +1,26 @@
+body{
+    margin: 0, auto;
+    max-width: 100%;
+    background-color: #04e0fd;
+}
+
+header{
+    margin: 50px;
+    background-color: orange;
+}
+
+.Foto_Titulo{
+    display: inline-block;
+}
+
+.Acceso_Registrar{
+    display: inline-block;
+}
+
+.Entrar{
+    display: inline-block;
+}
+
+.Registrar{
+    display: inline-block;
+}
