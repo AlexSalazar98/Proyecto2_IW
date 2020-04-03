@@ -40,7 +40,10 @@ class Empleados(models.Model):
 
 #Clase estado para recopilar el estado de las tareas
 class Estado(models.Model):
-    estado = models.CharField(max_length=20, default="Sin asignar")
+    estado = models.CharField(max_length=20, default="Abierta")
+
+    def __str__(self):
+        return f"Estado = {self.estado}"
 
 # Clase para la creacion de Tareas
 class Tareas(models.Model):
