@@ -133,7 +133,7 @@
 
 	#lado-derecha{
 
-		width: 750px;
+		width: 850px;
 		border: solid 1px black;
 		height: 450px;
 		float: right;	
@@ -145,7 +145,7 @@
 	#lado-izquierda{ 
 		float: left;
 		margin-top: 70px;
-		max-width: 30%;
+		width: 20%;
 		height: 450px;
 		padding: 10px;
 		border: solid 1px black;
