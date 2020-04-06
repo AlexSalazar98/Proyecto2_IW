@@ -5,6 +5,7 @@
 body{
     margin: 0 auto;
     background-image: url("../Imagenes/fondoPP.jpg");
+    background-size: cover;
     max-width: 100%;
 }
 
