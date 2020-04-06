@@ -17,7 +17,7 @@
             <div class="Acceso">
                 <div class="Entrar">
                     <img src="../Imagenes/usuario.png">
-                    <a href="Entrar.html">Entrar</a>
+                    <a href="#" id="enlAbrirPopup">Entrar</a>
                 </div>
                 <div class="Registrar">
                     <img src="../Imagenes/registro.png">
@@ -41,6 +41,39 @@
             <img src="../Imagenes/trabajando_oficina.jpg" class="Foto_Radio">
         </div>
     </div>
+
+    <!-- Aqui va el pop up para el login -->
+    <div class="overlay" id="overlay">
+    	<div class="pop-up" id="pop-up">
+    		
+		        <form class="form_Entrar">
+		        	<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><img src="../Imagenes/cerrar.png"></a>
+		            <div class="Titulo_mas_Logo">
+		                <h1>Iniciar Sesion</h1>
+		            </div>
+		            <fieldset class="fieldset_Entrar">
+		                <div class="Usuario">
+		                    <input type="text" name="Usuario" class="Control" placeholder="Usuario">
+		                </div>
+		                <div class="Contraseña">
+		                    <input type="password" name="Contraseña" class="Control" placeholder="Contraseña">
+		                </div>
+		                <div class="Resto">
+		                    <div class="Unido">
+		                        <label for="Sesion_Abierta">Mantener sesion abierta</label>
+		                        <input type="checkbox" name="Sesion_Abierta" id="Sesion_Abierta">
+		                    </div>
+		                    <a class="link" href="">¿Olvido su contraseña?</a>
+		                    <a class="link" href="Formulario.html">Registrarse</a>
+		                    <a href=""><button type="button" class="Entrar_Sesion">Entrar</button></a>
+		                </div>
+		            </fieldset>
+		        </form>
+		    
+
+    	</div>
+    </div>
+    <script src="popup.js"></script>
 </body>
 
 </html>
