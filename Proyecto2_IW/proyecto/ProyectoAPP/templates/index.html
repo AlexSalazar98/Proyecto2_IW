@@ -48,17 +48,18 @@
     <div class="overlay" id="overlay">
     	<div class="pop-up" id="pop-up">
     		
-		        <form class="form_Entrar">
+		        <form class="form_Entrar" action="{% url 'entrar' %}" method="post">
+                    {% csrf_token %}
 		        	<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><img src="../static/imagenes/cerrar.png"></a>
 		            <div class="Titulo_mas_Logo">
 		                <h1>Iniciar Sesion</h1>
 		            </div>
 		            <fieldset class="fieldset_Entrar">
 		                <div class="Usuario">
-		                    <input type="text" name="Usuario" class="Control" placeholder="nombre.apellido">
+		                    <input type="text" name="Usuario" class="Control" placeholder="nombre.apellido" required>
 		                </div>
 		                <div class="Contraseña">
-		                    <input type="password" name="Contraseña" class="Control" placeholder="Contraseña">
+		                    <input type="password" name="Contraseña" class="Control" placeholder="Contraseña" required>
 		                </div>
 		                <div class="Resto">
 		                    <div class="Unido">
@@ -67,7 +68,7 @@
 		                    </div>
 		                    <a class="link" href="">¿Olvido su contraseña?</a>
 		                    <a class="link" href="Formulario.html">Registrarse</a>
-		                    <a href=""><button type="button" class="Entrar_Sesion">Entrar</button></a>
+		                    <button type="submit" class="Entrar_Sesion">Entrar</button>
 		                </div>
 		            </fieldset>
 		        </form>

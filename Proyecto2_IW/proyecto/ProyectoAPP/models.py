@@ -30,6 +30,9 @@ class Usuarios(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     contraseña = models.CharField(max_length=10)
 
+    def __str__(self):
+        return f"{self.nombre}"
+
 
 # Clase para la creacion de Empleados
 class Empleados(models.Model):
