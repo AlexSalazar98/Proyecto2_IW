@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebae304a-89bd-4fce-8521-0fe9e0f37e31" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/CSS/Estilos.css" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/static/css/Estilos.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/HTML/Entrar.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/HTML/Formulario.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/templates/Formulario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/HTML/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/HTML/popup.js" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/static/js/popup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/Imagenes/Logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/static/imagenes/Logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/Imagenes/LogoEmpresa.png" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/static/imagenes/LogoEmpresa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/Imagenes/cerrar.png" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/static/imagenes/cerrar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/Imagenes/fondoPP.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/static/imagenes/fondoPP.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/Imagenes/registro.png" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/static/imagenes/registro.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/Imagenes/trabajando_oficina.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/static/imagenes/trabajando_oficina.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ParteVisual/Imagenes/usuario.png" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/static/imagenes/usuario.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/proyecto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/proyecto.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoAPP/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoAPP/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoAPP/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +49,13 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Industria 4.0\Documents\Ingenieria Web\Django\Variables_Sistema\Proyectos\Proyecto_IW\Proyecto2_IW\proyecto\ProyectoAPP\templates" />
+      <recent name="C:\Users\Industria 4.0\Documents\Ingenieria Web\Django\Variables_Sistema\Proyectos\Proyecto_IW\Proyecto2_IW\proyecto\ProyectoAPP\static\imagenes" />
+      <recent name="C:\Users\Industria 4.0\Documents\Ingenieria Web\Django\Variables_Sistema\Proyectos\Proyecto_IW\Proyecto2_IW\proyecto\ProyectoAPP\static\css" />
+      <recent name="C:\Users\Industria 4.0\Documents\Ingenieria Web\Django\Variables_Sistema\Proyectos\Proyecto_IW\Proyecto2_IW\proyecto\ProyectoAPP\static\js" />
+      <recent name="C:\Users\Industria 4.0\Documents\Ingenieria Web\Django\Variables_Sistema\Proyectos\Proyecto_IW\Proyecto2_IW\proyecto\ProyectoAPP\static\js\" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Industria 4.0\Documents\Ingenieria Web\Django\Variables_Sistema\Proyectos\Proyecto_IW\Proyecto2_IW" />
     </key>
@@ -57,10 +77,11 @@
     </state>
     <state x="462" y="131" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585843970584" />
     <state x="462" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1585905737450" />
-    <state x="184" y="26" key="SettingsEditor" timestamp="1585852475101">
-      <screen x="0" y="0" width="1366" height="768" />
+    <state x="184" y="13" key="SettingsEditor" timestamp="1586248955381">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="13" key="SettingsEditor/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1585848093447" />
+    <state x="184" y="13" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586248955381" />
     <state x="184" y="26" key="SettingsEditor/0.0.1366.768@0.0.1366.768" timestamp="1585852475101" />
   </component>
 </project>

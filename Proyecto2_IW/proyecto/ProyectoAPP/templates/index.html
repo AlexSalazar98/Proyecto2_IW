@@ -1,26 +1,28 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <title>Project-M</title>
-    <link rel="shortcut icon" href="../Imagenes/Logo.jpg">
-    <link rel="stylesheet" href="../CSS/Estilos.css">
+    <link rel="shortcut icon" href="../static/imagenes/Logo.jpg">
+    <link rel="stylesheet" href="{% static 'css/Estilos.css' %}">
 </head>
 
 <body>
     <header>
         <div class="General">
             <div class="Logo">
-                <img src="../Imagenes/LogoEmpresa.png" class="Img_Logo">
+                <img src="../static/imagenes/LogoEmpresa.png" class="Img_Logo">
             </div>
             <div class="Acceso">
                 <div class="Entrar">
-                    <img src="../Imagenes/usuario.png">
+                    <img src="../static/imagenes/usuario.png">
                     <a href="#" id="enlAbrirPopup">Entrar</a>
                 </div>
                 <div class="Registrar">
-                    <img src="../Imagenes/registro.png">
+                    <img src="../static/imagenes/registro.png">
                     <a href="Formulario.html">Registrar</a>
                 </div>
             </div>
@@ -38,7 +40,7 @@
                 evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)</p>
         </div>
         <div class="Foto">
-            <img src="../Imagenes/trabajando_oficina.jpg" class="Foto_Radio">
+            <img src="../static/imagenes/trabajando_oficina.jpg" class="Foto_Radio">
         </div>
     </div>
 
@@ -47,13 +49,13 @@
     	<div class="pop-up" id="pop-up">
     		
 		        <form class="form_Entrar">
-		        	<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><img src="../Imagenes/cerrar.png"></a>
+		        	<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><img src="../static/imagenes/cerrar.png"></a>
 		            <div class="Titulo_mas_Logo">
 		                <h1>Iniciar Sesion</h1>
 		            </div>
 		            <fieldset class="fieldset_Entrar">
 		                <div class="Usuario">
-		                    <input type="text" name="Usuario" class="Control" placeholder="Usuario">
+		                    <input type="text" name="Usuario" class="Control" placeholder="nombre.apellido">
 		                </div>
 		                <div class="Contraseña">
 		                    <input type="password" name="Contraseña" class="Control" placeholder="Contraseña">
@@ -69,11 +71,9 @@
 		                </div>
 		            </fieldset>
 		        </form>
-		    
-
     	</div>
     </div>
-    <script src="popup.js"></script>
+    <script src="../static/js/popup.js"></script>
 </body>
 
 </html>

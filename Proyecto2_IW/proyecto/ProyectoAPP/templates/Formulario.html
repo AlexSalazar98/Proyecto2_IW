@@ -1,8 +1,10 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="../CSS/Estilos.css">
+    <link rel="stylesheet" href="{% static 'css/Estilos.css' %}">
 </head>
 
 <body>
@@ -60,7 +62,7 @@
                     <input type="password" name="Contraseña" id="Contraseña">
                     <br>
                     <label for="Repetir_Contraseña">Repetir Contraseña</label>
-                    <input type="password" name="Contraseña" id="Contraseña">
+                    <input type="password" name="Repetir_Contraseña" id="Repetir_Contraseña">
                     <br>
                     <label for="Correo_Electronico">Correo Electronico</label>
                     <input type="email" name="Correo_Electronico" id="Correo_Electronico">
