@@ -11,7 +11,7 @@ class Clientes(models.Model):
     numero_cuenta = models.CharField(max_length=24)
 
 
-# Clase para categoria usuario (Jefe dep. / Gerente / Ingeniero
+# Clase para categoria usuario (Jefe dep. / Gerente / Ingeniero)
 class Categoria(models.Model):
     nombre = models.CharField(max_length=30)
 
