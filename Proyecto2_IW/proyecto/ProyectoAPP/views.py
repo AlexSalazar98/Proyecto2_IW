@@ -10,19 +10,41 @@ def index(request):
 
 def login(request):
     # Recogemos datos del HTML
-    usuario = request.POST['Usuario'].lower()
+    usuario = request.POST['Usuario'].lower()  # alex.salazar
     contraseña = request.POST["Contraseña"].lower()
 
     # Recogemos datos de DDBB
     user = Usuarios.objects.order_by("nombre")
+
+    # Montamos lista con:
     listausrec = []
     for u in user:
+        # Recogemos nombre ususario
         nomb = u.nombre.lower()
+        # Recogemos primer apellido usuario
         ape = u.apellido.lower()
+        # Montamos > nombre_de_usuario = nombre.apellido
         union = nomb + "." + ape
-        listausrec.append(union)
+        # Recogermos contraseña
+        cont = u.contraseña
 
-    return HttpResponse(f"usuario {usuario} contraseña: {contraseña}; {listausrec}")
+        # Almacenamos nombre_de_usuario y contraseña juntos
+        user_com = {
+            'usuario': union,
+            'contraseña': cont
+        }
+
+        # Los añadimos a la lista para comprobar despues
+        listausrec.append(user_com)
+
+        usuario_registrado = False
+
+        for us in listausrec:
+            if us['usuario'] == usuario and us['contraseña'] == contraseña:
+                usuario_registrado = True
+            break
+
+    return HttpResponse(f"usuario {usuario} contraseña: {contraseña}; {usuario_registrado} ")
 
 
 def PaginaPricipal(request):
