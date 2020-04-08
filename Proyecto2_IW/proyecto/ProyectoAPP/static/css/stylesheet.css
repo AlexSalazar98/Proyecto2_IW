@@ -2,25 +2,14 @@
 @media only screen and (max-width: 2000px) and (min-width: 1200px){
 
 	/*Estilos generales*/
-
-	a:hover{
-		background-color: orange;
-	}
-
 	body{
 		width: 1200px;
 		margin: 0 auto;
 		background: url(../Imagenes/fondoPP.jpg) no-repeat center center fixed;
 		background-size: cover;
-		 -moz-background-size: cover;
+		-moz-background-size: cover;
         -webkit-background-size: cover;
         -o-background-size: cover;
-	}
-
-	button{
-		margin-top: 15px;
-		margin-left: 40px;
-		height: 35px;
 	}
 
 	label{
@@ -78,15 +67,6 @@
 		background-color: white;
 	}
 
-	nav{
-		display: inline-block;
-		background-color: black;
-		width: 95%;
-		height: 9%;
-		margin-left: 15px;
-		color: white;
-	}
-
 	table{
 		width: 97.7%;	
 		margin-left: 15px;
@@ -97,10 +77,15 @@
 		text-align: center;
 	}
 
+	#content-Ppricipal{
+	    height: 600px;
+
+
+	}
+
 	#cuerpo{
 		display: inline-block;
 		width: 1200px;
-		height: 500px;
 		border: solid 1px black;
 	}
 
@@ -197,7 +182,6 @@
 		width: 1200px;
 		height: 150px;
 		border-radius: 13px;
-		position: fixed;
 		bottom: 0;
 		margin-bottom: 20px;
 	}

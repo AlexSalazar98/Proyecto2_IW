@@ -23,3 +23,7 @@ def login(request):
         listausrec.append(union)
 
     return HttpResponse(f"usuario {usuario} contraseña: {contraseña}; {listausrec}")
+
+
+def PaginaPricipal(request):
+    return render(request, 'TablaPrincipal.html')

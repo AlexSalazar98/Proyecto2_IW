@@ -3,6 +3,8 @@
 	{% block content %}
 	<!-- Cuerpo central de la pagina -->
 
+	<div id = "content-Ppricipal">
+
 		<!-- Lado izquierdo de la página, muestra noticias sobre la empresa -->
 		<aside id="lado-izquierda">
 
@@ -19,14 +21,6 @@
 
 			<h2><b><u>HISTORICO DE PROYECTOS</u></b></h2>
 
-			<!-- Barra de navegación para realizar busquedas -->
-			<nav>
-				<label>Nombre del proyecto:</label> <input type="text" name="nombre">
-				<label>Fecha de inicio: </label> <input type="date" name="fecha">
-				<button type="button">BUSCAR</button>
-			</nav>
-
-			<br>
 			<br>
 
 			<!-- Tabla. Se encuentra dentro de div para poder insertar una scrollbar -->
@@ -169,4 +163,5 @@
 
 		
 		</section>
+	</div>
 	{% endblock %}
