@@ -1,0 +1,100 @@
+[
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 1,
+    "fields": {
+        "nombre": "Gerente"
+    }
+},
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 2,
+    "fields": {
+        "nombre": "Jefe Departamento"
+    }
+},
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 3,
+    "fields": {
+        "nombre": "Tecnico"
+    }
+},
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 4,
+    "fields": {
+        "nombre": "Operario"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 1,
+    "fields": {
+        "nombre": "Automatizacion"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 2,
+    "fields": {
+        "nombre": "Dise\u00f1o"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 3,
+    "fields": {
+        "nombre": "Mecanica"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 4,
+    "fields": {
+        "nombre": "Finanzas"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 5,
+    "fields": {
+        "nombre": "Recursos Humanos"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 6,
+    "fields": {
+        "nombre": "Logistica"
+    }
+},
+{
+    "model": "ProyectoAPP.estado",
+    "pk": 1,
+    "fields": {
+        "estado": "Abierta"
+    }
+},
+{
+    "model": "ProyectoAPP.estado",
+    "pk": 2,
+    "fields": {
+        "estado": "Asignada"
+    }
+},
+{
+    "model": "ProyectoAPP.estado",
+    "pk": 3,
+    "fields": {
+        "estado": "En proceso"
+    }
+},
+{
+    "model": "ProyectoAPP.estado",
+    "pk": 4,
+    "fields": {
+        "estado": "Finalizada"
+    }
+}
+]
