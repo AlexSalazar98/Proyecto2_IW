@@ -1,0 +1,172 @@
+{% extends "Base.html" %}	
+
+	{% block content %}
+	<!-- Cuerpo central de la pagina -->
+
+		<!-- Lado izquierdo de la página, muestra noticias sobre la empresa -->
+		<aside id="lado-izquierda">
+
+			<h2><b><u>CLIENTES</u></b></h2>
+
+			<hr>
+
+			<!-- Noticia -->
+		
+		</aside>
+
+		<!-- Lado derecho de la página central. Muestra en una tabla los proyectos en curso -->
+		<section id="lado-derecha">
+
+			<h2><b><u>HISTORICO DE PROYECTOS</u></b></h2>
+
+			<!-- Barra de navegación para realizar busquedas -->
+			<nav>
+				<label>Nombre del proyecto:</label> <input type="text" name="nombre">
+				<label>Fecha de inicio: </label> <input type="date" name="fecha">
+				<button type="button">BUSCAR</button>
+			</nav>
+
+			<br>
+			<br>
+
+			<!-- Tabla. Se encuentra dentro de div para poder insertar una scrollbar -->
+			<div id="tabla"> 
+				<table border="1">
+					<!-- Cabecera de la tabla -->
+					<thead>
+						<tr>
+							<td><b>NOMBRE</b></td>
+							<td><b>FECHA DE INICIO</b></td>
+							<td><b>FECHA DE FIN</b></td>
+							<td><b>ESTADO</b></td>
+							<td><b>ENLACE</b></td>
+						</tr>
+					</thead>
+
+					<!-- A partir de aqui se encuentran los datos de la tabla -->
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>	
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><a href="">enlace al proyecto</a></td>
+					</tr>
+				
+				</table>
+			</div>
+
+		
+		</section>
+	{% endblock %}
