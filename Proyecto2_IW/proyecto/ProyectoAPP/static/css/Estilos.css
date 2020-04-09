@@ -233,6 +233,10 @@ legend{
 }
 
 /*POP UP*/
+.contrasena_incorrecta label{
+    color: red;
+    margin-left: 30px;
+}
 
 .overlay{
     background: rgba(0, 0, 0, 0.8);
