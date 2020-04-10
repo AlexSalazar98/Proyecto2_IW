@@ -23,7 +23,7 @@ def login(request):
         # Recogemos nombre ususario
         nomb = u.nombre.lower()
         # Recogemos primer apellido usuario
-        ape = u.apellido.lower()
+        ape = u.apellido1.lower()
         # Montamos > nombre_de_usuario = nombre.apellido
         union = nomb + "." + ape
         # Recogermos contraseña

@@ -4,23 +4,46 @@
 <html>
 <head>
 	<title>PROJECT-M</title>
-	<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}">
-	<link rel="shortcut icon" href="../Imagenes/Logo.jpg">
+	<link rel="shortcut icon" href="../static/imagenes/Logo.jpg">
+    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
 </head>
 <body>
 	<!-- Encabezado de la página Web -->
 	<header>
-		<h1>Deustotil Tech</h1>
-		<div class="">
-
+		<div class="nombre-empresa">
+			<h1>Deustotil Tech</h1>
 		</div>
+
+		<div class="logout">
+			<div class="logout-interno">
+				<img src="../static/imagenes/logout.png">
+				<a href="">Log out</a>
+			</div>
+		</div>
+
+		<nav class="Navegacion">
+            <ul class="Menu">
+                <li><a href="">Modificar</a>
+                    <ul class="SubMenu">
+                    	<li><a href="">Empleado</a></li>
+                        <li><a href="">Proyecto</a></li>
+                        <li><a href="">Tarea</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Nuevo</a>
+                    <ul class="SubMenu">
+                    	<li><a href="">Empleado</a></li>
+                        <li><a href="">Proyecto</a></li>
+                        <li><a href="">Tarea</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
 	</header>
 
 
 	<!-- Aqui irá el cuerpo de la página -->
 	{% block content %} {% endblock %}
-
-
 
 
 	<!-- Aqui comienza el pie de página -->
@@ -32,5 +55,3 @@
 
 </body>
 </html>
-
-<!-- onclick="window.open('https://twitter.com/?lang=es')"   onclick="window.open('https://www.instagram.com/')" onclick="window.open('https://es-es.facebook.com/')" -->
