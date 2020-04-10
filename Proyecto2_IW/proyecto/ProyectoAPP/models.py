@@ -24,7 +24,10 @@ class Departamento(models.Model):
 # Clase para la creacion de Usuarios
 class Usuarios(models.Model):
     nombre = models.CharField(max_length=10)
-    apellido = models.CharField(max_length=10)
+    apellido1 = models.CharField(max_length=10)
+    apellido2 = models.CharField(max_length=10)
+    #sexo = models.
+    fecha_nacimiento = models.DateField()
     email = models.EmailField()
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)

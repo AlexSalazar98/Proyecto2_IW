@@ -166,7 +166,7 @@ form .Contraseña{
   --- Registrarse ---
   --------------------*/
 
-.Alta_Usuario{
+  .Alta_Usuario{
     font-family:arial;
     width:450px;
     padding:15px;
@@ -207,9 +207,31 @@ label{
     margin-top: 5px;
 }
 
-.Registro_Personales label{
+.Nombre, .Apellido_1, .Apellido_2  {
     display: inline-block;
-    width: 80px;
+    width: 85px;
+}
+
+.Sexo{
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 45px;
+}
+
+.Fecha_Nacimiento{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+#Fecha_Nacimiento{
+    margin-left: 10px;
+}
+
+.Departamento, .Categoria{
+    display: inline-block;
+    margin-top: 10px;
+    width: 130px;
+    margin-left: 10px;
 }
 
 .Registro_Cuenta label{

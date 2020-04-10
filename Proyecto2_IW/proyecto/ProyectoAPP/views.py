@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from ProyectoAPP.models import Usuarios
-import js2py
+# import js2py
 
 
 # Create your views here.
@@ -47,14 +47,18 @@ def login(request):
                 # return HttpResponse(f"usuario {usuario} contraseña: {contraseña}; {usuario_registrado} ")
                 return render(request, 'TablaPrincipal.html')
                 break
-            else:
-                js2py.run_file('ProyectoAPP\static\js\popup.js')
+            #else:
+                #js2py.run_file('ProyectoAPP\static\js\popup.js')
                 # exec(open('popup.js').read())
-                context = {
-                    'contrasena_incorrecta': 'Usuario o contraseña incorrectos'
-                }
+                #context = {
+                   # 'contrasena_incorrecta': 'Usuario o contraseña incorrectos'
+                #}
                 # return render(request, 'index.html', context)
 
 
 def PaginaPricipal(request):
     return render(request, 'TablaPrincipal.html')
+
+
+def Formulario(request):
+    return render(request, 'Formulario.html')
