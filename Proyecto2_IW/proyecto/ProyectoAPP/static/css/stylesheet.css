@@ -26,6 +26,7 @@
 		height: 105px;
 		border: solid 2px white;
 		border-radius: 13px;
+		text-align: center;
 	}
 
 	.nombre-empresa{
@@ -34,13 +35,13 @@
 	}
 
 	.nombre-empresa h1{
-		margin-top: 10px;
+		margin-top: 17px;
 		margin-left: 10px;
 		padding-left: 10px;
 		margin: left;
 		font-family: Brush Script MT;
 		color: red;
-		font-size: 70px;
+		font-size: 60px;
 	}
 
 	.logout {
@@ -150,6 +151,7 @@
 	#content-Ppricipal{
 	    width: 100%;
 	    height: 600px;
+	    display: inline-block;
 	}
 
 	#cuerpo{
@@ -248,12 +250,161 @@
 	/*Estilos para el pie de página*/
 
 	footer{
-		background-color: #000;
+		background-color: #666;
 		width: 1200px;
-		height: 150px;
+		height: auto;
 		border-radius: 13px;
-		bottom: 0;
 		margin-bottom: 20px;
+		padding: 20px;
 	}
 
+.footer-left,
+.footer-center,
+.footer-right,
+.mapa{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-left{
+	width: 33%;
+}
+
+/* The company logo */
+
+.footer-left img{
+    width: 300px;
+    height: 80px;
+}
+
+/* Footer links */
+
+.footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+    font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+    text-align: center;
+}
+
+/* Footer Center */
+
+.footer-center{
+	width: 25%;
+}
+
+.footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-center i.email{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;
+}
+
+.footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-links{
+  content: none;
+}
+
+/* Footer Right */
+
+.mapa{
+    width: 25%
+}
+
+/* Footer Right */
+
+.footer-right{
+	width: 15%;
+}
+
+.footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-icons{
+	margin-top: 25px;
+}
+
+.footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
 
