@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from ProyectoAPP.models import Usuarios
+from ProyectoAPP.models import Usuarios, Departamento, Categoria
 # import js2py
 
 
@@ -55,10 +55,32 @@ def login(request):
                 #}
                 # return render(request, 'index.html', context)
 
-
 def PaginaPricipal(request):
     return render(request, 'TablaPrincipal.html')
 
 
-def Formulario(request):
-    return render(request, 'Formulario.html')
+def LlamarFormulario(request):
+    departamentos = Departamento.objects.order_by('nombre')
+    categoria = Categoria.objects.order_by('nombre')
+
+    return render(request, 'Formulario.html', departamentos, categoria)
+
+
+def RecogerFormulario(request):
+    # Recogemos datos del HTML
+    nombre = request.POST["nombre"]
+    apellido1 = request.POST["Apellido_1"]
+    apellido2 = request.POST["Apellido_2"]
+    #Sexo
+    fecha_nacimiento = request.POST["Fecha_Nacimiento"]
+    departamento = request.POST["Departamento"]
+    categoria = request.POST["Categoria"]
+    usuario = nombre.lower() + "." + apellido1.lower()
+    contraseña = request.POST["Contraseña"]
+    repContraseña = request.POST["Repetir_Contraseña"]
+    email = request.POST["Correo_Electronico"]
+
+    return HttpResponse(f"nombre {nombre} apellido 1 {apellido1} apellido 2 {apellido2} fecha nacimiento {fecha_nacimiento}"
+                        f" departamentos {departamento} categoria {categoria} usuario {usuario} contraseña {contraseña}"
+                        f" repContraseña {repContraseña} email {email} ")
+    #return render(request, 'Formulario.html')
