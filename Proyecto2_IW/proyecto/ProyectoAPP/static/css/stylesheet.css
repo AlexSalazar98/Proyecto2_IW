@@ -326,12 +326,15 @@
 	line-height: 38px;
 }
 
+.footer-center img{
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
 .footer-center p{
 	display: inline-block;
 	color: #ffffff;
-  font-weight:400;
-	vertical-align: middle;
-	margin:0;
+    font-weight:400;
 }
 
 .footer-center p span{
@@ -366,10 +369,16 @@
     width: 25%
 }
 
+.mapa h3{
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
 /* Footer Right */
 
 .footer-right{
 	width: 15%;
+	margin-top: 5px;
 }
 
 .footer-company-about{
