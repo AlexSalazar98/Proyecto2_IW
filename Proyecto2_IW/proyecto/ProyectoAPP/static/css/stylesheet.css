@@ -128,6 +128,72 @@
 
 	/*Estilos para el cuerpo*/
 
+	   /*Estilos para el buscador*/
+
+	   .buscador{
+	        width: 1200px;
+	        height: 60px;
+	        background-color: rgba(255, 255, 255, 0.8);
+	        border: solid 1px black;
+	        border-radius: 13px;
+	        margin: 0 auto;
+	        margin-bottom: 20px;
+	        margin-top: 30px;
+	        display: inline_block;
+	   }
+
+	   .buscador label{
+	        font-size: 20px;
+	        color: black;
+	        font-family: Star Wars;
+	        font-weight: 599;
+	   }
+
+	   .buscador input{
+	        height: 20px;
+	   }
+
+
+	   .btn-buscar{
+	        float: right;
+	        height: 90%;
+	        width: 7%;
+	        margin-right: 20px;
+	        margin-top: 9px;
+	   }
+
+       .btn-buscar button{
+            height: 76%;
+            width: 100%;
+            border: solid;
+            border-radius: 18px;
+       }
+
+       .buscar-por-estado{
+            width: 21%;
+            float: right;
+            margin-top: 18px;
+       }
+
+       .buscar-por-fecha-fin{
+            width: 19%;
+            float: right;
+            margin-top: 18px;
+       }
+
+       .buscar-por-fecha-inicio{
+            width: 20%;
+            float: right;
+            margin-top: 18px;
+       }
+
+       .bucar-por-nombre{
+            width: 27%;
+            float: left;
+            margin-left: 20px;
+            margin-top: 18px;
+       }
+
 	h2{
 		text-align: center;
 		font: arial;
@@ -167,14 +233,12 @@
 		border: solid 1px black;
 		height: 450px;
 		float: right;
-		margin-top: 70px;
 		background-color: #DED5D5;
 		padding: 10px;
 	}
 
 	#lado-izquierda{
 		float: left;
-		margin-top: 70px;
 		width: 20%;
 		height: 450px;
 		padding: 10px;
