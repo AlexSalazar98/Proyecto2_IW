@@ -15,6 +15,9 @@ class Clientes(models.Model):
 class Categoria(models.Model):
     nombre = models.CharField(max_length=30)
 
+    def __str__(self):
+        return f"{self.nombre}"
+
 
 # Clase para departamentos
 class Departamento(models.Model):
@@ -26,7 +29,7 @@ class Usuarios(models.Model):
     nombre = models.CharField(max_length=10)
     apellido1 = models.CharField(max_length=10)
     apellido2 = models.CharField(max_length=10)
-    #sexo = models.
+    sexo = models.CharField(max_length=15)
     fecha_nacimiento = models.DateField()
     email = models.EmailField()
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
