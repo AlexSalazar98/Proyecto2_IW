@@ -40,7 +40,13 @@
 
 			<hr>
 
-			<!-- Noticia -->
+			<!-- Botones -->
+			<div class="botones-clientes">
+				<button type="button">Todos</button>
+				{% for n_cliente in clientes %}
+					<button type="button">{{ n_cliente.empresa }}</button>
+				{% endfor %}
+			</div>
 		
 		</aside>
 

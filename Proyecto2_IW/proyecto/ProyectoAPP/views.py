@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from ProyectoAPP.models import Usuarios, Departamento, Categoria
+from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes
 
 
 # import js2py
@@ -42,12 +42,15 @@ def login(request):
 
         usuario_registrado = False
 
+        clientes = Clientes.objects.order_by('empresa')
+
         for us in listausrec:
             if us['usuario'] == usuario and us['contraseña'] == contraseña:
-                # PaginaPricipal(request)
-                # usuario_registrado = True
-                # return HttpResponse(f"usuario {usuario} contraseña: {contraseña}; {usuario_registrado} ")
-                return render(request, 'TablaPrincipal.html')
+
+                context = {
+                    'clientes': clientes,
+                }
+                return render(request, 'TablaPrincipal.html', context)
                 break
 
 
@@ -66,17 +69,16 @@ def LlamarFormulario(request):
 
 
 def RecogerFormulario(request):
-
     UsuarioGuardado = Usuarios()
 
     # Recogemos datos del HTML
     UsuarioGuardado.nombre = request.POST["nombre"]
     UsuarioGuardado.apellido1 = request.POST["Apellido_1"]
     UsuarioGuardado.apellido2 = request.POST["Apellido_2"]
-    UsuarioGuardado.Sexo = request.POST.get('Sexo')
+    UsuarioGuardado.sexo = request.POST.get('Sexo')
     UsuarioGuardado.fecha_nacimiento = request.POST["Fecha_Nacimiento"]
-    UsuarioGuardado.departamento = Departamento.objects.get(nombre = request.POST["Departamento"])
-    UsuarioGuardado.categoria = Categoria.objects.get(nombre = request.POST["Categoria"])
+    UsuarioGuardado.departamento = Departamento.objects.get(nombre=request.POST["Departamento"])
+    UsuarioGuardado.categoria = Categoria.objects.get(nombre=request.POST["Categoria"])
     UsuarioGuardado.contraseña = request.POST["Contraseña"]
     repContraseña = request.POST["Repetir_Contraseña"]
     UsuarioGuardado.email = request.POST["Correo_Electronico"]
