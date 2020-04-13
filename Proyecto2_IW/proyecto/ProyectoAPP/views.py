@@ -75,8 +75,8 @@ def RecogerFormulario(request):
     UsuarioGuardado.apellido2 = request.POST["Apellido_2"]
     UsuarioGuardado.Sexo = request.POST.get('Sexo')
     UsuarioGuardado.fecha_nacimiento = request.POST["Fecha_Nacimiento"]
-    UsuarioGuardado.Departamento = request.POST["Departamento"]
-    UsuarioGuardado.Categoria = request.POST["Categoria"]
+    UsuarioGuardado.departamento = Departamento.objects.get(nombre = request.POST["Departamento"])
+    UsuarioGuardado.categoria = Categoria.objects.get(nombre = request.POST["Categoria"])
     UsuarioGuardado.contraseña = request.POST["Contraseña"]
     repContraseña = request.POST["Repetir_Contraseña"]
     UsuarioGuardado.email = request.POST["Correo_Electronico"]
