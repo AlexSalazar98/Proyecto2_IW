@@ -165,12 +165,17 @@
        .btn-buscar button{
             height: 76%;
             width: 100%;
-            border: solid;
-            border-radius: 18px;
+            border: solid 1px;
+            border-radius: 13px;
+            background-color: rgb(255, 255, 255);
+       }
+
+       .btn-buscar button:hover{
+            background-color: orange;
        }
 
        .buscar-por-estado{
-            width: 21%;
+            width: 22%;
             float: right;
             margin-top: 18px;
        }
@@ -188,7 +193,7 @@
        }
 
        .bucar-por-nombre{
-            width: 27%;
+            width: 28%;
             float: left;
             margin-left: 20px;
             margin-top: 18px;
@@ -200,9 +205,6 @@
 		background-color: white;
 	}
 
-	nav{
-
-	}
 
 	table{
 		width: 97.7%;
