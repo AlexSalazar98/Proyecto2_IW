@@ -11,7 +11,8 @@
 
 <body>
     <main>
-        <form class="Alta_Usuario" action="{% url 'RecogerFormulario' %}" method="post">
+        <div class="Alta_Usuario">
+        <form  id="Alta_Registro" action="{{ comprobarClave() }}" method="post">
             {% csrf_token %}
             <div class="Titulo_Formulario">
                 <h1>Formulario Registro</h1>
@@ -63,8 +64,10 @@
                 <label for="Acepto_Condiciones">Acepto Condiciones</label>
                 <input type="checkbox" name="Acepto_Condiciones" id="Acepto_Condiciones" required>
             </div>
-            <a href=""><button type="submit" class="Entrar_Usuario" id="Entrar_Usuario">Registrarse</button></a>
+            <button type="submit" class="Entrar_Usuario" id="Entrar_Usuario" onclick="comprobarClave()">Registrarse</button>
         </form>
+
+        </div>
     </main>
 </body>
 
