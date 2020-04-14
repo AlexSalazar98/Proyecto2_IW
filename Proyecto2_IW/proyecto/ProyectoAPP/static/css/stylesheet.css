@@ -199,12 +199,6 @@
             margin-top: 18px;
        }
 
-	h2{
-		text-align: center;
-		font: arial;
-		background-color: white;
-	}
-
 
 	table{
 		width: 97.7%;
@@ -237,6 +231,7 @@
 		float: right;
 		background-color: #DED5D5;
 		padding: 10px;
+		border-radius: 15px;
 	}
 
 	#lado-izquierda{
@@ -261,6 +256,7 @@
 	    margin-bottom: 10px;
 	    font-family: Star Wars;
 	    font-size: 20px;
+	    border-radius: 40px;
 	}
 
 	#tabla{
