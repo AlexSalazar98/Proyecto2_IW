@@ -72,125 +72,16 @@
 					</thead>
 
 					<!-- A partir de aqui se encuentran los datos de la tabla -->
+
+					{% for dat in proyectos %}
 					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
+						<td>{{ dat.nombre }}</td>
+						<td>{{ dat.fecha_inicio }}</td>
+						<td>{{ dat.fecha_fin }}</td>
+						<td>{{ dat.estado }}</td>
 						<td><a href="">enlace al proyecto</a></td>
 					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>	
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
-
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td><a href="">enlace al proyecto</a></td>
-					</tr>
+					{% endfor %}
 				
 				</table>
 			</div>

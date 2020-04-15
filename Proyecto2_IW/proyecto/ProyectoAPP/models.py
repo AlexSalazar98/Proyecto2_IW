@@ -68,6 +68,8 @@ class Tareas(models.Model):
     estado_tarea = models.ForeignKey(Estado, on_delete=models.CASCADE)
     notas_adicionales_escritas_empleado = models.TextField()
 
+class Estado_Proyecto(models.Model):
+    estado = models.CharField(max_length=20)
 
 # Clase para la creacion de Proyectos
 class Proyectos(models.Model):
@@ -80,3 +82,4 @@ class Proyectos(models.Model):
     tareas_a_realizar = models.ManyToManyField(Tareas)
     empleados = models.ManyToManyField(Empleados)
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
+    estado = models.ForeignKey(Estado_Proyecto, on_delete=models.CASCADE)
