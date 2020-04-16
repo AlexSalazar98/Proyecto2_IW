@@ -3,9 +3,8 @@
   --------------------*/
 
 @keyframes animacion {
-  0% { transform: rotateY(0deg) rotateX(0deg); }
-  50% { transform: rotateY(0deg) rotateX(0deg); }
-  100% { transform: rotateY(0deg) rotateX(0deg); }
+  0% { transform: rotateY(360deg) rotateX(0deg); }
+  100% { transform: rotateY(0deg) rotateX(360deg); }
 }
 
 body{
@@ -30,8 +29,7 @@ header{
 .Img_Logo{
     height: 75px;
     width: 400px;
-    animation: animacion 5s infinite alternate ease-in-out -7.5s;
-    transform: rotateY(40deg) rotateX(33deg) translateZ(0);
+    animation: animacion 10s infinite;
 }
 
 .Acceso{
