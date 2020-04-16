@@ -78,7 +78,6 @@
 	.Navegacion{
 	    width: 400px;
 	    font-family: Arial, Helvetica, sans-serif;
-	    /*padding: 12px;*/
 	    float: right;
 	    display: flex;
 	    align-items: center;
@@ -242,6 +241,10 @@
 		border: solid 1px black;
 		background-color: rgb(250, 149, 227, 0.3);
 		overflow-y: scroll;
+	}
+
+	#lado-izquierda h2{
+	    text-align: center;
 	}
 
 	#lado-izquierda hr{

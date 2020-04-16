@@ -10,6 +10,9 @@ class Clientes(models.Model):
     telefono = models.IntegerField()
     numero_cuenta = models.CharField(max_length=24)
 
+    def __str__(self):
+        return f"{self.empresa}"
+
 
 # Clase para categoria usuario (Jefe dep. / Gerente / Ingeniero)
 class Categoria(models.Model):
@@ -22,6 +25,9 @@ class Categoria(models.Model):
 # Clase para departamentos
 class Departamento(models.Model):
     nombre = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f"{self.nombre}"
 
 
 # Clase para la creacion de Usuarios
@@ -48,6 +54,9 @@ class Empleados(models.Model):
     email = models.EmailField()
     telefono = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.nombre}"
+
 
 # Clase estado para recopilar el estado de las tareas
 class Estado(models.Model):
@@ -68,8 +77,16 @@ class Tareas(models.Model):
     estado_tarea = models.ForeignKey(Estado, on_delete=models.CASCADE)
     notas_adicionales_escritas_empleado = models.TextField()
 
+    def __str__(self):
+        return f"{self.nombre}"
+
+
 class Estado_Proyecto(models.Model):
     estado = models.CharField(max_length=20)
+
+    def __str__(self):
+        return f"{self.estado}"
+
 
 # Clase para la creacion de Proyectos
 class Proyectos(models.Model):
@@ -83,3 +100,6 @@ class Proyectos(models.Model):
     empleados = models.ManyToManyField(Empleados)
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
     estado = models.ForeignKey(Estado_Proyecto, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.nombre}"
