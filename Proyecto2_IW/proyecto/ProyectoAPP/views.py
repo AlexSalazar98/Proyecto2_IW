@@ -90,6 +90,6 @@ def RecogerFormulario(request):
 
 
 def DetallesProyecto(request):
-    nombre_proyect = B
+    nombre_proyect = request.POST["eleccion"]
     #return render(request, 'detalles_proyecto.html')
     return HttpResponse(f"Nombre del proyecto: {nombre_proyect}")
