@@ -47,7 +47,6 @@ def login(request):
 
         for us in listausrec:
             if us['usuario'] == usuario and us['contraseña'] == contraseña:
-
                 context = {
                     'clientes': clientes,
                     'proyectos': proyectos
@@ -87,8 +86,10 @@ def RecogerFormulario(request):
 
     UsuarioGuardado.save()
 
-    # return HttpResponse(
-    #    f"nombre {nombre} apellido 1 {apellido1} apellido 2 {apellido2} sexo {Sexo} fecha nacimiento {fecha_nacimiento}"
-    #    f" departamentos {departamento} categoria {categoria} usuario {usuario} contraseña {contraseña}"
-    #    f" repContraseña {repContraseña} email {email} ")
     return render(request, 'TablaPrincipal.html')
+
+
+def DetallesProyecto(request):
+    nombre_proyect = B
+    #return render(request, 'detalles_proyecto.html')
+    return HttpResponse(f"Nombre del proyecto: {nombre_proyect}")

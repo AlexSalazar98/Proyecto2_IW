@@ -7,4 +7,5 @@ urlpatterns = [
     path('PaginaPrincipal/', views.PaginaPricipal, name="PaginaPrincipal"),
     path('Registro/', views.LlamarFormulario, name="LlamarFormulario"),
     path('Registrar/', views.RecogerFormulario, name="RecogerFormulario"),
+    path('DetallesProyecto', views.DetallesProyecto, name="DetallesProyecto")
 ]

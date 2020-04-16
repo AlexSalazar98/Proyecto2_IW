@@ -1,0 +1,56 @@
+{% extends "Base.html" %}
+
+	{% block content %}
+	<!-- Cuerpo central de la pagina -->
+
+    <div class="detalles_proyecto">
+
+        <h2>{nombre del proyecto}</h2>
+
+        <div class="infor-basica">
+            <div class="parte-central">
+                <div class="est-proyect">
+                    <label>Estado del proyecto: </label>
+                    <input type="text" readonly>
+                </div>
+                <div class="fecha-ini">
+                    <label>Fecha de inicio: </label>
+                    <input type="text" readonly>
+                </div>
+                <div class="fecha-fin">
+                    <label>Fecha de finalizacion: </label>
+                    <input type="text" readonly>
+                </div>
+                <div class="dep">
+                    <label>Departamento asignado al proyecto: </label>
+                    <input type="text" readonly>
+                </div>
+                <div class="cliente">
+                    <label>Cliente: </label>
+                    <input type="text" readonly>
+                </div>
+                <div class="pres">
+                    <label>Presupuesto: </label>
+                    <input type="text" readonly>
+                </div>
+            </div>
+            <div class="lado-izq">
+                <label>Empleados asignados: </label>
+            </div>
+            <div class="lado-derecho">
+                <label>Tareas a realizar</label>
+            </div>
+
+
+        </div>
+
+        <div class="desc">
+            <label>Descripcion del proyecto: </label>
+            <br>
+            <textarea></textarea>
+        </div>
+
+    </div>
+
+    {% endblock %}
+
