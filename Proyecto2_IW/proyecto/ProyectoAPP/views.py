@@ -43,12 +43,8 @@ def login(request):
         clientes = Clientes.objects.order_by('empresa')
 
         proyectos = Proyectos.objects.order_by('nombre')
-<<<<<<< HEAD
-=======
 
->>>>>>> dc6c262819b1fa3da67b554e56116d7da40017db
         responsable = Empleados.objects.order_by('nombre')
-
 
         for us in listausrec:
             if us['usuario'] == usuario and us['contraseña'] == contraseña:
@@ -96,47 +92,47 @@ def RecogerFormulario(request):
 
 
 def DetallesProyecto(request):
+    # Recogemos del .HTML
     id_proyect = request.POST["eleccion"]
+    # Recogemos proyectos de BBDD
     proyecto = Proyectos.objects.all()
 
     pro_select = ""
 
+    # Buscamos y obtenemos el proyecto que queremos
     for pro in proyecto:
         if int(id_proyect) == int(pro.id):
             pro_select = pro
 
-<<<<<<< HEAD
+    # Obtenemos tareas de BBDD
     tareas = Tareas.objects.all()
 
-
+    # Creamos lista para agrupar tareas con sus responsables
     lista_pasar = []
 
+    # Buscamos tareas obtenemos responsables y agrupamos
     for a in pro_select.tareas_a_realizar.all():
-        for b in  tareas:
+        for b in tareas:
             if str(a) == str(b.nombre):
                 conj = {
                     'tarea': a,
-                    'responsabe': b.responsable
+                    'responsable': b.responsable
                 }
                 lista_pasar.append(conj)
 
-    print(lista_pasar)
-    #return render(request, 'detalles_proyecto.html')
-    return HttpResponse(f"Nombre del proyecto: {pro_select.nombre}; presupuesto: {pro_select.cliente}")
-=======
-            context = {
-                'nombre': pro_select.nombre,
-                'descripcion': pro_select.descripcion,
-                'fecha_inicio': pro_select.fecha_inicio,
-                'fecha_fin': pro_select.fecha_fin,
-                'presupuesto': pro_select.presupuesto,
-                'cliente': pro_select.cliente,
-                'tareas_a_realizar': pro_select.tareas_a_realizar.all(),
-                'empleados': pro_select.empleados,
-                'departamento': pro_select.departamento,
-                'estado': pro_select.estado,
-            }
+    # Creamos el context con lo que vamos a pasar al HTML de mostrar
+    context = {
+        'nombre': pro_select.nombre,
+        'descripcion': pro_select.descripcion,
+        'fecha_inicio': pro_select.fecha_inicio,
+        'fecha_fin': pro_select.fecha_fin,
+        'presupuesto': pro_select.presupuesto,
+        'cliente': pro_select.cliente,
+        'tareas_a_realizar': lista_pasar,
+        'empleados': pro_select.empleados,
+        'departamento': pro_select.departamento,
+        'estado': pro_select.estado,
+    }
 
     return render(request, 'detalles_proyecto.html', context)
-    #return HttpResponse(f"Nombre del proyecto: {pro_select.nombre}; presupuesto: {pro_select.cliente}")
->>>>>>> dc6c262819b1fa3da67b554e56116d7da40017db
+

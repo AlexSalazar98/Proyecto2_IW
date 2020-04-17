@@ -31,7 +31,16 @@
                 <label>Jefes de tarea : {{ empleados }} </label>
             </div>
             <div class="lado-derecho">
-                <label>Tareas a realizar {{ tareas_a_realizar }}</label>
+                {% for a in tareas_a_realizar %}
+                <ul>TAREAS
+                    <li>{{ a.tarea }}</li>
+                </ul>
+
+                <ul>RESPONSABLE
+                    <li>{{ a.responsable }}</li>
+                </ul>
+
+                {% endfor %}
             </div>
 
 
