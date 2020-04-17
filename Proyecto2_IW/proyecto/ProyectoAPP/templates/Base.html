@@ -3,120 +3,245 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PROJECT-M</title>
-	<link rel="shortcut icon" href="/static/imagenes/Logo.jpg">
+    <title>PROJECT-M</title>
+    <link rel="shortcut icon" href="/static/imagenes/Logo.jpg">
     <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
 </head>
 <body>
-	<!-- Encabezado de la página Web -->
-	<header>
-		<div class="nombre-empresa">
-			<h1>Deustotil Tech</h1>
-		</div>
+<!-- Encabezado de la página Web -->
+<header>
+    <div class="nombre-empresa">
+        <h1>Deustotil Tech</h1>
+    </div>
 
-		<div class="logout">
-			<div class="logout-interno">
-				<img src="/static/imagenes/logout.png">
-				<a href="{% url 'index' %}">Log out</a>
-			</div>
-		</div>
+    <div class="logout">
+        <div class="logout-interno">
+            <img src="/static/imagenes/logout.png">
+            <a href="{% url 'index' %}">Log out</a>
+        </div>
+    </div>
 
-		<nav class="Navegacion">
-            <ul class="Menu">
-                <li><a href="">Modificar</a>
-                    <ul class="SubMenu">
-						<li><a href="">Cliente</a></li>
-                    	<li><a href="">Empleado</a></li>
-                        <li><a href="">Proyecto</a></li>
-                        <li><a href="">Tarea</a></li>
-                    </ul>
-                </li>
-                <li><a href="">Nuevo</a>
-                    <ul class="SubMenu">
-						<li><a href="">Cliente</a></li>
-                    	<li><a href="">Empleado</a></li>
-                        <li><a href="">Proyecto</a></li>
-                        <li><a href="">Tarea</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-	</header>
-
-
-	<!-- Aqui irá el cuerpo de la página -->
-	{% block content %} {% endblock %}
+    <nav class="Navegacion">
+        <ul class="Menu">
+            <li><a>Modificar</a>
+                <ul class="SubMenu">
+                    <li><a href="">Cliente</a></li>
+                    <li><a href="">Empleado</a></li>
+                    <li><a href="">Proyecto</a></li>
+                    <li><a href="">Tarea</a></li>
+                </ul>
+            </li>
+            <li><a>Nuevo</a>
+                <ul class="SubMenu">
+                    <li><a href="#" id="Cliente">Cliente</a></li>
+                    <li><a href="#" id="Empleado">Empleado</a></li>
+                    <li><a href="">Proyecto</a></li>
+                    <li><a href="">Tarea</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
 
 
-	<!-- Aqui comienza el pie de página -->
-	<footer>
-
-			<div class="footer-left">
-
-				<img src="/static/imagenes/LogoEmpresa.png">
-
-				<p class="footer-links">
-					<a href="#">Home</a>
-
-					<a href="#">Blog</a>
-
-					<a href="#">Pricing</a>
-
-					<a href="#">About</a>
-
-					<a href="#">Faq</a>
-
-					<a href="#">Contact</a>
-				</p>
-
-			</div>
+<!-- Aqui irá el cuerpo de la página -->
+{% block content %} {% endblock %}
 
 
-			<div class="footer-center">
+<!-- Aqui comienza el pie de página -->
+<footer>
 
-				<div>
-					<img src="/static/imagenes/alfiler.png">
-					<p><span>Pozoa Kalea, s/n</span>01013 Gasteiz, Araba</p>
-				</div>
+    <div class="footer-left">
 
-				<div>
-					<img src="/static/imagenes/llamada.png">
-					<p>945 01 01 10</p>
-				</div>
+        <img src="/static/imagenes/LogoEmpresa.png">
 
-				<div>
-					<img src="/static/imagenes/correo.png">
-					<p><a href="#">support@project-M.com</a></p>
-				</div>
+        <p class="footer-links">
+            <a href="#">Home</a>
 
-			</div>
+            <a href="#">Blog</a>
 
-			<div class="mapa">
-				<h3>Mapa</h3>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d731.0635369239043!2d-2.677746379648076!3d42.867479635958794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fc24a2f4d4c95%3A0x7cded83857c813f4!2sEgibide%20-%20Arriaga!5e0!3m2!1ses!2ses!4v1586621952096!5m2!1ses!2ses" width="200" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-			</div>
+            <a href="#">Pricing</a>
 
-			<div class="footer-right">
+            <a href="#">About</a>
 
-				<p class="footer-company-about">
-					<span>Sobre la empresa</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-				</p>
+            <a href="#">Faq</a>
 
-				<div class="footer-icons">
+            <a href="#">Contact</a>
+        </p>
 
-					<a href="https://es-es.facebook.com/"><img src="/static/imagenes/facebook.png"></a>
-					<a href="https://twitter.com/"><img src="/static/imagenes/twitter.png"></a>
-					<a href="https://es.linkedin.com/"><img src="/static/imagenes/linkedin.png"></a>
-					<a href="https://github.com/"><img src="/static/imagenes/imagen-de-github.png"></a>
+    </div>
 
-				</div>
 
-			</div>
-				<p class="footer-company-name">PROJECT-M © 2020</p>
-		</footer>
+    <div class="footer-center">
 
+        <div>
+            <img src="/static/imagenes/alfiler.png">
+            <p><span>Pozoa Kalea, s/n</span>01013 Gasteiz, Araba</p>
+        </div>
+
+        <div>
+            <img src="/static/imagenes/llamada.png">
+            <p>945 01 01 10</p>
+        </div>
+
+        <div>
+            <img src="/static/imagenes/correo.png">
+            <p><a href="#">support@project-M.com</a></p>
+        </div>
+
+    </div>
+
+    <div class="mapa">
+        <h3>Mapa</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d731.0635369239043!2d-2.677746379648076!3d42.867479635958794!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4fc24a2f4d4c95%3A0x7cded83857c813f4!2sEgibide%20-%20Arriaga!5e0!3m2!1ses!2ses!4v1586621952096!5m2!1ses!2ses"
+                width="200" height="200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+    </div>
+
+    <div class="footer-right">
+
+        <p class="footer-company-about">
+            <span>Sobre la empresa</span>
+            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus
+            vehicula sit amet.
+        </p>
+
+        <div class="footer-icons">
+
+            <a href="https://es-es.facebook.com/"><img src="/static/imagenes/facebook.png"></a>
+            <a href="https://twitter.com/"><img src="/static/imagenes/twitter.png"></a>
+            <a href="https://es.linkedin.com/"><img src="/static/imagenes/linkedin.png"></a>
+            <a href="https://github.com/"><img src="/static/imagenes/imagen-de-github.png"></a>
+
+        </div>
+
+    </div>
+    <p class="footer-company-name">PROJECT-M © 2020</p>
+</footer>
+
+
+<!------------------------
+Aqui comienza los PopUp
+------------------------------->
+
+<!-- aqui va el de clientes -->
+
+<div class="overlay" id="overlay_Cliente">
+    <div class="pop-up" id="pop-up_Cliente">
+        <div class="Alta">
+            <form id="Alta_Cliente" action="{% url 'PaginaPrincipal' %}" method="post">
+                {% csrf_token %}
+				<a href="#" class="btn-cerrar-popup" id="btn-cerrar-popup_Cliente"><img src="/static/imagenes/cerrar.png"></a>
+                <div class="Titulo_Alta">
+                    <h1>Alta Cliente</h1>
+                </div>
+                <fieldset class="fieldset_Alta">
+                    <legend><strong>Datos del Cliente</strong></legend>
+                    <div class="Registro_Personales">
+                        <label for="Nombre" class="Nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="Nombre_Cliente" required>
+                        <br>
+                        <label for="Empresa" class="Empresa">Empresa:</label>
+                        <input type="text" name="Empresa" id="Empresa" required>
+                        <br>
+                        <label for="Email_Cliente" class="Email">Email:</label>
+                        <input type="email" name="Email" id="Email_Cliente" required>
+                        <br>
+                        <label for="Localizacion_Empresa_Cliente" class="Localizacion">Fecha Nacimiento:</label>
+                        <input type="text" name="Localizacion" id="Localizacion_Empresa_Cliente" required>
+                        <br>
+                        <label for="Telefono" class="Telefono">Telefono:</label>
+                        <input type="number" name="Telefono" id="Telefono_Cliente" required>
+                        <br>
+                        <label for="Numero_Cuenta_Cliente" class="Numero_Cuenta">Numero Cuenta:</label>
+                        <input type="text" name="Numero_Cuenta" id="Numero_Cuenta_Cliente" required>
+                        <br>
+                    </div>
+                </fieldset>
+                <button type="submit" class="Guardar" id="Guardar_Cliente">Guardar</button>
+            </form>
+        </div>
+
+    </div>
 </div>
+
+<!-- aqui va el de Empleado -->
+
+<div class="overlay" id="overlay_Empleado">
+    <div class="pop-up" id="pop-up_Empleado">
+        <div class="Alta">
+            <form id="Alta_Empleado" action="{% url 'PaginaPrincipal' %}" method="post">
+                {% csrf_token %}
+				<a href="#" id="btn-cerrar-popup_Empleado" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
+                <div class="Titulo_Alta">
+                    <h1>Alta Empleado</h1>
+                </div>
+                <fieldset class="fieldset_Alta">
+                    <legend><strong>Datos del Empleado</strong></legend>
+                    <div class="Registro_Personales">
+                        <label for="DNI" class="DNI">DNI:</label>
+                        <input type="text" name="DNI" id="DNI" required>
+                        <br>
+                        <label for="Nombre" class="Nombre">Nombre:</label>
+                        <input type="text" name="nombre" id="Nombre" required>
+                        <br>
+                        <label for="Apellido" class="Apellido">Apellido:</label>
+                        <input type="text" name="Apellido" id="Apellido" required>
+                        <br>
+                        <label for="Email_Empleado" class="Email">Email:</label>
+                        <input type="email" name="Email" id="Email_Empleado" required>
+                        <br>
+                        <label for="Telefono" class="Telefono">Telefono:</label>
+                        <input type="number" name="Telefono" id="Telefono" required>
+                        <br>
+                    </div>
+                </fieldset>
+                <button type="submit" class="Guardar" id="Guardar_Empleado">Guardar</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- aqui va el de Tareas -->
+
+<div class="overlay" id="overlay_Tarea">
+    <div class="pop-up" id="pop-up_Tarea">
+        <div class="Alta">
+            <form id="Alta_Tarea" action="{% url 'PaginaPrincipal' %}" method="post">
+                {% csrf_token %}
+				<a href="#" id="btn-cerrar-popup_Tarea" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
+                <div class="Titulo_Alta">
+                    <h1>Alta Tarea</h1>
+                </div>
+                <fieldset class="fieldset_Alta">
+                    <legend><strong>Datos de la Tarea</strong></legend>
+                    <div class="Registro_Personales">
+                        <label for="Nombre_Tarea" class="Nombre">Tarea:</label>
+                        <input type="text" name="Nombre_Tarea" id="Nombre_Tarea" required>
+                        <br>
+                        <label for="Descripcion_Tarea" class="Descripcion">Descripcion:</label>
+                        <textarea type="text" name="Descripcion_Tarea" id="Descripcion_Tarea" required> </textarea>
+                        <br>
+                        <label for="Fecha_Inicio" class="Fecha">Fecha Inicio:</label>
+                        <input type="date" name="Fecha_Inicio" id="Fecha_Inicio" required>
+                        <br>
+                        <label for="Fecha_Fin" class="Fecha">Fecha Fin:</label>
+                        <input type="date" name="Fecha_Fin" id="Fecha_Fin" required>
+                        <br>
+						<!--{% block content_responsable %} {% endblock %}-->
+                        <br>
+                    </div>
+                </fieldset>
+                <button type="submit" class="Guardar" id="Guardar_Tarea">Guardar</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script src="/static/js/popup_base.js"></script>
+
 
 </body>
 </html>

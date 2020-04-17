@@ -8,9 +8,8 @@ enlAbrirPopup.addEventListener('click', function(){
 	overlay.classList.add('active');
 	popup.classList.add('active');
 });
-	
+
 enlCerrarPopup.addEventListener('click', function(){
 	overlay.classList.remove('active');
 	popup.classList.remove('active');
 });
-		
