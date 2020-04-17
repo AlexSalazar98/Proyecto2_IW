@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos
+from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados
 
 
 # import js2py
@@ -44,12 +44,14 @@ def login(request):
 
         clientes = Clientes.objects.order_by('empresa')
         proyectos = Proyectos.objects.all()
+        responsable = Empleados.objects.order_by('nombre')
 
         for us in listausrec:
             if us['usuario'] == usuario and us['contraseña'] == contraseña:
                 context = {
                     'clientes': clientes,
-                    'proyectos': proyectos
+                    'proyectos': proyectos,
+                    'responsable': responsable,
                 }
                 return render(request, 'TablaPrincipal.html', context)
                 break

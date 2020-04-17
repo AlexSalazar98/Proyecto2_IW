@@ -496,3 +496,120 @@
 	margin-bottom: 5px;
 }
 
+
+
+/*-----------------------------
+---------Pop up----------
+------------------------------*/
+
+.overlay{
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    transition: .3s ease all;
+}
+
+.overlay.active{
+    visibility: visible;
+}
+
+.btn-cerrar-popup{
+    display: block;
+    text-align: right;
+    /*transition: .3s ease all;*/
+}
+
+.pop-up{
+    opacity: 0;
+    transition: .3s ease all;
+    transform: scale(0.7);
+}
+
+.pop-up.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.pop-up.active h1{
+    animation: entradaTitulo .8s ease .5s forwards;
+}
+
+@keyframes entradaTitulo{
+    from{
+        transform: translateY(-25px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+.Alta{
+    font-family:arial;
+    width:450px;
+    padding:15px;
+    background:#eee;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 30%;
+}
+
+.Titulo_Alta h1{
+    color:#999999;
+    text-align:center;
+    font-family: 'Vibur', cursive;
+    font-size: 40px
+  }
+
+.fieldset_Alta{
+    border-radius: 20px;
+}
+
+.Guardar{
+    width: 448px;
+    background:#0AC986;
+    display:inline-block;
+    font-size:16px;
+    height:50px;
+    color:#fff;
+    text-decoration:none;
+    border:none;
+    border-radius:4px;
+}
+
+.Registro_Personales,{
+    margin: 10px;
+}
+
+label{
+    margin-top: 5px;
+}
+
+.Nombre, .Empresa, .Email, .Localizacion, .Telefono, .Nummero_Cuenta, .DNI, .Apellido{
+    display: inline-block;
+    width: 85px;
+}
+
+.Registro_Personales input{
+    border-radius: 10px;
+}
+
+legend{
+    font-style: italic;
+    margin-top: 10px;
+}
+
