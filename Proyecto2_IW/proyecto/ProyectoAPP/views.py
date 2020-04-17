@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados
+from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas
 
 
 # import js2py
@@ -40,15 +40,11 @@ def login(request):
         # Los añadimos a la lista para comprobar despues
         listausrec.append(user_com)
 
-        usuario_registrado = False
-
         clientes = Clientes.objects.order_by('empresa')
-<<<<<<< HEAD
+
         proyectos = Proyectos.objects.order_by('nombre')
-=======
-        proyectos = Proyectos.objects.all()
         responsable = Empleados.objects.order_by('nombre')
->>>>>>> 01923a6ccbcb3fdce061a2531da5b0bad4397d80
+
 
         for us in listausrec:
             if us['usuario'] == usuario and us['contraseña'] == contraseña:
@@ -97,7 +93,7 @@ def RecogerFormulario(request):
 
 def DetallesProyecto(request):
     id_proyect = request.POST["eleccion"]
-    proyecto = Proyectos.objects.order_by('id')
+    proyecto = Proyectos.objects.all()
 
     pro_select = ""
 
@@ -105,5 +101,20 @@ def DetallesProyecto(request):
         if int(id_proyect) == int(pro.id):
             pro_select = pro
 
+    tareas = Tareas.objects.all()
+
+
+    lista_pasar = []
+
+    for a in pro_select.tareas_a_realizar.all():
+        for b in  tareas:
+            if str(a) == str(b.nombre):
+                conj = {
+                    'tarea': a,
+                    'responsabe': b.responsable
+                }
+                lista_pasar.append(conj)
+
+    print(lista_pasar)
     #return render(request, 'detalles_proyecto.html')
     return HttpResponse(f"Nombre del proyecto: {pro_select.nombre}; presupuesto: {pro_select.cliente}")

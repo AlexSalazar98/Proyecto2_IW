@@ -25,18 +25,18 @@
         <ul class="Menu">
             <li><a>Modificar</a>
                 <ul class="SubMenu">
-                    <li><a href="">Cliente</a></li>
-                    <li><a href="">Empleado</a></li>
-                    <li><a href="">Proyecto</a></li>
-                    <li><a href="">Tarea</a></li>
+                    <li><a href="#">Cliente</a></li>
+                    <li><a href="#">Empleado</a></li>
+                    <li><a href="#">Proyecto</a></li>
+                    <li><a href="#">Tarea</a></li>
                 </ul>
             </li>
             <li><a>Nuevo</a>
                 <ul class="SubMenu">
                     <li><a href="#" id="Cliente">Cliente</a></li>
                     <li><a href="#" id="Empleado">Empleado</a></li>
-                    <li><a href="">Proyecto</a></li>
-                    <li><a href="">Tarea</a></li>
+                    <li><a href="#" id="Proyecto">Proyecto</a></li>
+                    <li><a href="#" id="Tarea">Tarea</a></li>
                 </ul>
             </li>
         </ul>
@@ -221,7 +221,7 @@ Aqui comienza los PopUp
                         <input type="text" name="Nombre_Tarea" id="Nombre_Tarea" required>
                         <br>
                         <label for="Descripcion_Tarea" class="Descripcion">Descripcion:</label>
-                        <textarea type="text" name="Descripcion_Tarea" id="Descripcion_Tarea" required> </textarea>
+                        <textarea name="Descripcion_Tarea" id="Descripcion_Tarea" required> </textarea>
                         <br>
                         <label for="Fecha_Inicio" class="Fecha">Fecha Inicio:</label>
                         <input type="date" name="Fecha_Inicio" id="Fecha_Inicio" required>
@@ -229,7 +229,7 @@ Aqui comienza los PopUp
                         <label for="Fecha_Fin" class="Fecha">Fecha Fin:</label>
                         <input type="date" name="Fecha_Fin" id="Fecha_Fin" required>
                         <br>
-						<!--{% block content_responsable %} {% endblock %}-->
+						{% block content_responsable %} {% endblock %}
                         <br>
                     </div>
                 </fieldset>
