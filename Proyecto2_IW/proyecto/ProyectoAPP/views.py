@@ -43,6 +43,10 @@ def login(request):
         clientes = Clientes.objects.order_by('empresa')
 
         proyectos = Proyectos.objects.order_by('nombre')
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6c262819b1fa3da67b554e56116d7da40017db
         responsable = Empleados.objects.order_by('nombre')
 
 
@@ -101,6 +105,7 @@ def DetallesProyecto(request):
         if int(id_proyect) == int(pro.id):
             pro_select = pro
 
+<<<<<<< HEAD
     tareas = Tareas.objects.all()
 
 
@@ -118,3 +123,20 @@ def DetallesProyecto(request):
     print(lista_pasar)
     #return render(request, 'detalles_proyecto.html')
     return HttpResponse(f"Nombre del proyecto: {pro_select.nombre}; presupuesto: {pro_select.cliente}")
+=======
+            context = {
+                'nombre': pro_select.nombre,
+                'descripcion': pro_select.descripcion,
+                'fecha_inicio': pro_select.fecha_inicio,
+                'fecha_fin': pro_select.fecha_fin,
+                'presupuesto': pro_select.presupuesto,
+                'cliente': pro_select.cliente,
+                'tareas_a_realizar': pro_select.tareas_a_realizar.all(),
+                'empleados': pro_select.empleados,
+                'departamento': pro_select.departamento,
+                'estado': pro_select.estado,
+            }
+
+    return render(request, 'detalles_proyecto.html', context)
+    #return HttpResponse(f"Nombre del proyecto: {pro_select.nombre}; presupuesto: {pro_select.cliente}")
+>>>>>>> dc6c262819b1fa3da67b554e56116d7da40017db
