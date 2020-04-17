@@ -43,7 +43,7 @@ def login(request):
         usuario_registrado = False
 
         clientes = Clientes.objects.order_by('empresa')
-        proyectos = Proyectos.objects.all()
+        proyectos = Proyectos.objects.order_by('nombre')
 
         for us in listausrec:
             if us['usuario'] == usuario and us['contraseña'] == contraseña:
@@ -90,6 +90,14 @@ def RecogerFormulario(request):
 
 
 def DetallesProyecto(request):
-    nombre_proyect = request.POST["eleccion"]
+    id_proyect = request.POST["eleccion"]
+    proyecto = Proyectos.objects.order_by('id')
+
+    pro_select = ""
+
+    for pro in proyecto:
+        if int(id_proyect) == int(pro.id):
+            pro_select = pro
+
     #return render(request, 'detalles_proyecto.html')
-    return HttpResponse(f"Nombre del proyecto: {nombre_proyect}")
+    return HttpResponse(f"Nombre del proyecto: {pro_select.nombre}; presupuesto: {pro_select.cliente}")
