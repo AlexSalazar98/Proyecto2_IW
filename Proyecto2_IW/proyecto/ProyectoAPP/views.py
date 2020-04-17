@@ -40,15 +40,12 @@ def login(request):
         # Los añadimos a la lista para comprobar despues
         listausrec.append(user_com)
 
-        usuario_registrado = False
-
         clientes = Clientes.objects.order_by('empresa')
-<<<<<<< HEAD
+
         proyectos = Proyectos.objects.order_by('nombre')
-=======
-        proyectos = Proyectos.objects.all()
+
         responsable = Empleados.objects.order_by('nombre')
->>>>>>> 01923a6ccbcb3fdce061a2531da5b0bad4397d80
+
 
         for us in listausrec:
             if us['usuario'] == usuario and us['contraseña'] == contraseña:
@@ -105,5 +102,18 @@ def DetallesProyecto(request):
         if int(id_proyect) == int(pro.id):
             pro_select = pro
 
-    #return render(request, 'detalles_proyecto.html')
-    return HttpResponse(f"Nombre del proyecto: {pro_select.nombre}; presupuesto: {pro_select.cliente}")
+            context = {
+                'nombre': pro_select.nombre,
+                'descripcion': pro_select.descripcion,
+                'fecha_inicio': pro_select.fecha_inicio,
+                'fecha_fin': pro_select.fecha_fin,
+                'presupuesto': pro_select.presupuesto,
+                'cliente': pro_select.cliente,
+                'tareas_a_realizar': pro_select.tareas_a_realizar.all(),
+                'empleados': pro_select.empleados,
+                'departamento': pro_select.departamento,
+                'estado': pro_select.estado,
+            }
+
+    return render(request, 'detalles_proyecto.html', context)
+    #return HttpResponse(f"Nombre del proyecto: {pro_select.nombre}; presupuesto: {pro_select.cliente}")
