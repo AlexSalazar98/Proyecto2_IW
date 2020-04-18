@@ -1,104 +1,110 @@
-{% extends "Base.html" %}	
+{% extends "Base.html" %}
 
-	{% block content %}
-	<!-- Cuerpo central de la pagina -->
+{% block content %}
+<!-- Cuerpo central de la pagina -->
 
-	<div id = "content-Ppricipal">
+<div id="content-Ppricipal">
 
-		<nav class="buscador">
+    <nav class="buscador">
 
-			<div class="btn-buscar">
-				<a href="https://www.google.com/"><button type="button"><img src="/static/imagenes/buscar.png"></button></a>
-			</div>
+        <div class="btn-buscar">
+            <a href="https://www.google.com/">
+                <button type="button"><img src="/static/imagenes/buscar.png"></button>
+            </a>
+        </div>
 
-			<div class="buscar-por-estado">
-				<label>Estado proyecto: </label>
-				<select name="Estado" class="Estado">
-					<option>ABIERTO</option>
-					<option>EN CURSO</option>
-					<OPTION>FINALIZADO</OPTION>
-				</select>
-			</div>
+        <div class="buscar-por-estado">
+            <label>Estado proyecto: </label>
+            <select name="Estado" class="Estado">
+                <option>ABIERTO</option>
+                <option>EN CURSO</option>
+                <OPTION>FINALIZADO</OPTION>
+            </select>
+        </div>
 
-			<div class="buscar-por-fecha-fin">
-				<label>Fecha fin: </label>
-				<input type="date">
-			</div>
+        <div class="buscar-por-fecha-fin">
+            <label>Fecha fin: </label>
+            <input type="date">
+        </div>
 
-			<div class="buscar-por-fecha-inicio">
-				<label>Fecha inicio: </label>
-				<input type="date">
-			</div>
+        <div class="buscar-por-fecha-inicio">
+            <label>Fecha inicio: </label>
+            <input type="date">
+        </div>
 
-			<div class="bucar-por-nombre">
-				<label>Nombre del proyecto: </label>
-				<input type="text">
-			</div>
+        <div class="bucar-por-nombre">
+            <label>Nombre del proyecto: </label>
+            <input type="text">
+        </div>
 
-		</nav>
+    </nav>
 
-		<!-- Lado izquierdo de la página, muestra noticias sobre la empresa -->
-		<aside id="lado-izquierda">
+    <!-- Lado izquierdo de la página, muestra noticias sobre la empresa -->
+    <aside id="lado-izquierda">
 
-			<h2><b>CLIENTES</b></h2>
+        <h2><b>CLIENTES</b></h2>
 
-			<hr>
+        <hr>
 
-			<!-- Botones -->
-			<div class="botones-clientes">
-				<button type="button">Todos</button>
-				{% for n_cliente in clientes %}
-					<button type="button">{{ n_cliente.empresa }}</button>
-				{% endfor %}
-			</div>
-		
-		</aside>
+        <!-- Botones -->
+        <div class="botones-clientes">
+            <button type="button">Todos</button>
+            {% for n_cliente in clientes %}
+            <button type="button">{{ n_cliente.empresa }}</button>
+            {% endfor %}
+        </div>
 
-		<!-- Lado derecho de la página central. Muestra en una tabla los proyectos en curso -->
-		<section id="lado-derecha">
+    </aside>
 
-			<h2>HISTORICO DE PROYECTOS</h2>
+    <!-- Lado derecho de la página central. Muestra en una tabla los proyectos en curso -->
+    <section id="lado-derecha">
 
-			<br>
+        <h2>HISTORICO DE PROYECTOS</h2>
 
-			<!-- Tabla. Se encuentra dentro de div para poder insertar una scrollbar -->
-			<div id="tabla"> 
-				<table border="1">
-					<!-- Cabecera de la tabla -->
-					<thead>
-						<tr>
-							<td><b>NOMBRE</b></td>
-							<td><b>FECHA DE INICIO</b></td>
-							<td><b>FECHA DE FIN</b></td>
-							<td><b>ESTADO</b></td>
-							<td><b>ENLACE</b></td>
-						</tr>
-					</thead>
+        <br>
 
-					<!-- A partir de aqui se encuentran los datos de la tabla -->
+        <!-- Tabla. Se encuentra dentro de div para poder insertar una scrollbar -->
+        <div id="tabla">
+            <table border="1">
+                <!-- Cabecera de la tabla -->
+                <thead>
+                <tr>
+                    <td><b>NOMBRE</b></td>
+                    <td><b>FECHA DE INICIO</b></td>
+                    <td><b>FECHA DE FIN</b></td>
+                    <td><b>ESTADO</b></td>
+                    <td><b>ENLACE</b></td>
+                </tr>
+                </thead>
 
-					{% for dat in proyectos %}
-					<form action="{% url 'DetallesProyecto' %}" method="post">
-						{% csrf_token %}
-						<tr>
-							<td>{{ dat.nombre }}</td>
-							<td>{{ dat.fecha_inicio }}</td>
-							<td>{{ dat.fecha_fin }}</td>
-							<td>{{ dat.estado }}</td>
-							<td><button type="submit" name="eleccion" value="{{ dat.id }}">Enlace a detalles</button></td>
-						</tr>
-					</form>
-					{% endfor %}
-				
-				</table>
-			</div>
+                <!-- A partir de aqui se encuentran los datos de la tabla -->
 
-		
-		</section>
-	</div>
+                {% for dat in proyectos %}
+                <form action="{% url 'DetallesProyecto' %}" method="post">
+                    {% csrf_token %}
+                    <tr>
+                        <td>{{ dat.nombre }}</td>
+                        <td>{{ dat.fecha_inicio|date:'d-m-Y' }}</td>
+                        <td>{{ dat.fecha_fin|date:'d-m-Y' }}</td>
+                        <td>{{ dat.estado }}</td>
+                        <td>
+                            <button type="submit" name="eleccion" value="{{ dat.id }}">Enlace a detalles</button>
+                        </td>
+                    </tr>
+                </form>
+                {% endfor %}
 
-	{% endblock %}
+            </table>
+        </div>
+
+
+    </section>
+</div>
+
+{% endblock %}
 
 {% block content_responsable %}
-<label>Responsable:</label><select name="Responsable" class="Responsable" required> {% for resp in responsable %} <option name="responsable" value="{{ resp.nombre }}"> {{ resp.nombre }} </option> {% endfor %} </select>
+<label>Responsable:</label><select name="Responsable" class="Responsable" required> {% for resp in responsable %}
+    <option name="responsable" value="{{ resp.nombre }}"> {{ resp.nombre }}</option>
+    {% endfor %} </select>
 {% endblock %}

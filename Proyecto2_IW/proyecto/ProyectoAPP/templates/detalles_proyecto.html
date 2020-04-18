@@ -1,56 +1,96 @@
 {% extends "Base.html" %}
 
-	{% block content %}
-	<!-- Cuerpo central de la pagina -->
+{% block content %}
+<!-- Cuerpo central de la pagina -->
 
-    <div class="detalles_proyecto">
-        <h2>{{ nombre }}</h2>
-
-        <div class="infor-basica">
-            <div class="parte-central">
-                <div class="est-proyect">
-                    <label>Estado del proyecto: {{ estado}} </label>
-                </div>
-                <div class="fecha-ini">
-                    <label>Fecha de inicio: {{ fecha_inicio }} </label>
-                </div>
-                <div class="fecha-fin">
-                    <label>Fecha de finalizacion: {{ fecha_fin }} </label>
-                </div>
-                <div class="dep">
-                    <label>Departamento asignado al proyecto: {{ departamento }} </label>
-                </div>
-                <div class="cliente">
-                    <label>Cliente: {{ cliente }} </label>
-                </div>
-                <div class="pres">
-                    <label>Presupuesto: {{ presupuesto }} </label>
-                </div>
-            </div>
-            <div class="lado-izq">
-                <label>Jefes de tarea : {{ empleados }} </label>
-            </div>
-            <div class="lado-derecho">
-                {% for a in tareas_a_realizar %}
-                <ul>TAREAS
-                    <li>{{ a.tarea }}</li>
-                </ul>
-
-                <ul>RESPONSABLE
-                    <li>{{ a.responsable }}</li>
-                </ul>
-
-                {% endfor %}
-            </div>
-
-
+<div class="detalles_proyecto">
+    <div class="top">
+        <div class="titulo">
+            <h1>{{ nombre }}</h1>
         </div>
+        <div class="est-proyect">
+            {% if estado == 'Abierto' %}
+            <label class="verde">{{ estado }}</label>
+            {% elif estado == 'En proceso' %}
+            <label class="naranja">{{ estado }}</label>
+            {% else %}
+            <label class="rojo">{{ estado }}</label>
+            {% endif %}
 
-        <div class="desc">
-            <label>Descripcion del proyecto: {{ descripcion }} </label>
-            <br>
         </div>
     </div>
 
-    {% endblock %}
+    <div class="infor-basica">
+        <fieldset class="datos-principales">
+            <legend><strong>Datos principales</strong></legend>
+            <div class="primera-linea">
+                <div class="fecha-ini">
+                    <label class="etiqueta"><strong>Fecha de inicio: </strong></label><label class="variable">{{ fecha_inicio|date:'d-m-Y' }}</label>
+                </div>
+                <div class="fecha-fin">
+                    <label class="etiqueta"><strong>Fecha de finalizacion: </strong></label><label class="variable">{{ fecha_fin|date:'d-m-Y' }}</label>
+                </div>
+            </div>
+            <div class="segunda-linea">
+                <div class="cliente">
+                    <label class="etiqueta"><strong>Cliente: </strong></label><label class="variable">{{ cliente }}</label>
+                </div>
+                <div class="dep">
+                    <label class="etiqueta"><strong>Departamento asignado al proyecto: </strong></label><label
+                        class="variable">{{ departamento }}</label>
+                </div>
+            </div>
+            <div class="pres">
+                <label class="etiqueta"><strong>Presupuesto: </strong></label><label class="variable">{{ presupuesto }} €</label>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="datos-principales">
+            <legend><strong>Tareas a realizar</strong></legend>
+            <div class="conjuto">
+                <div class="lado-derecho">
+                    <ul class="etiqueta">TAREAS
+                        {% for a in tareas_a_realizar %}
+                        <li class="variable">{{ a.tarea }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="lado-izquierda">
+                    <ul class="etiqueta">RESPONSABLE
+                        {% for a in tareas_a_realizar %}
+                        <li class="variable">{{ a.responsable }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+        </fieldset>
+
+
+        <fieldset class="datos-principales">
+            <legend><strong>Empleados asignados al proyecto</strong></legend>
+            {% for a in empleados %}
+            <div class="izq">
+                <label>&#8226;   {{ a }} </label>
+            </div>
+            <div class="cen">
+                <label>&#8226;  {{ a }} </label>
+            </div>
+            <div class="der">
+                <label>&#8226;  {{ a }} </label>
+            </div>
+            {% endfor %}
+        </fieldset>
+
+
+    </div>
+
+    <div class="desc">
+        <label>Descripcion del proyecto: {{ descripcion }} </label>
+        <br>
+    </div>
+</div>
+
+{% endblock %}
 

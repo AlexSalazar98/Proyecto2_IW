@@ -7,6 +7,5 @@ function comprobarClave() {
         alert('Las contraseñas no coinciden');
     }else{
         document.getElementById('Alta_Registro').submit();
-        return " url 'RecogerFormulario' "
     }
 }

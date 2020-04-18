@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    <main>
-        <div class="Alta_Usuario">
-        <form  id="Alta_Registro" action="{{ comprobarClave() }}" method="post">
+<main>
+    <div class="Alta_Usuario">
+        <form id="Alta_Registro" action="{% url 'RecogerFormulario' %}" method="post">
             {% csrf_token %}
             <div class="Titulo_Formulario">
                 <h1>Formulario Registro</h1>
@@ -39,9 +39,14 @@
                     <label for="Fecha_Nacimiento" class="Fecha_Nacimiento">Fecha Nacimiento:</label>
                     <input type="date" name="Fecha_Nacimiento" id="Fecha_Nacimiento" required>
                     <br>
-                    Departamento: <select name="Departamento" class="Departamento" required> {% for dep in departamentos %} <option> {{ dep.nombre }} </option> {% endfor %} </select>
+                    Departamento: <select name="Departamento" class="Departamento" required> {% for dep in departamentos
+                    %}
+                    <option> {{ dep.nombre }}</option>
+                    {% endfor %} </select>
                     <br>
-                    Categoria: <select name="Categoria" class="Categoria" required> {% for cat in categoria %} <option> {{ cat.nombre }} </option> {% endfor %} </select>
+                    Categoria: <select name="Categoria" class="Categoria" required> {% for cat in categoria %}
+                    <option> {{ cat.nombre }}</option>
+                    {% endfor %} </select>
                 </div>
             </fieldset>
             <fieldset class="fieldset_Registro">
@@ -64,11 +69,12 @@
                 <label for="Acepto_Condiciones">Acepto Condiciones</label>
                 <input type="checkbox" name="Acepto_Condiciones" id="Acepto_Condiciones" required>
             </div>
-            <button type="submit" class="Entrar_Usuario" id="Entrar_Usuario" onclick="comprobarClave()">Registrarse</button>
+            <input type="button" class="Entrar_Usuario" id="Entrar_Usuario" onclick="comprobarClave()"
+                   value="Registrarse"></input>
         </form>
 
-        </div>
-    </main>
+    </div>
+</main>
 </body>
 
 

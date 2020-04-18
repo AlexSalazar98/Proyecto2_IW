@@ -138,7 +138,6 @@
 	        margin: 0 auto;
 	        margin-bottom: 20px;
 	        margin-top: 30px;
-	        display: inline_block;
 	   }
 
 	   .buscador label{
@@ -613,3 +612,137 @@ legend{
     margin-top: 10px;
 }
 
+
+
+/* CSS PARA detalles_proyecto.html */
+
+.detalles_proyecto {
+    margin-top: 30px;
+    width: 1100px;
+    margin-left: 50px;
+    height: 700px;
+    background-color: rgba(66, 63, 63, 0.7);
+    margin-bottom: 30px;
+    padding-top: 30px;
+}
+
+.top{
+    width: 90%;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 13px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.titulo{
+    text-align: center;
+}
+
+.top h1{
+    margin-top: 10px;
+    display: inline_block;
+    float: left;
+    width: 70%;
+    font-size: 40px;
+    font-style: Arial Black;
+}
+
+.verde{
+    color: green;
+}
+
+.naranja{
+    color: yellow;
+}
+
+.rojo{
+    color: red;
+}
+
+.est-proyect{
+    float: right;
+    width: 30%;
+    text-align: center;
+    margin-top: 2.5%;
+}
+
+.est-proyect label{
+    font-size: 22px;
+}
+
+.datos-principales{
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 9px;
+}
+
+.etiqueta{
+    font-style: italic;
+    color: white;
+    font-size: 17px;
+    margin-left: 30px;
+}
+
+.variable{
+    margin-left: 10px;
+    color: red;
+    font-style: Arial Black;
+}
+
+.datos-principales legend{
+    margin-left: 4px;
+}
+
+.primera-linea{
+    display: inline_block;
+    margin-bottom: 10px;
+    height: 20px;
+}
+
+.fecha-ini{
+    width: 50%;
+    float: left;
+}
+
+.fecha-fin{
+    width: 50%;
+    float: right;
+}
+
+.segunda-linea{
+    display: inline_block;
+    margin-bottom: 10px;
+    height: 20px;
+}
+
+.cliente{
+    width: 50%;
+    float: left;
+}
+
+.dep{
+    width: 50%;
+    float: left;
+}
+
+.pres{
+    margin-left: 350px;
+}
+
+.conjuto{
+    display: inline_block;
+}
+
+.lado-derecho{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.lado-izquierda{
+    width: 50%;
+    float: right;
+    text-align: center;
+}

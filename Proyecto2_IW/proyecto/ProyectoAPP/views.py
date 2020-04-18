@@ -88,7 +88,17 @@ def RecogerFormulario(request):
 
     UsuarioGuardado.save()
 
-    return render(request, 'TablaPrincipal.html')
+    clientes = Clientes.objects.order_by('empresa')
+
+    proyectos = Proyectos.objects.order_by('nombre')
+
+    responsable = Empleados.objects.order_by('nombre')
+    context = {
+        'clientes': clientes,
+        'proyectos': proyectos,
+        'responsable': responsable,
+    }
+    return render(request, 'TablaPrincipal.html', context)
 
 
 def DetallesProyecto(request):
@@ -119,7 +129,11 @@ def DetallesProyecto(request):
                     'responsable': b.responsable
                 }
                 lista_pasar.append(conj)
+    lista_empleados = []
+    for a in pro_select.empleados.all():
+        lista_empleados.append(a)
 
+    print(lista_empleados)
     # Creamos el context con lo que vamos a pasar al HTML de mostrar
     context = {
         'nombre': pro_select.nombre,
@@ -129,10 +143,10 @@ def DetallesProyecto(request):
         'presupuesto': pro_select.presupuesto,
         'cliente': pro_select.cliente,
         'tareas_a_realizar': lista_pasar,
-        'empleados': pro_select.empleados,
+        'empleados': lista_empleados,
         'departamento': pro_select.departamento,
-        'estado': pro_select.estado,
+        'estado': str(pro_select.estado),
     }
-
+    print(pro_select.empleados.all())
     return render(request, 'detalles_proyecto.html', context)
 
