@@ -147,7 +147,7 @@ Aqui comienza los PopUp
                         <label for="Email_Cliente" class="Email">Email:</label>
                         <input type="email" name="Email" id="Email_Cliente" required>
                         <br>
-                        <label for="Localizacion_Empresa_Cliente" class="Localizacion">Fecha Nacimiento:</label>
+                        <label for="Localizacion_Empresa_Cliente" class="Localizacion">Localizacion:</label>
                         <input type="text" name="Localizacion" id="Localizacion_Empresa_Cliente" required>
                         <br>
                         <label for="Telefono" class="Telefono">Telefono:</label>
@@ -220,16 +220,23 @@ Aqui comienza los PopUp
                         <label for="Nombre_Tarea" class="Nombre">Tarea:</label>
                         <input type="text" name="Nombre_Tarea" id="Nombre_Tarea" required>
                         <br>
-                        <label for="Descripcion_Tarea" class="Descripcion">Descripcion:</label>
-                        <textarea name="Descripcion_Tarea" id="Descripcion_Tarea" required> </textarea>
+                        <label for="Fecha_Inicio_Tarea" class="Fecha_Inicio">Fecha Inicio:</label>
+                        <input type="date" name="Fecha_Inicio" id="Fecha_Inicio_Tarea" required>
                         <br>
-                        <label for="Fecha_Inicio" class="Fecha">Fecha Inicio:</label>
-                        <input type="date" name="Fecha_Inicio" id="Fecha_Inicio" required>
-                        <br>
-                        <label for="Fecha_Fin" class="Fecha">Fecha Fin:</label>
-                        <input type="date" name="Fecha_Fin" id="Fecha_Fin" required>
+                        <label for="Fecha_Fin_Tarea" class="Fecha_Fin">Fecha Fin:</label>
+                        <input type="date" name="Fecha_Fin" id="Fecha_Fin_Tarea" required>
                         <br>
 						{% block content_responsable %} {% endblock %}
+                        <br>
+                        {% block content_prioridad %} {% endblock %}
+                        <br>
+                        {% block content_estado %} {% endblock %}
+                        <br>
+                        <label for="Descripcion_Tarea" class="Descripcion_Tarea">Descripcion:</label>
+                        <textarea name="Descripcion_Tarea" id="Descripcion_Tarea" required> </textarea>
+                        <br>
+                        <label for="Notas_Empleado" class="Notas_Empleado">Notas Empleado:</label>
+                        <textarea type="text" name="Notas_Empleado" id="Notas_Empleado" required></textarea>
                         <br>
                     </div>
                 </fieldset>
@@ -239,6 +246,55 @@ Aqui comienza los PopUp
 
     </div>
 </div>
+
+<!-- aqui va el de Proyectos -->
+
+<div class="overlay" id="overlay_Proyecto">
+    <div class="pop-up" id="pop-up_Proyecto">
+        <div class="Alta">
+            <form id="Alta_Proyecto" action="{% url 'PaginaPrincipal' %}" method="post">
+                {% csrf_token %}
+				<a href="#" id="btn-cerrar-popup_Proyecto" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
+                <div class="Titulo_Alta">
+                    <h1>Alta Proyectos</h1>
+                </div>
+                <fieldset class="fieldset_Alta">
+                    <legend><strong>Datos del Proyecto</strong></legend>
+                    <div class="Registro_Personales">
+                        <label for="Nombre_Proyecto" class="Nombre_Proyecto">Nombre Proyecto:</label>
+                        <input type="text" name="Nombre_Proyecto" id="Nombre_Proyecto" required>
+                        <br>
+                        <label for="Fecha_Inicio_Proyecto" class="Fecha_Inicio">Fecha Inicio:</label>
+                        <input type="date" name="Fecha_Inicio" id="Fecha_Inicio_Proyecto" required>
+                        <br>
+                        <label for="Fecha_Fin_Proyecto" class="Fecha_Fin">Fecha Fin:</label>
+                        <input type="date" name="Fecha_Fin" id="Fecha_Fin_Proyecto" required>
+                        <br>
+                        <label for="Presupuesto" class="Presupuesto">Presupuesto:</label>
+                        <input type="number" name="Presupuesto" id="Presupuesto" required>
+                        <br>
+						{% block content_cliente %} {% endblock %}
+                        <br>
+                        {% block content_tareas %} {% endblock %}
+                        <br>
+                        {% block content_empleados %} {% endblock %}
+                        <br>
+                        {% block content_departamento %} {% endblock %}
+                        <br>
+                        {% block content_estados %} {% endblock %}
+                        <br>
+                        <label for="Descripcion_Proyecto" class="Descripcion_Proyecto">Descripcion:</label>
+                        <textarea name="Descripcion_Proyecto" id="Descripcion_Proyecto" required> </textarea>
+                    </div>
+                </fieldset>
+                <button type="submit" class="Guardar" id="Guardar_Proyecto">Guardar</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
 
 <script src="/static/js/popup_base.js"></script>
 

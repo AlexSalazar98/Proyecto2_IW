@@ -88,6 +88,13 @@ class Estado_Proyecto(models.Model):
         return f"{self.estado}"
 
 
+class Nivel_Prioridad(models.Model):
+    nivel_prioridad = models.CharField(max_length=15)
+
+    def __str__(self):
+        return f"{self.nivel_prioridad}"
+
+
 # Clase para la creacion de Proyectos
 class Proyectos(models.Model):
     nombre = models.CharField(max_length=30)

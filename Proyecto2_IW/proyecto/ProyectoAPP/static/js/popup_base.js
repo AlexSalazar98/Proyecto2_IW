@@ -11,9 +11,12 @@ var Cliente = document.getElementById('Cliente'),
 	Tarea = document.getElementById('Tarea'),
 	overlay_Tarea = document.getElementById('overlay_Tarea'),
 	popup_Tarea = document.getElementById('pop-up_Tarea'),
-
 	enlCerrarPopup_Tarea = document.getElementById('btn-cerrar-popup_Tarea');
 
+    Proyecto = document.getElementById('Proyecto'),
+	overlay_Proyecto = document.getElementById('overlay_Proyecto'),
+	popup_Proyecto = document.getElementById('pop-up_Proyecto'),
+	enlCerrarPopup_Proyecto = document.getElementById('btn-cerrar-popup_Proyecto');
 
 
 
@@ -34,9 +37,10 @@ Tarea.addEventListener('click', function(){
 	popup_Tarea.classList.add('active');
 });
 
-
-
-
+Proyecto.addEventListener('click', function(){
+	overlay_Proyecto.classList.add('active');
+	popup_Proyecto.classList.add('active');
+});
 
 
 
@@ -58,3 +62,7 @@ enlCerrarPopup_Tarea.addEventListener('click', function(){
 	popup_Tarea.classList.remove('active');
 });
 
+enlCerrarPopup_Proyecto.addEventListener('click', function(){
+	overlay_Proyecto.classList.remove('active');
+	popup_Proyecto.classList.remove('active');
+});

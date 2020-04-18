@@ -564,7 +564,6 @@
     background:#eee;
     border-radius: 20px;
     margin-top: 10px;
-    margin-left: 30%;
 }
 
 .Titulo_Alta h1{
@@ -588,17 +587,18 @@
     text-decoration:none;
     border:none;
     border-radius:4px;
+    margin-top: 10px;
 }
 
-.Registro_Personales,{
+.Registro_Personales{
     margin: 10px;
 }
 
 label{
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
-.Nombre, .Empresa, .Email, .Localizacion, .Telefono, .Nummero_Cuenta, .DNI, .Apellido{
+.Nombre, .Empresa, .Email, .Localizacion, .Telefono, .DNI, .Apellido, Nombre_Proyecto, .Fecha_Fin, .Presupuesto, .Cliente, .Tareas, .Empleados, .Departamento, .Estado{
     display: inline-block;
     width: 85px;
 }
@@ -612,6 +612,7 @@ legend{
     margin-top: 10px;
 }
 
+<<<<<<< Updated upstream
 
 
 /* CSS PARA detalles_proyecto.html */
@@ -745,4 +746,31 @@ legend{
     width: 50%;
     float: right;
     text-align: center;
+=======
+input{
+    margin-left: 10px;
+}
+
+select{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.Numero_Cuenta{
+    display: inline-block;
+}
+
+#Descripcion_Proyecto, #Descripcion_Tarea, #Notas_Empleado{
+    margin-top: 10px;
+    display: list-item;
+}
+
+.Fecha_Inicio{
+    display: inline-block;
+}
+
+.Descripcion_Proyecto, .Descripcion_Tarea, .Notas_Empleado{
+    margin-top: 10px;
+    display: inline-block;
+>>>>>>> Stashed changes
 }
