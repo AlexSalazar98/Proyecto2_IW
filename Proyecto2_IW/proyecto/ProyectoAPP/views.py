@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, Nivel_Prioridad, Estado_Proyecto
+from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, Nivel_Prioridad, Estado_Proyecto, Estado
 
 
 # import js2py
@@ -161,4 +161,65 @@ def DetallesProyecto(request):
     }
     print(pro_select.empleados.all())
     return render(request, 'detalles_proyecto.html', context)
+
+def Nuevo_Cliente (request):
+
+    nuevo_cliente = Clientes()
+
+    nuevo_cliente.nombre = request.POST["nombre"]
+    nuevo_cliente.empresa = request.POST["Empresa"]
+    nuevo_cliente.email = request.POST["Email"]
+    nuevo_cliente.localizacion = request.POST["Localizacion"]
+    nuevo_cliente.telefono = request.POST["Telefono"]
+    nuevo_cliente.numero_cuenta = request.POST["Numero_Cuenta"]
+
+    nuevo_cliente.save()
+
+    clientes = Clientes.objects.order_by('empresa')
+
+    proyectos = Proyectos.objects.order_by('nombre')
+
+    responsable = Empleados.objects.order_by('nombre')
+    context = {
+        'clientes': clientes,
+        'proyectos': proyectos,
+        'responsable': responsable,
+    }
+
+    return render(request, 'TablaPrincipal.html', context)
+
+
+def Nuevo_Empleado (request):
+
+    nuevo_empleado = Empleados()
+
+    nuevo_empleado.dni = request.POST["DNI"]
+    nuevo_empleado.nombre = request.POST["nombre"]
+    nuevo_empleado.apellido = request.POST["Apellido"]
+    nuevo_empleado.email = request.POST["Email"]
+    nuevo_empleado.telefono = request.POST["Telefono"]
+
+    nuevo_empleado.save()
+
+    return render(request, 'TablaPrincipal.html')
+
+
+def Envio_Datos_Nuevo (request):
+
+    cliente = Clientes.objects.order_by('nombre')
+    tareas = Tareas.objects.order_by('nombre')
+    empleados = Empleados.objects.order_by('nombre')
+    departamento = Departamento.objects.order_by('nombre')
+    estado = Estado.objects.order_by('estado')
+
+    context = {
+        'cliente': cliente,
+        'tareas': tareas,
+        'empleados': empleados,
+        'departamento': departamento,
+        'estado': estado,
+    }
+
+    return render(request, 'TablaPrincipal.html', context)
+
 

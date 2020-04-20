@@ -121,7 +121,7 @@
 <label>Tareas:</label><select name="Tareas" class="Tareas" required> {% for tar in tareas %} <option name="tareas" value="{{ tar.nombre }}"> {{ tar.nombre }} </option> {% endfor %} </select>
 {% endblock %}
 {% block content_empleados %}
-<label>Empleados:</label><select name="Responsable" class="Responsable" multiple required> {% for resp in responsable %} <option name="responsable" value="{{ resp.nombre }}"> {{ resp.nombre }} </option> {% endfor %} </select>
+<label class="Clase_Empleado">Empleados:</label><select name="Empleados" class="Empleados" multiple size="3" required> {% for resp in responsable %} <option name="Empleados" value="{{ resp.nombre }}"> {{ resp.nombre }} </option> {% endfor %} </select>
 {% endblock %}
 {% block content_departamento %}
 <label>Departamento:</label><select name="Departamento" class="Departamento" required> {% for dep in departamento %} <option name="departamento" value="{{ dep.nombre }}"> {{ dep.nombre }} </option> {% endfor %} </select>

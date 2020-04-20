@@ -597,7 +597,7 @@ label{
     margin-top: 10px;
 }
 
-.Nombre, .Empresa, .Email, .Localizacion, .Telefono, .DNI, .Apellido, Nombre_Proyecto, .Fecha_Fin, .Presupuesto, .Cliente, .Tareas, .Empleados, .Departamento, .Estado{
+.Nombre, .Empresa, .Email, .Localizacion, .Telefono, .DNI, .Apellido, Nombre_Proyecto, .Fecha_Fin, .Presupuesto, .Cliente, .Tareas, .Departamento, .Estado{
     display: inline-block;
     width: 85px;
 }
@@ -764,6 +764,8 @@ select{
 #Descripcion_Proyecto, #Descripcion_Tarea, #Notas_Empleado{
     margin-top: 10px;
     display: list-item;
+    width: 420px;
+    height: 60px;
 }
 
 .Fecha_Inicio{
@@ -776,3 +778,12 @@ select{
 
 }
 
+.Empleados{
+    margin-top: 10px;
+    display: list-item;
+}
+
+.Clase_Empleado{
+    margin-top: 10px;
+    display: inline-block;
+}

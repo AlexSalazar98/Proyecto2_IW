@@ -67,6 +67,12 @@ class Estado(models.Model):
         return f"Estado = {self.estado}"
 
 
+class Nivel_Prioridad(models.Model):
+    nivel_prioridad = models.CharField(max_length=15)
+
+    def __str__(self):
+        return f"{self.nivel_prioridad}"
+
 # Clase para la creacion de Tareas
 class Tareas(models.Model):
     nombre = models.CharField(max_length=30)
@@ -74,7 +80,7 @@ class Tareas(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     responsable = models.ForeignKey(Empleados, on_delete=models.CASCADE)
-    nivel_prioridad = models.CharField(max_length=20)
+    nivel_prioridad = models.ForeignKey(Nivel_Prioridad, on_delete=models.CASCADE)
     estado_tarea = models.ForeignKey(Estado, on_delete=models.CASCADE)
     notas_adicionales_escritas_empleado = models.TextField()
 
@@ -88,12 +94,6 @@ class Estado_Proyecto(models.Model):
     def __str__(self):
         return f"{self.estado}"
 
-
-class Nivel_Prioridad(models.Model):
-    nivel_prioridad = models.CharField(max_length=15)
-
-    def __str__(self):
-        return f"{self.nivel_prioridad}"
 
 
 # Clase para la creacion de Proyectos

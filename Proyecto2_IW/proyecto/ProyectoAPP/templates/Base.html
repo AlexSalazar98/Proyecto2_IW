@@ -129,7 +129,7 @@ Aqui comienza los PopUp
 <div class="overlay" id="overlay_Cliente">
     <div class="pop-up" id="pop-up_Cliente">
         <div class="Alta">
-            <form id="Alta_Cliente" action="{% url 'PaginaPrincipal' %}" method="post">
+            <form id="Alta_Cliente" action="{% url 'NuevoCliente' %}" method="post">
                 {% csrf_token %}
 				<a href="#" class="btn-cerrar-popup" id="btn-cerrar-popup_Cliente"><img src="/static/imagenes/cerrar.png"></a>
                 <div class="Titulo_Alta">
@@ -170,7 +170,7 @@ Aqui comienza los PopUp
 <div class="overlay" id="overlay_Empleado">
     <div class="pop-up" id="pop-up_Empleado">
         <div class="Alta">
-            <form id="Alta_Empleado" action="{% url 'PaginaPrincipal' %}" method="post">
+            <form id="Alta_Empleado" action="{% url 'NuevoEmpleado' %}" method="post">
                 {% csrf_token %}
 				<a href="#" id="btn-cerrar-popup_Empleado" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
                 <div class="Titulo_Alta">
