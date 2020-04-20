@@ -40,6 +40,7 @@ class Usuarios(models.Model):
     email = models.EmailField()
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    user = models.CharField(max_length=21)
     contraseña = models.CharField(max_length=10)
 
     def __str__(self):
