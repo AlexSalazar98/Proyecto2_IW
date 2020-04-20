@@ -18,7 +18,7 @@ function Usuario(){
         union;
 
 
-        union = nombre + "." + apellido;
+        union = nombre.toLowerCase() + "." + apellido.toLowerCase();
 
     for(var i = 0; i < user.length;i++){
         user[i].value = union;
