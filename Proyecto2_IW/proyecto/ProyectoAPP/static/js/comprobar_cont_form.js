@@ -9,3 +9,19 @@ function comprobarClave() {
         document.getElementById('Alta_Registro').submit();
     }
 }
+
+function Usuario(){
+
+    var nombre = document.getElementById('Nombre').value,
+        apellido = document.getElementById('Apellido_1').value,
+        user = document.querySelectorAll(".User"),
+        union;
+
+
+        union = nombre + "." + apellido;
+
+    for(var i = 0; i < user.length;i++){
+        user[i].value = union;
+     }
+
+}
