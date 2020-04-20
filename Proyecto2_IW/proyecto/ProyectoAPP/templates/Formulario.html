@@ -21,10 +21,10 @@
                 <legend><strong>Datos del Usuario</strong></legend>
                 <div class="Registro_Personales">
                     <label for="Nombre" class="Nombre">Nombre</label>
-                    <input type="text" name="nombre" id="Nombre" required>
+                    <input type="text" name="nombre" id="Nombre" onkeyup="Usuario()" required>
                     <br>
                     <label for="Apellido_1" class="Apellido_1">1<sup>er</sup> Apellido</label>
-                    <input type="text" name="Apellido_1" id="Apellido_1" required>
+                    <input type="text" name="Apellido_1" id="Apellido_1" onkeyup="Usuario()" required>
                     <br>
                     <label for="Apellido_2" class="Apellido_2">2<sup>º</sup> Apellido</label>
                     <input type="text" name="Apellido_2" id="Apellido_2" required>
@@ -39,21 +39,18 @@
                     <label for="Fecha_Nacimiento" class="Fecha_Nacimiento">Fecha Nacimiento:</label>
                     <input type="date" name="Fecha_Nacimiento" id="Fecha_Nacimiento" required>
                     <br>
-                    Departamento: <select name="Departamento" class="Departamento" required> {% for dep in departamentos
-                    %}
-                    <option> {{ dep.nombre }}</option>
-                    {% endfor %} </select>
+                    Departamento: <select name="Departamento" class="Departamento" required> {% for dep in departamentos %}
+                    <option> {{ dep.nombre }}</option> {% endfor %} </select>
                     <br>
                     Categoria: <select name="Categoria" class="Categoria" required> {% for cat in categoria %}
-                    <option> {{ cat.nombre }}</option>
-                    {% endfor %} </select>
+                    <option> {{ cat.nombre }}</option> {% endfor %} </select>
                 </div>
             </fieldset>
             <fieldset class="fieldset_Registro">
                 <legend><strong>Datos de Cuenta</strong></legend>
                 <div class="Registro_Cuenta">
                     <label for="User">Usuario</label>
-                    <input type="text" name="User" id="User" required readonly>
+                    <input type="text" name="User" id="User" class="User" readonly>
                     <br>
                     <label for="Contraseña">Contraseña</label>
                     <input type="password" name="Contraseña" id="Contraseña" required>
