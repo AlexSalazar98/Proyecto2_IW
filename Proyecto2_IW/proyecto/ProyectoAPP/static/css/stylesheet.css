@@ -496,7 +496,6 @@
 }
 
 
-
 /*-----------------------------
 ---------Pop up----------
 ------------------------------*/
@@ -612,7 +611,7 @@ legend{
     margin-top: 10px;
 }
 
-<<<<<<< Updated upstream
+
 
 
 /* CSS PARA detalles_proyecto.html */
@@ -746,7 +745,9 @@ legend{
     width: 50%;
     float: right;
     text-align: center;
-=======
+}
+
+
 input{
     margin-left: 10px;
 }
@@ -772,5 +773,6 @@ select{
 .Descripcion_Proyecto, .Descripcion_Tarea, .Notas_Empleado{
     margin-top: 10px;
     display: inline-block;
->>>>>>> Stashed changes
+
 }
+
