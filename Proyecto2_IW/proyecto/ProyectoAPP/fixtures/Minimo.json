@@ -1,0 +1,1593 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "categoria"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "clientes"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "departamento"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "empleados"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "estado"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "estado_proyecto"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "nivel_prioridad"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "usuarios"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 15,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "tareas"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 16,
+    "fields": {
+        "app_label": "ProyectoAPP",
+        "model": "proyectos"
+    }
+},
+{
+    "model": "ProyectoAPP.clientes",
+    "pk": 1,
+    "fields": {
+        "nombre": "Fernando",
+        "empresa": "SNA",
+        "email": "Sna@ejemplo.com",
+        "localizacion": "Vitoria-Gasteiz",
+        "telefono": 938173628,
+        "numero_cuenta": "ES837 18373 17362"
+    }
+},
+{
+    "model": "ProyectoAPP.clientes",
+    "pk": 2,
+    "fields": {
+        "nombre": "Julio",
+        "empresa": "Rubi",
+        "email": "Rubi@ejemplo.com",
+        "localizacion": "Vitoria-Gasteiz",
+        "telefono": 9281783827,
+        "numero_cuenta": "ES534 283827 29173"
+    }
+},
+{
+    "model": "ProyectoAPP.clientes",
+    "pk": 3,
+    "fields": {
+        "nombre": "Isabel",
+        "empresa": "Mercedes",
+        "email": "Mercedes@ejemplo.com",
+        "localizacion": "Vitoria-Gasteiz",
+        "telefono": 982718362,
+        "numero_cuenta": "ES827 17381 372913"
+    }
+},
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 1,
+    "fields": {
+        "nombre": "Gerente"
+    }
+},
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 2,
+    "fields": {
+        "nombre": "Jefe Departamento"
+    }
+},
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 3,
+    "fields": {
+        "nombre": "Jefe Turno"
+    }
+},
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 4,
+    "fields": {
+        "nombre": "Jefe Planta"
+    }
+},
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 5,
+    "fields": {
+        "nombre": "Tecnico"
+    }
+},
+{
+    "model": "ProyectoAPP.categoria",
+    "pk": 6,
+    "fields": {
+        "nombre": "Operario"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 1,
+    "fields": {
+        "nombre": "Automatizacion"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 2,
+    "fields": {
+        "nombre": "Mecanica"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 3,
+    "fields": {
+        "nombre": "Dise\u00f1o"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 4,
+    "fields": {
+        "nombre": "Mantenimiento"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 5,
+    "fields": {
+        "nombre": "Recursos Humanos"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 6,
+    "fields": {
+        "nombre": "Logistica"
+    }
+},
+{
+    "model": "ProyectoAPP.departamento",
+    "pk": 7,
+    "fields": {
+        "nombre": "IT"
+    }
+},
+{
+    "model": "ProyectoAPP.usuarios",
+    "pk": 1,
+    "fields": {
+        "nombre": "David",
+        "apellido1": "Requeta",
+        "apellido2": "Vallejo",
+        "sexo": "Hombre",
+        "fecha_nacimiento": "2020-04-21",
+        "email": "David@ejemplo.com",
+        "departamento": 1,
+        "categoria": 4,
+        "user": "david.requeta",
+        "contrase\u00f1a": "1234"
+    }
+},
+{
+    "model": "ProyectoAPP.usuarios",
+    "pk": 2,
+    "fields": {
+        "nombre": "Alex",
+        "apellido1": "Salazar",
+        "apellido2": "Herran",
+        "sexo": "Hombre",
+        "fecha_nacimiento": "2020-04-21",
+        "email": "Alex@ejemplo.com",
+        "departamento": 7,
+        "categoria": 4,
+        "user": "alex.salazar",
+        "contrase\u00f1a": "1234"
+    }
+},
+{
+    "model": "ProyectoAPP.empleados",
+    "pk": 1,
+    "fields": {
+        "dni": "18927739H",
+        "nombre": "Jon",
+        "apellido": "Fernandez",
+        "email": "Jon.Fernandez@ejemplo.com",
+        "telefono": 983746182
+    }
+},
+{
+    "model": "ProyectoAPP.empleados",
+    "pk": 2,
+    "fields": {
+        "dni": "17937284S",
+        "nombre": "Ana",
+        "apellido": "Perez",
+        "email": "Ana.Perez@ejemplo.com",
+        "telefono": 928372819
+    }
+},
+{
+    "model": "ProyectoAPP.empleados",
+    "pk": 3,
+    "fields": {
+        "dni": "16649923S",
+        "nombre": "Paco",
+        "apellido": "Rodriguez",
+        "email": "Paco.Rodriguez@ejemplo.com",
+        "telefono": 98372816
+    }
+},
+{
+    "model": "ProyectoAPP.empleados",
+    "pk": 4,
+    "fields": {
+        "dni": "18829923\u00d1",
+        "nombre": "Amaia",
+        "apellido": "Solana",
+        "email": "Amaia.Solana@ejemplo.com",
+        "telefono": 92847281
+    }
+},
+{
+    "model": "ProyectoAPP.estado",
+    "pk": 1,
+    "fields": {
+        "estado": "Abierta"
+    }
+},
+{
+    "model": "ProyectoAPP.estado",
+    "pk": 2,
+    "fields": {
+        "estado": "Asignada"
+    }
+},
+{
+    "model": "ProyectoAPP.estado",
+    "pk": 3,
+    "fields": {
+        "estado": "En Proceso"
+    }
+},
+{
+    "model": "ProyectoAPP.estado",
+    "pk": 4,
+    "fields": {
+        "estado": "Finalizada"
+    }
+},
+{
+    "model": "ProyectoAPP.nivel_prioridad",
+    "pk": 1,
+    "fields": {
+        "nivel_prioridad": "Alta"
+    }
+},
+{
+    "model": "ProyectoAPP.nivel_prioridad",
+    "pk": 2,
+    "fields": {
+        "nivel_prioridad": "Media"
+    }
+},
+{
+    "model": "ProyectoAPP.nivel_prioridad",
+    "pk": 3,
+    "fields": {
+        "nivel_prioridad": "Baja"
+    }
+},
+{
+    "model": "ProyectoAPP.tareas",
+    "pk": 1,
+    "fields": {
+        "nombre": "Automatizar",
+        "descripcion": "Cablear sensores\r\nProgramar PLC",
+        "fecha_inicio": "2020-04-21",
+        "fecha_fin": "2020-04-09",
+        "responsable": 2,
+        "nivel_prioridad": 2,
+        "estado_tarea": 1,
+        "notas_adicionales_escritas_empleado": "Pedir PLC 1500"
+    }
+},
+{
+    "model": "ProyectoAPP.tareas",
+    "pk": 2,
+    "fields": {
+        "nombre": "Chapado",
+        "descripcion": "Rectificar chapado celula 8",
+        "fecha_inicio": "2020-04-07",
+        "fecha_fin": "2020-04-22",
+        "responsable": 3,
+        "nivel_prioridad": 3,
+        "estado_tarea": 3,
+        "notas_adicionales_escritas_empleado": "Ninguna"
+    }
+},
+{
+    "model": "ProyectoAPP.tareas",
+    "pk": 3,
+    "fields": {
+        "nombre": "Mantenimiento",
+        "descripcion": "Realizar mantenimiento robots Rubi",
+        "fecha_inicio": "2020-04-12",
+        "fecha_fin": "2020-04-21",
+        "responsable": 4,
+        "nivel_prioridad": 1,
+        "estado_tarea": 2,
+        "notas_adicionales_escritas_empleado": "Cambiar controladora"
+    }
+},
+{
+    "model": "ProyectoAPP.estado_proyecto",
+    "pk": 1,
+    "fields": {
+        "estado": "Abierto"
+    }
+},
+{
+    "model": "ProyectoAPP.estado_proyecto",
+    "pk": 2,
+    "fields": {
+        "estado": "En proceso"
+    }
+},
+{
+    "model": "ProyectoAPP.estado_proyecto",
+    "pk": 3,
+    "fields": {
+        "estado": "Finalizado"
+    }
+},
+{
+    "model": "ProyectoAPP.proyectos",
+    "pk": 1,
+    "fields": {
+        "nombre": "Automatas",
+        "descripcion": "Automatizar",
+        "fecha_inicio": "2020-04-21",
+        "fecha_fin": "2020-04-21",
+        "presupuesto": 1342,
+        "cliente": 1,
+        "departamento": 1,
+        "estado": 1,
+        "tareas_a_realizar": [
+            1
+        ],
+        "empleados": [
+            3
+        ]
+    }
+},
+{
+    "model": "ProyectoAPP.proyectos",
+    "pk": 2,
+    "fields": {
+        "nombre": "Chapar",
+        "descripcion": "Chapados",
+        "fecha_inicio": "2020-04-06",
+        "fecha_fin": "2020-04-24",
+        "presupuesto": 3232,
+        "cliente": 3,
+        "departamento": 3,
+        "estado": 2,
+        "tareas_a_realizar": [
+            2
+        ],
+        "empleados": [
+            1
+        ]
+    }
+},
+{
+    "model": "ProyectoAPP.proyectos",
+    "pk": 3,
+    "fields": {
+        "nombre": "Manteni",
+        "descripcion": "Mantenimientos",
+        "fecha_inicio": "2020-04-02",
+        "fecha_fin": "2020-04-30",
+        "presupuesto": 9382,
+        "cliente": 2,
+        "departamento": 7,
+        "estado": 3,
+        "tareas_a_realizar": [
+            3
+        ],
+        "empleados": [
+            4
+        ]
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add categoria",
+        "content_type": 7,
+        "codename": "add_categoria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change categoria",
+        "content_type": 7,
+        "codename": "change_categoria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete categoria",
+        "content_type": 7,
+        "codename": "delete_categoria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view categoria",
+        "content_type": 7,
+        "codename": "view_categoria"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add clientes",
+        "content_type": 8,
+        "codename": "add_clientes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change clientes",
+        "content_type": 8,
+        "codename": "change_clientes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete clientes",
+        "content_type": 8,
+        "codename": "delete_clientes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view clientes",
+        "content_type": 8,
+        "codename": "view_clientes"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add departamento",
+        "content_type": 9,
+        "codename": "add_departamento"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change departamento",
+        "content_type": 9,
+        "codename": "change_departamento"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete departamento",
+        "content_type": 9,
+        "codename": "delete_departamento"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view departamento",
+        "content_type": 9,
+        "codename": "view_departamento"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+        "name": "Can add empleados",
+        "content_type": 10,
+        "codename": "add_empleados"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+        "name": "Can change empleados",
+        "content_type": 10,
+        "codename": "change_empleados"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+        "name": "Can delete empleados",
+        "content_type": 10,
+        "codename": "delete_empleados"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+        "name": "Can view empleados",
+        "content_type": 10,
+        "codename": "view_empleados"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+        "name": "Can add estado",
+        "content_type": 11,
+        "codename": "add_estado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+        "name": "Can change estado",
+        "content_type": 11,
+        "codename": "change_estado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+        "name": "Can delete estado",
+        "content_type": 11,
+        "codename": "delete_estado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+        "name": "Can view estado",
+        "content_type": 11,
+        "codename": "view_estado"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+        "name": "Can add estado_ proyecto",
+        "content_type": 12,
+        "codename": "add_estado_proyecto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+        "name": "Can change estado_ proyecto",
+        "content_type": 12,
+        "codename": "change_estado_proyecto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+        "name": "Can delete estado_ proyecto",
+        "content_type": 12,
+        "codename": "delete_estado_proyecto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+        "name": "Can view estado_ proyecto",
+        "content_type": 12,
+        "codename": "view_estado_proyecto"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+        "name": "Can add nivel_ prioridad",
+        "content_type": 13,
+        "codename": "add_nivel_prioridad"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+        "name": "Can change nivel_ prioridad",
+        "content_type": 13,
+        "codename": "change_nivel_prioridad"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+        "name": "Can delete nivel_ prioridad",
+        "content_type": 13,
+        "codename": "delete_nivel_prioridad"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+        "name": "Can view nivel_ prioridad",
+        "content_type": 13,
+        "codename": "view_nivel_prioridad"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+        "name": "Can add usuarios",
+        "content_type": 14,
+        "codename": "add_usuarios"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+        "name": "Can change usuarios",
+        "content_type": 14,
+        "codename": "change_usuarios"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+        "name": "Can delete usuarios",
+        "content_type": 14,
+        "codename": "delete_usuarios"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+        "name": "Can view usuarios",
+        "content_type": 14,
+        "codename": "view_usuarios"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 57,
+    "fields": {
+        "name": "Can add tareas",
+        "content_type": 15,
+        "codename": "add_tareas"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 58,
+    "fields": {
+        "name": "Can change tareas",
+        "content_type": 15,
+        "codename": "change_tareas"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 59,
+    "fields": {
+        "name": "Can delete tareas",
+        "content_type": 15,
+        "codename": "delete_tareas"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 60,
+    "fields": {
+        "name": "Can view tareas",
+        "content_type": 15,
+        "codename": "view_tareas"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 61,
+    "fields": {
+        "name": "Can add proyectos",
+        "content_type": 16,
+        "codename": "add_proyectos"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 62,
+    "fields": {
+        "name": "Can change proyectos",
+        "content_type": 16,
+        "codename": "change_proyectos"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 63,
+    "fields": {
+        "name": "Can delete proyectos",
+        "content_type": 16,
+        "codename": "delete_proyectos"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 64,
+    "fields": {
+        "name": "Can view proyectos",
+        "content_type": 16,
+        "codename": "view_proyectos"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$180000$ZxgARHVQHYO0$dn0RS05jJv3Q6Q5vgsWqJxFYhWITnOnAYG+mmfptRhU=",
+        "last_login": "2020-04-21T09:19:49.827Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2020-04-21T09:19:15.222Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2020-04-21T09:22:01.344Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Gerente",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2020-04-21T09:22:11.920Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "Jefe Departamento",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2020-04-21T09:22:34.402Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "Jefe Turno",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2020-04-21T09:22:44.785Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "4",
+        "object_repr": "Jefe Planta",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2020-04-21T09:22:51.682Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "5",
+        "object_repr": "Tecnico",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2020-04-21T09:23:00.522Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "6",
+        "object_repr": "Operario",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2020-04-21T09:23:16.052Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Automatizacion",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2020-04-21T09:23:22.808Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "Mecanica",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2020-04-21T09:23:28.232Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "Dise\u00f1o",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2020-04-21T09:23:47.573Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "Mantenimiento",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2020-04-21T09:24:06.282Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "5",
+        "object_repr": "Recursos Humanos",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2020-04-21T09:24:12.593Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "6",
+        "object_repr": "Logistica",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2020-04-21T09:25:09.212Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "1",
+        "object_repr": "Alta",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2020-04-21T09:25:13.477Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "2",
+        "object_repr": "Media",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2020-04-21T09:25:24.311Z",
+        "user": 1,
+        "content_type": 13,
+        "object_id": "3",
+        "object_repr": "Baja",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2020-04-21T09:26:12.742Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "1",
+        "object_repr": "Estado = Abierta",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2020-04-21T09:26:20.723Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "2",
+        "object_repr": "Estado = Asignada",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2020-04-21T09:26:46.688Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "3",
+        "object_repr": "Estado = En Proceso",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2020-04-21T09:26:54.889Z",
+        "user": 1,
+        "content_type": 11,
+        "object_id": "4",
+        "object_repr": "Estado = Finalizada",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2020-04-21T09:27:53.738Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "1",
+        "object_repr": "Abierto",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2020-04-21T09:28:08.292Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "En proceso",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2020-04-21T09:28:14.878Z",
+        "user": 1,
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "Finalizado",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2020-04-21T09:29:57.809Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "1",
+        "object_repr": "David",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2020-04-21T09:30:50.408Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "7",
+        "object_repr": "IT",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2020-04-21T09:31:41.543Z",
+        "user": 1,
+        "content_type": 14,
+        "object_id": "2",
+        "object_repr": "Alex",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2020-04-21T09:32:48.853Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "SNA",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2020-04-21T09:33:43.863Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "2",
+        "object_repr": "Rubi",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2020-04-21T09:34:32.020Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "3",
+        "object_repr": "Mercedes",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2020-04-21T09:35:54.133Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "1",
+        "object_repr": "Jon",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2020-04-21T09:36:30.947Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "2",
+        "object_repr": "Ana",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2020-04-21T09:37:09.483Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "3",
+        "object_repr": "Paco",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2020-04-21T09:37:48.882Z",
+        "user": 1,
+        "content_type": 10,
+        "object_id": "4",
+        "object_repr": "Amaia",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2020-04-21T09:41:29.365Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "1",
+        "object_repr": "Automatizar",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2020-04-21T09:42:21.459Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "2",
+        "object_repr": "Chapado",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2020-04-21T09:43:36.428Z",
+        "user": 1,
+        "content_type": 15,
+        "object_id": "3",
+        "object_repr": "Mantenimiento",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2020-04-21T09:47:30.479Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "1",
+        "object_repr": "Automatas",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2020-04-21T09:48:06.212Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "2",
+        "object_repr": "Chapar",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2020-04-21T09:48:38.009Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "3",
+        "object_repr": "Manteni",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+}
+]
