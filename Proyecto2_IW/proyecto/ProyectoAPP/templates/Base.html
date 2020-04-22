@@ -208,7 +208,7 @@ Aqui comienza los PopUp
 <div class="overlay" id="overlay_Tarea">
     <div class="pop-up" id="pop-up_Tarea">
         <div class="Alta">
-            <form id="Alta_Tarea" action="{% url 'PaginaPrincipal' %}" method="post">
+            <form id="Alta_Tarea" action="{% url 'NuevaTarea' %}" method="post">
                 {% csrf_token %}
 				<a href="#" id="btn-cerrar-popup_Tarea" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
                 <div class="Titulo_Alta">
@@ -252,7 +252,7 @@ Aqui comienza los PopUp
 <div class="overlay" id="overlay_Proyecto">
     <div class="pop-up" id="pop-up_Proyecto">
         <div class="Alta">
-            <form id="Alta_Proyecto" action="{% url 'PaginaPrincipal' %}" method="post">
+            <form id="Alta_Proyecto" action="{% url 'NuevoProyecto' %}" method="post">
                 {% csrf_token %}
 				<a href="#" id="btn-cerrar-popup_Proyecto" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
                 <div class="Titulo_Alta">
@@ -293,8 +293,6 @@ Aqui comienza los PopUp
 
     </div>
 </div>
-
-
 
 <script src="/static/js/popup_base.js"></script>
 

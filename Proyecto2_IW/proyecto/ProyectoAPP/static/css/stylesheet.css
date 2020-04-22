@@ -147,6 +147,12 @@
 	        font-weight: 599;
 	   }
 
+	   .Estado-buscador{
+	        width: 99px;
+	        margin-left: 0;
+	        margin-top: 0;
+	   }
+
 	   .buscador input{
 	        height: 20px;
 	   }
@@ -597,13 +603,22 @@ label{
     margin-top: 10px;
 }
 
-.Nombre, .Empresa, .Email, .Localizacion, .Telefono, .DNI, .Apellido, Nombre_Proyecto, .Fecha_Fin, .Presupuesto, .Cliente, .Tareas, .Departamento, .Estado{
+.Empresa, .Email, .Localizacion, .Telefono, .DNI, .Apellido, Nombre_Proyecto, .Fecha_Fin, .Presupuesto, .Cliente, .Tareas, .Departamento, .Estado{
     display: inline-block;
-    width: 85px;
+    width: 108px;
+}
+
+.Nombre{
+    width: 44px;
+}
+
+.Fecha_Fin{
+    width: 80px;
 }
 
 .Registro_Personales input{
     border-radius: 10px;
+    margin-left: 10px;
 }
 
 legend{
@@ -747,14 +762,18 @@ legend{
     text-align: center;
 }
 
-
-input{
-    margin-left: 10px;
-}
-
-select{
+#Alta_Proyecto select{
     margin-left: 10px;
     margin-top: 10px;
+}
+
+#Alta_Tarea select{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.Estado{
+    width: auto;
 }
 
 .Numero_Cuenta{
@@ -766,6 +785,7 @@ select{
     display: list-item;
     width: 420px;
     height: 60px;
+    resize: none;
 }
 
 .Fecha_Inicio{
@@ -781,6 +801,8 @@ select{
 .Empleados{
     margin-top: 10px;
     display: list-item;
+    width: 50%;
+    text-align: center;
 }
 
 .Clase_Empleado{
