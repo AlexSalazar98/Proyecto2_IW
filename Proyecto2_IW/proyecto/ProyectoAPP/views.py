@@ -210,13 +210,55 @@ def Nuevo_Proyecto(request):
     nuevo_proyecto.fecha_inicio = request.POST["Fecha_Inicio"]
     nuevo_proyecto.fecha_fin = request.POST["Fecha_Fin"]
     nuevo_proyecto.descripcion = request.POST["Descripcion_Proyecto"]
-    nuevo_proyecto.presupuesto = request.POST["Presupuesto"]
+    nuevo_proyecto.presupuesto = float(request.POST["Presupuesto"])
     nuevo_proyecto.departamento = Departamento.objects.get(nombre=request.POST["Departamento"])
     nuevo_proyecto.estado = Estado_Proyecto.objects.get(estado=request.POST["Estado"])
     nuevo_proyecto.cliente = Clientes.objects.get(id=request.POST["Cliente"])
-    nuevo_proyecto.empleados = Empleados.objects.(id=request.POST["Empleados"])
-    nuevo_proyecto.tareas_a_realizar = Tareas.objects.(id=request.POST["Tareas"])
+    mirar_tarea = request.POST["Tareas[]"]
+    print(mirar_tarea)
 
     nuevo_proyecto.save()
 
+    #nuevo_proyecto.empleados = nuevo_proyecto.empleados.add(id=request.POST["Empleados"])
+    #nuevo_proyecto.tareas_a_realizar = nuevo_proyecto.tareas_a_realizar.add(id=request.POST["Tareas"])
+
     return redirect('PaginaPrincipal')
+
+def ProyectosPorCliente(request):
+
+    n_cliente = request.POST["botones_cliente"]
+
+    clientes = Clientes.objects.order_by('empresa')
+
+    proyectos = ""
+
+    if n_cliente=='Todos':
+        proyectos = Proyectos.objects.order_by('nombre')
+    else:
+        proyectos = Proyectos.objects.filter(cliente=n_cliente)
+
+    responsable = Empleados.objects.order_by('nombre')
+
+    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
+
+    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
+
+    tareas = Tareas.objects.order_by('nombre')
+
+    departamento = Departamento.objects.order_by('nombre')
+
+    estado_tarea = Estado.objects.order_by('estado')
+
+    context = {
+        'clientes': clientes,
+        'proyectos': proyectos,
+        'responsable': responsable,
+        'prioridad': prioridad,
+        'estado_tarea': estado_tarea,
+        'estado_proyecto': estado_proyecto,
+        'tareas': tareas,
+        'departamento': departamento,
+    }
+
+    return render(request, 'TablaPrincipal.html', context)
+
