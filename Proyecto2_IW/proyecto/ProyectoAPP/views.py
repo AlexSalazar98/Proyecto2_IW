@@ -1,10 +1,6 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, \
     Nivel_Prioridad, Estado_Proyecto, Estado
-
-
-# import js2py
 
 
 # Create your views here.
@@ -47,7 +43,9 @@ def login(request):
                 break
 
 
+# Funcion para mostrar la pagina principal de la aplicacion
 def PaginaPricipal(request):
+    # Recogemos los objetos necesaios para cargar la info necesaria en la pagina principal
     clientes = Clientes.objects.order_by('empresa')
 
     proyectos = Proyectos.objects.order_by('nombre')
@@ -64,6 +62,7 @@ def PaginaPricipal(request):
 
     estado_tarea = Estado.objects.order_by('estado')
 
+    # Pasamo la info necesaria a la pagina principal
     context = {
         'clientes': clientes,
         'proyectos': proyectos,
@@ -78,9 +77,13 @@ def PaginaPricipal(request):
     return render(request, 'TablaPrincipal.html', context)
 
 
+# Funcion para llamar al formulacio de registo
 def LlamarFormulario(request):
+    # Recogemos de BBDD los datos necesarios para mostrar en el formulario
     departamentos = Departamento.objects.order_by('nombre')
     categoria = Categoria.objects.order_by('nombre')
+
+    # Pasamos los datos al formulario
     context = {
         'departamentos': departamentos,
         'categoria': categoria
@@ -88,7 +91,9 @@ def LlamarFormulario(request):
     return render(request, 'Formulario.html', context)
 
 
+# Funcion para recoger los datos de formulario de registro y guardarlos en BBDD
 def RecogerFormulario(request):
+    # Creamos nuevo ususario
     UsuarioGuardado = Usuarios()
 
     # Recogemos datos del HTML
@@ -103,11 +108,13 @@ def RecogerFormulario(request):
     UsuarioGuardado.user = request.POST["User"]
     UsuarioGuardado.email = request.POST["Correo_Electronico"]
 
+    # Guardamos el nuevo usuario en BBDD
     UsuarioGuardado.save()
 
     return redirect('PaginaPrincipal')
 
 
+# Funcion para mostrar los datos completos de los proyectos
 def DetallesProyecto(request):
     # Recogemos del .HTML
     id_proyect = request.POST["eleccion"]
@@ -140,7 +147,6 @@ def DetallesProyecto(request):
     for a in pro_select.empleados.all():
         lista_empleados.append(a)
 
-    print(lista_empleados)
     # Creamos el context con lo que vamos a pasar al HTML de mostrar
     context = {
         'nombre': pro_select.nombre,
@@ -154,13 +160,16 @@ def DetallesProyecto(request):
         'departamento': pro_select.departamento,
         'estado': str(pro_select.estado),
     }
-    print(pro_select.empleados.all())
+
     return render(request, 'detalles_proyecto.html', context)
 
 
+# Formulario para registrar un nuevo cliente en BBDD
 def Nuevo_Cliente(request):
+    # Creamos un nuevo cliente
     nuevo_cliente = Clientes()
 
+    # Recogemos los datos del HTML
     nuevo_cliente.nombre = request.POST["nombre"]
     nuevo_cliente.empresa = request.POST["Empresa"]
     nuevo_cliente.email = request.POST["Email"]
@@ -168,28 +177,36 @@ def Nuevo_Cliente(request):
     nuevo_cliente.telefono = request.POST["Telefono"]
     nuevo_cliente.numero_cuenta = request.POST["Numero_Cuenta"]
 
+    # Guardamos los datos en BBDD
     nuevo_cliente.save()
 
     return redirect('PaginaPrincipal')
 
 
+# Formulario para registrar nuevo empleado en BBDD
 def Nuevo_Empleado(request):
+    # Creamo un nuevo empleado
     nuevo_empleado = Empleados()
 
+    # Recogemos los datos de HTML
     nuevo_empleado.dni = request.POST["DNI"]
     nuevo_empleado.nombre = request.POST["nombre"]
     nuevo_empleado.apellido = request.POST["Apellido"]
     nuevo_empleado.email = request.POST["Email"]
     nuevo_empleado.telefono = request.POST["Telefono"]
 
+    # Guardamos el nuevo empleado en BBDD
     nuevo_empleado.save()
 
     return redirect('PaginaPrincipal')
 
 
+# Funcion para crear nueva tarea en BBDD
 def Nueva_Tarea(request):
+    # Creamos una nueva tarea
     nueva_tarea = Tareas()
 
+    # Recogemos sus datos del HTML
     nueva_tarea.nombre = request.POST["Nombre_Tarea"]
     nueva_tarea.descripcion = request.POST["Descripcion_Tarea"]
     nueva_tarea.estado_tarea = Estado.objects.get(estado=request.POST["Estado"])
@@ -199,13 +216,18 @@ def Nueva_Tarea(request):
     nueva_tarea.notas_adicionales_escritas_empleado = request.POST["Notas_Empleado"]
     nueva_tarea.responsable = Empleados.objects.get(id=request.POST["Responsable"])
 
+    # Guardamos la nueva tarea en BBDD
     nueva_tarea.save()
 
     return redirect('PaginaPrincipal')
 
+
+# Funcion para crear un nuevo proyecto en BBDD
 def Nuevo_Proyecto(request):
+    # Creamos un nuevo proyecto
     nuevo_proyecto = Proyectos()
 
+    # Recogemos sus datos de la BBDD
     nuevo_proyecto.nombre = request.POST["Nombre_Proyecto"]
     nuevo_proyecto.fecha_inicio = request.POST["Fecha_Inicio"]
     nuevo_proyecto.fecha_fin = request.POST["Fecha_Fin"]
@@ -215,27 +237,34 @@ def Nuevo_Proyecto(request):
     nuevo_proyecto.estado = Estado_Proyecto.objects.get(estado=request.POST["Estado"])
     nuevo_proyecto.cliente = Clientes.objects.get(id=request.POST["Cliente"])
     mirar_tarea = request.POST["Tareas[]"]
-    print(mirar_tarea)
+    # print(mirar_tarea)
 
+    # Guardamos el nuevo proyecto en BBDD
     nuevo_proyecto.save()
 
-    #nuevo_proyecto.empleados = nuevo_proyecto.empleados.add(id=request.POST["Empleados"])
-    #nuevo_proyecto.tareas_a_realizar = nuevo_proyecto.tareas_a_realizar.add(id=request.POST["Tareas"])
+    # Aqui deberiamos asignarle los empleados y las tareas recogidas previamente del HTML al nuevo proyecto guardado
+    # nuevo_proyecto.empleados = nuevo_proyecto.empleados.add(id=request.POST["Empleados"])
+    # nuevo_proyecto.tareas_a_realizar = nuevo_proyecto.tareas_a_realizar.add(id=request.POST["Tareas"])
 
     return redirect('PaginaPrincipal')
 
-def ProyectosPorCliente(request):
 
+# Funcion para mostrar los proyectos en la P.principal en función de los botones de clientes
+def ProyectosPorCliente(request):
+    # Recogemos la infor del boton seleccionado
     n_cliente = request.POST["botones_cliente"]
 
-    clientes = Clientes.objects.order_by('empresa')
+    # Miramos que boton nos han seleccionado. Si es el de todos, devolveremos todos los proyectos
+    if n_cliente == 'Todos':
+        #proyectos = Proyectos.objects.order_by('nombre')
+        return redirect('PaginaPrincipal')
 
-    proyectos = ""
-
-    if n_cliente=='Todos':
-        proyectos = Proyectos.objects.order_by('nombre')
+    # Si es otro, sacaremos los proyectos filtrados por ese dato que nos pasen (id de la empresa)
     else:
         proyectos = Proyectos.objects.filter(cliente=n_cliente)
+
+    # A partir de aqui cargamos el resto de datos que necesita la P.principal para funcionar (excepto proyectos)
+    clientes = Clientes.objects.order_by('empresa')
 
     responsable = Empleados.objects.order_by('nombre')
 
@@ -249,6 +278,7 @@ def ProyectosPorCliente(request):
 
     estado_tarea = Estado.objects.order_by('estado')
 
+    # Lo juntamos toodo para mandarlo en la respuesta
     context = {
         'clientes': clientes,
         'proyectos': proyectos,
@@ -261,4 +291,3 @@ def ProyectosPorCliente(request):
     }
 
     return render(request, 'TablaPrincipal.html', context)
-
