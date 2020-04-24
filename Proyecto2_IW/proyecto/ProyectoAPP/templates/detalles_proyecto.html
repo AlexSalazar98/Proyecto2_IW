@@ -33,7 +33,7 @@
             </div>
             <div class="segunda-linea">
                 <div class="cliente">
-                    <label class="etiqueta"><strong>Cliente: </strong></label><label class="variable">{{ cliente }}</label>
+                    <label class="etiqueta"><strong>Cliente: </strong></label> <label class="variable">{{ cliente }}</label>
                 </div>
                 <div class="dep">
                     <label class="etiqueta"><strong>Departamento asignado al proyecto: </strong></label><label
@@ -50,11 +50,14 @@
             <legend><strong>Tareas a realizar</strong></legend>
             <div class="conjuto">
                 <div class="lado-derecho">
-                    <ul class="etiqueta">TAREAS
-                        {% for a in tareas_a_realizar %}
-                        <li class="variable">{{ a.tarea }}</li>
-                        {% endfor %}
-                    </ul>
+                    <form action="{% url 'PaginaPrincipal' %}" method="post">
+                        {% csrf_token %}
+                        <ul class="etiqueta">TAREAS
+                            {% for a in tareas_a_realizar %}
+                            <li class="variable"><label>{{ a.tarea }}</label>  <button type="submit" value="{{ a.id }}">IR</button></li>
+                            {% endfor %}
+                        </ul>
+                    </form>
                 </div>
                 <div class="lado-izquierda">
                     <ul class="etiqueta">RESPONSABLE
@@ -72,13 +75,13 @@
             <legend><strong>Empleados asignados al proyecto</strong></legend>
             {% for a in empleados %}
             <div class="izq">
-                <label>&#8226;   {{ a }} </label>
+                <label>&#8226; {{ a.nombre }} {{ a.apellido }} </label>
             </div>
             <div class="cen">
-                <label>&#8226;  {{ a }} </label>
+                <label>&#8226; {{ a }} {{ a.apellido }} </label>
             </div>
             <div class="der">
-                <label>&#8226;  {{ a }} </label>
+                <label>&#8226; {{ a }} {{ a.apellido }} </label>
             </div>
             {% endfor %}
         </fieldset>

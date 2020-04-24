@@ -236,15 +236,24 @@ def Nuevo_Proyecto(request):
     nuevo_proyecto.departamento = Departamento.objects.get(nombre=request.POST["Departamento"])
     nuevo_proyecto.estado = Estado_Proyecto.objects.get(estado=request.POST["Estado"])
     nuevo_proyecto.cliente = Clientes.objects.get(id=request.POST["Cliente"])
-    mirar_tarea = request.POST["Tareas[]"]
-    # print(mirar_tarea)
+    tareas_recogidas = request.POST.getlist("Tareas")
+    empleados_recogidos = request.POST.getlist("Empleados")
 
     # Guardamos el nuevo proyecto en BBDD
     nuevo_proyecto.save()
 
-    # Aqui deberiamos asignarle los empleados y las tareas recogidas previamente del HTML al nuevo proyecto guardado
-    # nuevo_proyecto.empleados = nuevo_proyecto.empleados.add(id=request.POST["Empleados"])
-    # nuevo_proyecto.tareas_a_realizar = nuevo_proyecto.tareas_a_realizar.add(id=request.POST["Tareas"])
+    todas_las_tareas = Tareas.objects.all()
+    todos_los_empleados = Empleados.objects.all()
+
+    for tr in tareas_recogidas:
+        for tlt in todas_las_tareas:
+            if int(tr) == int(tlt.id):
+                nuevo_proyecto.tareas_a_realizar.add(tlt)
+
+    for er in empleados_recogidos:
+        for tle in todos_los_empleados:
+            if int(er) == int(tle.id):
+                nuevo_proyecto.empleados.add(tle)
 
     return redirect('PaginaPrincipal')
 
@@ -256,7 +265,7 @@ def ProyectosPorCliente(request):
 
     # Miramos que boton nos han seleccionado. Si es el de todos, devolveremos todos los proyectos
     if n_cliente == 'Todos':
-        #proyectos = Proyectos.objects.order_by('nombre')
+        # proyectos = Proyectos.objects.order_by('nombre')
         return redirect('PaginaPrincipal')
 
     # Si es otro, sacaremos los proyectos filtrados por ese dato que nos pasen (id de la empresa)
