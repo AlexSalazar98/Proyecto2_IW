@@ -25,10 +25,10 @@
         <ul class="Menu">
             <li><a>Modificar</a>
                 <ul class="SubMenu">
-                    <li><a href="#">Cliente</a></li>
-                    <li><a href="#">Empleado</a></li>
-                    <li><a href="#">Proyecto</a></li>
-                    <li><a href="#">Tarea</a></li>
+                    <li><a href="{% url 'ModificarClientes' %}">Cliente</a></li>
+                    <li><a href="{% url 'ModificarEmpleados' %}">Empleado</a></li>
+                    <li><a href="{% url 'ModificarProyectos' %}">Proyecto</a></li>
+                    <li><a href="{% url 'ModificarTareas' %}">Tarea</a></li>
                 </ul>
             </li>
             <li><a>Nuevo</a>
@@ -138,7 +138,7 @@ Aqui comienza los PopUp
                 <fieldset class="fieldset_Alta">
                     <legend><strong>Datos del Cliente</strong></legend>
                     <div class="Registro_Personales">
-                        <label for="Nombre" class="Nombre">Nombre:</label>
+                        <label for="Nombre" class="Nombre">Nombre y Apellido:</label>
                         <input type="text" name="nombre" id="Nombre_Cliente" required>
                         <br>
                         <label for="Empresa" class="Empresa">Empresa:</label>

@@ -3,7 +3,7 @@ from django.db import models
 
 # Clase para la creacion de Clientes
 class Clientes(models.Model):
-    nombre = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=50)
     empresa = models.CharField(max_length=50)
     email = models.EmailField()
     localizacion = models.TextField()
@@ -64,7 +64,7 @@ class Estado(models.Model):
     estado = models.CharField(max_length=20, default="Abierta")
 
     def __str__(self):
-        return f"Estado = {self.estado}"
+        return f"{self.estado}"
 
 
 class Nivel_Prioridad(models.Model):

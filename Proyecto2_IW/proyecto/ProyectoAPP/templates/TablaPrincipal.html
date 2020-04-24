@@ -52,8 +52,7 @@
                 {% csrf_token %}
                 <button type="submit" name="botones_cliente" value="Todos">Todos</button>
                 {% for n_cliente in clientes %}
-                <button type="submit" name="botones_cliente" value="{{ n_cliente.id }}">{{ n_cliente.empresa }}
-                </button>
+                <button type="submit" name="botones_cliente" value="{{ n_cliente.id }}">{{ n_cliente.empresa }}</button>
                 {% endfor %}
             </form>
         </div>

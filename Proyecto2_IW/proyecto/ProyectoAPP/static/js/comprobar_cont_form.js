@@ -19,8 +19,6 @@ function Usuario(){
     var nombre = document.getElementById('Nombre').value,
         apellido = document.getElementById('Apellido_1').value,
         user = document.querySelectorAll(".User"),
-        union;
-
 
         union = nombre.toLowerCase() + "." + apellido.toLowerCase();
 

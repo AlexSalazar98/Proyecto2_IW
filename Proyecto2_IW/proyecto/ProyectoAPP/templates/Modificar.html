@@ -1,0 +1,21 @@
+{% extends "Base.html" %}
+
+{% block content %}
+
+<div class="ModificarClientes">
+    <table class="TablaCliente">
+        <thead>
+        <tr>
+            <th colspan="4" class="CentrarTituloModificarClientes">{% block content_titulo %} {% endblock %}</th>
+        </tr>
+        <tr>
+            <th class="AlinearIzqModificarCliente">{% block content_col1%} {% endblock %}</th>
+            <th colspan="1" class="AlinearIzqModificarCliente">{% block content_col2%} {% endblock %}</th>
+            <th colspan="2" class="AlinearIzqModificarCliente">{% block content_col3 %} {% endblock %}</th>
+        </tr>
+        </thead>
+        {% block content_datos%} {% endblock %}
+    </table>
+</div>
+
+{% endblock %}

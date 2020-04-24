@@ -291,3 +291,71 @@ def ProyectosPorCliente(request):
     }
 
     return render(request, 'TablaPrincipal.html', context)
+
+
+# Funcion para modificar los clientes
+def ModificarClientes (request):
+
+    clientes = Clientes.objects.order_by('empresa')
+
+    context = {
+        'datos': clientes,
+        'titulo': "Clientes",
+        'col1':  "Empresa",
+        'col2': "Persona Contacto",
+        'col3': "Telefono"
+
+    }
+
+    return render(request, 'ModificarClientes.html', context)
+
+
+# Funcion para modificar los empleados
+def ModificarEmpleados (request):
+
+    empleados = Empleados.objects.order_by('nombre')
+
+    context = {
+        'datos': empleados,
+        'titulo': "Empleados",
+        'col1':  "Nombre",
+        'col2': "Apellido",
+        'col3': "Telefono"
+
+    }
+
+    return render(request, 'ModificarEmpleados.html', context)
+
+
+# Funcion para modificar los proyectos
+def ModificarProyectos (request):
+
+    proyectos = Proyectos.objects.order_by('nombre')
+
+    context = {
+        'datos': proyectos,
+        'titulo': "Proyectos",
+        'col1':  "Nombre",
+        'col2': "Cliente",
+        'col3': "Estado"
+
+    }
+
+    return render(request, 'ModificarProyectos.html', context)
+
+
+# Funcion para modificar los tareas
+def ModificarTareas(request):
+
+    tareas = Tareas.objects.order_by('nombre')
+
+    context = {
+        'datos': tareas,
+        'titulo': "Tareas",
+        'col1':  "Nombre",
+        'col2': "Prioridad",
+        'col3': "Estado"
+
+    }
+
+    return render(request, 'ModificarTareas.html', context)
