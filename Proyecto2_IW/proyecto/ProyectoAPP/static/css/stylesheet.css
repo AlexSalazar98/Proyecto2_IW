@@ -656,7 +656,6 @@ legend{
 
 .top h1{
     margin-top: 10px;
-    display: inline_block;
     float: left;
     width: 70%;
     font-size: 40px;
@@ -711,7 +710,6 @@ legend{
 }
 
 .primera-linea{
-    display: inline_block;
     margin-bottom: 10px;
     height: 20px;
 }
@@ -727,7 +725,6 @@ legend{
 }
 
 .segunda-linea{
-    display: inline_block;
     margin-bottom: 10px;
     height: 20px;
 }
@@ -744,10 +741,6 @@ legend{
 
 .pres{
     margin-left: 350px;
-}
-
-.conjuto{
-    display: inline_block;
 }
 
 .lado-derecho{
@@ -808,4 +801,128 @@ legend{
 .Clase_Empleado{
     margin-top: 10px;
     display: inline-block;
+}
+
+input[type="number"]
+{
+    -webkit-appearance: textfield !important;
+    margin: 0;
+    -moz-appearance:textfield !important;
+}
+
+
+/* CSS PARA ModificarClientes.html */
+
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v50/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -moz-font-feature-settings: 'liga';
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.TablaCliente{
+  text-align: left;
+  line-height: 40px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid #ed1c40;
+  width: 700px;
+  height: 415px;
+  margin: 50px auto;
+  border-radius: .25rem;
+  background: whitesmoke;
+  overflow-y: scroll;
+}
+
+.TablaCliente thead tr:first-child {
+  background: #ed1c40;
+  color: #fff;
+  border: none;
+}
+
+.TablaCliente th:first-child,
+.TablaCliente td:first-child {
+  padding: 0 15px 0 20px;
+}
+
+.TablaCliente th {
+  font-weight: 500;
+}
+
+.TablaCliente thead tr:last-child th {
+  border-bottom: 3px solid #ddd;
+}
+
+.TablaCliente tbody tr:hover {
+  background-color: #f2f2f2;
+  cursor: default;
+}
+
+.TablaCliente tbody tr:last-child td {
+  border: none;
+}
+
+.TablaCliente tbody td {
+  border-bottom: 1px solid #ddd;
+}
+
+.TablaCliente td:last-child {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.TablaCliente .button {
+  color: #aaa;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-top: -4px;
+}
+
+.TablaCliente .edit:hover {
+  color: #0a79df;
+}
+
+.TablaCliente .delete:hover {
+  color: #dc2a2a;
+}
+
+.AlinearIzqModificarCliente{
+    text-align: left;
+}
+
+.CentrarTituloModificarClientes{
+    text-align: center;
+}
+
+.EditarBorrar{
+    display: inline-block;
+}
+
+.Editar{
+    float: left;
+    margin-right: 5px;
+}
+
+.Borrar{
+    float: right;
+    margin-left: 5px;
 }

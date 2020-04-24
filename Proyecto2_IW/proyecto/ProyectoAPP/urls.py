@@ -12,5 +12,9 @@ urlpatterns = [
     path('NuevoEmpleado/', views.Nuevo_Empleado, name="NuevoEmpleado"),
     path('NuevaTarea/', views.Nueva_Tarea, name="NuevaTarea"),
     path('NuevoProyecto/', views.Nuevo_Proyecto, name="NuevoProyecto"),
-    path('MostrarPorCliente', views.ProyectosPorCliente, name="ProyectosPorClientes")
+    path('MostrarPorCliente/', views.ProyectosPorCliente, name="ProyectosPorClientes"),
+    path('ModificarClientes/', views.ModificarClientes, name="ModificarClientes"),
+    path('ModificarEmpleados/', views.ModificarEmpleados, name="ModificarEmpleados"),
+    path('ModificarProyectos/', views.ModificarProyectos, name="ModificarProyectos"),
+    path('ModificarTareas/', views.ModificarTareas, name="ModificarTareas"),
 ]

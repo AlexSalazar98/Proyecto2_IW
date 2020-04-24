@@ -1,0 +1,44 @@
+{% extends 'Modificar.html' %}
+
+
+{% block content_titulo %}
+{{ titulo }}
+{% endblock %}
+
+{% block content_col1%}
+{{ col1 }}
+{% endblock %}
+
+{% block content_col2%}
+{{ col2 }}
+{% endblock %}
+
+{% block content_col3%}
+{{ col3 }}
+{% endblock %}
+
+{% block content_datos%}
+<tbody>
+{% for empleados in datos %}
+<tr>
+    <td>{{ empleados.nombre }}</td>
+    <td>{{ empleados.apellido }}</td>
+    <td>{{ empleados.telefono }}</td>
+    <td>
+        <div class="EditarBorrar">
+            <div class="Editar">
+                <form action="{% url 'PaginaPrincipal' %}">
+                    <button type="submit"><i class="material-icons button edit">edit</i></button>
+                </form>
+            </div>
+            <div class="Borrar">
+                <form action="{% url 'PaginaPrincipal' %}">
+                    <button type="submit"><i class="material-icons button delete">delete</i></button>
+                </form>
+            </div>
+        </div>
+    </td>
+</tr>
+{% endfor %}
+</tbody>
+{% endblock %}
