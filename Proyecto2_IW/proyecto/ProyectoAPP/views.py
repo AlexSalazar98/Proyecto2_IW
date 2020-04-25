@@ -45,9 +45,6 @@ def login(request):
 
 # Funcion para mostrar la pagina principal de la aplicacion
 def PaginaPricipal(request):
-
-    print(request.POST["btn-edit-cliente"])
-
     # Recogemos los objetos necesaios para cargar la info necesaria en la pagina principal
     clientes = Clientes.objects.order_by('empresa')
 
@@ -372,13 +369,56 @@ def ModificarTareas(request):
 # Funcion para eliminar clientes
 def BorrarCliente(request):
     # Recuperamos el id del cliente a borrar desde el HTML
-    # id = request.POST["btnDeleteCliente"]
-    print(request.POST["btn-delete-cliente"])
+    id = request.POST["btn-delete-cliente"]
+
     # Obtenemos el objeto a borrar de BBDD filtrado por el id obtenido
-    # cliente_a_borrar = Clientes.objects.filter(id=id)
+    cliente_a_borrar = Clientes.objects.filter(id=id)
 
     # Borramos el objeto
-    # cliente_a_borrar.delete()
+    cliente_a_borrar.delete()
 
     # Recargamos la tabla de Clientes
     return redirect('ModificarClientes')
+
+
+# Funcion para eliminar empleados
+def BorrarEmpleados(request):
+    # Recuperamos el id del empleados a borrar desde el HTML
+    id = request.POST["btn-delete-empleados"]
+
+    # Obtenemos el objeto a borrar de BBDD filtrado por el id obtenido
+    empleado_a_borrar = Empleados.objects.filter(id=id)
+
+    # Borramos el objeto
+    empleado_a_borrar.delete()
+
+    # Recargamos la tabla de Empleaods
+    return redirect('ModificarEmpleados')
+
+# Funcion para eliminar proyectos
+def BorrarProyectos(request):
+    # Recuperamos el id del proyectos a borrar desde el HTML
+    id = request.POST["btn-delete-proyectos"]
+
+    # Obtenemos el objeto a borrar de BBDD filtrado por el id obtenido
+    proyecto_a_borrar = Proyectos.objects.filter(id=id)
+
+    # Borramos el objeto
+    proyecto_a_borrar.delete()
+
+    # Recargamos la tabla de Proyectos
+    return redirect('ModificarProyectos')
+
+# Funcion para eliminar tareas
+def BorrarTareas(request):
+    # Recuperamos el id del tareas a borrar desde el HTML
+    id = request.POST["btn-delete-tareas"]
+
+    # Obtenemos el objeto a borrar de BBDD filtrado por el id obtenido
+    tareas_a_borrar = Tareas.objects.filter(id=id)
+
+    # Borramos el objeto
+    tareas_a_borrar.delete()
+
+    # Recargamos la tabla de Tareas
+    return redirect('ModificarTareas')

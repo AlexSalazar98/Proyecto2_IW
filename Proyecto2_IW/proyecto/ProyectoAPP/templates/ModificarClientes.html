@@ -34,9 +34,9 @@
                 </form>
             </div>
             <div class="Borrar">
-                <form id="Borrar-Registro" action="{% url 'BorrarCliente' %}" method="post">
+                <form id="Borrar-Registro"  action="{% url 'BorrarCliente' %}" method="post" name="Borrar-Registro">
                     {% csrf_token %}
-                     <button onclick="ConfirmarBorrar()" type="submit" name="btn-delete-cliente" value="{{ cliente.id }}"><i class="material-icons button delete">delete</i></button>
+                    <button type="submit" onclick="ConfirmarBorrar()" name="btn-delete-cliente" value="{{ cliente.id }}"><i class="material-icons button delete">delete</i></button>
                 </form>
 
             </div>

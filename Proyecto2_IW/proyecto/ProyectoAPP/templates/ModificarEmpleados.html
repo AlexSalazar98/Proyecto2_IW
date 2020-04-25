@@ -20,6 +20,7 @@
 {% block content_datos%}
 <tbody>
 {% for empleados in datos %}
+<script src="/static/js/ConfirmarBorrar.js"></script>
 <tr>
     <td>{{ empleados.nombre }}</td>
     <td>{{ empleados.apellido }}</td>
@@ -33,9 +34,9 @@
                 </form>
             </div>
             <div class="Borrar">
-                <form action="{% url 'PaginaPrincipal' %}" method="post">
+                <form action="{% url 'BorrarEmpleado' %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" name="btn-delete-empleados" value="{{ empleados.id }}"><i class="material-icons button delete">delete</i></button>
+                    <button type="submit" onclick="ConfirmarBorrar()" name="btn-delete-empleados" value="{{ empleados.id }}"><i class="material-icons button delete">delete</i></button>
                 </form>
             </div>
         </div>

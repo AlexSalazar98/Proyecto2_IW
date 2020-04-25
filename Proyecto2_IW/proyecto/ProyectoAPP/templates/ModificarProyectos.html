@@ -20,6 +20,7 @@
 {% block content_datos%}
 <tbody>
 {% for proyectos in datos %}
+<script src="/static/js/ConfirmarBorrar.js"></script>
 <tr>
     <td>{{ proyectos.nombre }}</td>
     <td>{{ proyectos.cliente }}</td>
@@ -33,9 +34,9 @@
                 </form>
             </div>
             <div class="Borrar">
-                <form action="{% url 'PaginaPrincipal' %}" method="post">
+                <form action="{% url 'BorrarProyecto' %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" name="btn-delete-proyectos" value="{{ proyectos.id }}"><i class="material-icons button delete">delete</i></button>
+                    <button type="submit" onclick="ConfirmarBorrar()" name="btn-delete-proyectos" value="{{ proyectos.id }}"><i class="material-icons button delete">delete</i></button>
                 </form>
             </div>
         </div>
