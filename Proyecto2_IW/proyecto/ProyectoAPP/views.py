@@ -45,6 +45,9 @@ def login(request):
 
 # Funcion para mostrar la pagina principal de la aplicacion
 def PaginaPricipal(request):
+
+    print(request.POST["btn-edit-cliente"])
+
     # Recogemos los objetos necesaios para cargar la info necesaria en la pagina principal
     clientes = Clientes.objects.order_by('empresa')
 
@@ -303,14 +306,13 @@ def ProyectosPorCliente(request):
 
 
 # Funcion para modificar los clientes
-def ModificarClientes (request):
-
+def ModificarClientes(request):
     clientes = Clientes.objects.order_by('empresa')
 
     context = {
         'datos': clientes,
         'titulo': "Clientes",
-        'col1':  "Empresa",
+        'col1': "Empresa",
         'col2': "Persona Contacto",
         'col3': "Telefono"
 
@@ -320,14 +322,13 @@ def ModificarClientes (request):
 
 
 # Funcion para modificar los empleados
-def ModificarEmpleados (request):
-
+def ModificarEmpleados(request):
     empleados = Empleados.objects.order_by('nombre')
 
     context = {
         'datos': empleados,
         'titulo': "Empleados",
-        'col1':  "Nombre",
+        'col1': "Nombre",
         'col2': "Apellido",
         'col3': "Telefono"
 
@@ -337,14 +338,13 @@ def ModificarEmpleados (request):
 
 
 # Funcion para modificar los proyectos
-def ModificarProyectos (request):
-
+def ModificarProyectos(request):
     proyectos = Proyectos.objects.order_by('nombre')
 
     context = {
         'datos': proyectos,
         'titulo': "Proyectos",
-        'col1':  "Nombre",
+        'col1': "Nombre",
         'col2': "Cliente",
         'col3': "Estado"
 
@@ -355,16 +355,30 @@ def ModificarProyectos (request):
 
 # Funcion para modificar los tareas
 def ModificarTareas(request):
-
     tareas = Tareas.objects.order_by('nombre')
 
     context = {
         'datos': tareas,
         'titulo': "Tareas",
-        'col1':  "Nombre",
+        'col1': "Nombre",
         'col2': "Prioridad",
         'col3': "Estado"
 
     }
 
     return render(request, 'ModificarTareas.html', context)
+
+
+# Funcion para eliminar clientes
+def BorrarCliente(request):
+    # Recuperamos el id del cliente a borrar desde el HTML
+    # id = request.POST["btnDeleteCliente"]
+    print(request.POST["btn-delete-cliente"])
+    # Obtenemos el objeto a borrar de BBDD filtrado por el id obtenido
+    # cliente_a_borrar = Clientes.objects.filter(id=id)
+
+    # Borramos el objeto
+    # cliente_a_borrar.delete()
+
+    # Recargamos la tabla de Clientes
+    return redirect('ModificarClientes')
