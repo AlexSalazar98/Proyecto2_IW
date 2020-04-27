@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-
-from .forms import *
 from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, \
     Nivel_Prioridad, Estado_Proyecto, Estado
 from django.views.generic import UpdateView, DetailView
@@ -429,17 +427,21 @@ def BorrarTareas(request):
     return redirect('ModificarTareas')
 
 
-# def FormModificarClientes(request):
-# form = FormModCliente()
+# Funcion para editar el cliente seleccionado
+def FormModificarClientes(request):
+    id = request.POST['btn-edit-cliente']
 
-# return render(request, 'FormModificarCliente.html', {'form': form})
+    clientes = Clientes.objects.all()
 
+    cliente_slec = ""
 
-class FormModificarClientes(DetailView):
-    model = Clientes
-    template_name = 'Prueba.html'
+    for c in clientes:
+        if int(id) == c.id:
+            cliente_slec = c
+            break
 
-    def get_context_data(self, **kwargs):
-        context = super(FormModificarClientes, self).get_context_data(**kwargs)
-        context['titulo_pagina'] = 'Detalles de la empresa'
-        return context
+    context = {
+        'cliente': cliente_slec
+    }
+
+    return render(request, 'FormModificarCliente.html', context)

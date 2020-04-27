@@ -16,49 +16,46 @@
                 <div class="Mod-Nombre-c">
                     <label for="Nombre_Cliente-f" class="Nombre">Nombre y Apellido:</label>
                     <div id="Nombre_Cliente-f">
-                        {{ cliente.nombre}}
+                        <input type="text" name="nombre" id="Nombre_Cliente" value="{{ cliente.nombre }}" required>
                     </div>
-                    <!-- <input type="text" name="nombre" id="Nombre_Cliente" required> -->
                 </div>
 
                 <div class="Mod-Empresa-c">
                     <label for="Empresa-f" class="Empresa">Empresa:</label>
                     <div id="Empresa-f">
-                        {{ cliente.empresa }}
+                        <input type="text" name="Empresa" id="Empresa" value="{{ cliente.empresa }}" required>
                     </div>
-                    <!-- <input type="text" name="Empresa" id="Empresa" required> -->
                 </div>
 
                 <div class="Mod-Email-c">
                     <label for="Email_Cliente-f" class="Email">Email:</label>
                     <div id="Email_Cliente-f">
-                        {{ cliente.email }}
+                        <input type="email" name="Email" id="Email_Cliente" value="{{ cliente.email }}" required>
                     </div>
-                    <!-- <input type="email" name="Email" id="Email_Cliente" required> -->
                 </div>
 
                 <div class="Mod-Loc-c">
                     <label for="Localizacion_Empresa_Cliente-f" class="Localizacion">Localizacion:</label>
                     <div id="Localizacion_Empresa_Cliente-f">
-                        {{ cliente.localizacion }}
+                        <input type="text" name="Localizacion" id="Localizacion_Empresa_Cliente"
+                               value="{{ cliente.localizacion }}" required>
                     </div>
-                    <!-- <input type="text" name="Localizacion" id="Localizacion_Empresa_Cliente" required> -->
                 </div>
 
                 <div class="Mod-Tel-c">
                     <label for="Telefono_Cliente-f" class="Telefono">Telefono:</label>
                     <div id="Telefono_Cliente-f">
-                        {{ cliente.telefono }}
+                        <input type="number" name="Telefono" id="Telefono_Cliente" value="{{ cliente.telefono }}"
+                               required>
                     </div>
-                    <!-- <input type="number" name="Telefono" id="Telefono_Cliente" required> -->
                 </div>
 
                 <div class="Mod-Cuenta-c">
                     <label for="Numero_Cuenta_Cliente-f" class="Numero_Cuenta">Numero Cuenta:</label>
                     <div id="Numero_Cuenta_Cliente-f">
-                        {{ cliente.numero_cuenta }}
+                        <input type="text" name="Numero_Cuenta" id="Numero_Cuenta_Cliente"
+                               value="{{ cliente.numero_cuenta }}" required>
                     </div>
-                    <!-- <input type="text" name="Numero_Cuenta" id="Numero_Cuenta_Cliente" required> -->
                 </div>
 
             </div>
@@ -67,11 +64,20 @@
             <div class="btn-guardar-cc">
                 <button type="submit" class="Guardar-mfc" id="Guardar_Cambios_Cliente">Guardar Cambios</button>
             </div>
+        </div>
+    </form>
+    <form action="{% url 'BorrarCliente' %}" method="post">
+        {% csrf_token %}
+        <div class="botones-fc">
             <div class="btn-eliminar-c">
-                <button type="submit" class="Eliminar-mfc" id="Eliminar_Cliente">Eliminar</button>
+                <button type="submit" class="Eliminar-mfc" id="Eliminar_Cliente" name="btn-delete-cliente"
+                        value="{{ cliente.id }}">Eliminar
+                </button>
             </div>
         </div>
     </form>
+</div>
+
 </div>
 
 {% endblock %}

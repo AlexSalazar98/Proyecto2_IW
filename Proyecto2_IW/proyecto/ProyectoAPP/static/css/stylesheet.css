@@ -1086,15 +1086,10 @@ input[type="number"]
 }
 
 .botones-fc{
-    display: inline-block;
+    width: 100%;
 }
 
 .btn-guardar-cc{
-    float: left;
-
-}
-
-.btn-eliminar-c{
     float: left;
 
 }

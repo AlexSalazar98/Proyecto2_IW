@@ -29,9 +29,9 @@ urlpatterns = [
     path('BorrarProyecto/', views.BorrarProyectos, name="BorrarProyecto"),
     path('BorrarTarea/', views.BorrarTareas, name="BorrarTarea"),
 
-    #path('FormModificarClientes/', views.FormModificarClientes, name="FormModificarClientes"),
+    path('FormModificarClientes/', views.FormModificarClientes, name="FormModificarClientes"),
 
-    path('ModificarClientes/<int:pk>/', views.FormModificarClientes.as_view(), name="FormModificarClientes"),
+
 
 ]
 
