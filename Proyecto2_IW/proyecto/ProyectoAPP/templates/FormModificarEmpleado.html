@@ -4,7 +4,7 @@
 
 
 <div class="ModificarEmpleado">
-    <form action="{% url 'NuevoEmpleado' %}" method="post">
+    <form action="{% url 'ActualizarEmpleado' %}" method="post">
         {% csrf_token %}
         <div class="Titulo_Modificar_Empleado">
             <h1>Empleado</h1>
@@ -15,53 +15,53 @@
                 <div>
                     <label for="DNI_Empleado-f" class="DNI">DNI:</label>
                     <div id="DNI_Empleado-f">
-                        <input type="text" name="DNI" id="DNI" required>
+                        <input type="text" name="dni" id="DNI" value="{{ empleado.dni }}" required>
                     </div>
                 </div>
 
                 <div class="Mod-Empresa-empleado-f">
                     <label for="Empresa-empleado-f" class="Nombre">Nombre:</label>
                     <div id="Empresa-empleado-f">
-                        <input type="text" name="nombre" id="Nombre" required>
+                        <input type="text" name="nombre" id="Nombre" value="{{ empleado.nombre }}" required>
                     </div>
                 </div>
 
                 <div class="Mod-Empresa-empleado-f">
                     <label for="Apellido-empleado-f" class="Apellido">Apellido:</label>
                     <div id="Apellido-empleado-f">
-                        <input type="text" name="Apellido" id="Apellido" required>
+                        <input type="text" name="apellido" id="Apellido" value="{{ empleado.apellido }}" required>
                     </div>
                 </div>
 
                 <div class="Mod-Empresa-empleado-f">
                     <label for="Email_Empleado" class="Email">Email:</label>
                     <div id="Email-empleado-f">
-                        <input type="email" name="Email" id="Email_Empleado" required>
+                        <input type="email" name="email" id="Email_Empleado" value="{{ empleado.email }}" required>
                     </div>
                 </div>
 
                 <div class="Mod-Empresa-empleado-f">
                     <label for="Tel-empleado-f" class="Telefono">Telefono:</label>
                     <div id="Tel-empleado-f">
-                        <input type="number" name="Telefono" id="Telefono" required>
+                        <input type="number" name="telefono" id="Telefono" value="{{ empleado.telefono }}" required>
                     </div>
                 </div>
             </div>
         </fieldset>
         <div class="botones-fc">
             <div class="btn-guardar-cc">
-                <button type="submit" class="Guardar-mfc" id="Guardar_Cambios_Cliente" name="btn-modificar-cliente"
-                        value="{{ cliente.id }}">Guardar Cambios
+                <button type="submit" class="Guardar-mfc" name="btn-modificar-empleado"
+                        value="{{ empleado.id }}">Guardar Cambios
                 </button>
             </div>
         </div>
     </form>
-    <form action="{% url 'BorrarCliente' %}" method="post">
+    <form action="{% url 'BorrarEmpleado' %}" method="post">
         {% csrf_token %}
         <div class="botones-fc">
             <div class="btn-eliminar-c">
-                <button type="submit" class="Eliminar-mfc" id="Eliminar_Cliente" name="btn-delete-cliente"
-                        value="{{ cliente.id }}">Eliminar
+                <button type="submit" class="Eliminar-mfc" name="btn-delete-empleados"
+                        value="{{ empleado.id }}">Eliminar
                 </button>
             </div>
         </div>

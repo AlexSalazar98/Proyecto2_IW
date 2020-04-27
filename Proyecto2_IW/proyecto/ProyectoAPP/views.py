@@ -645,3 +645,26 @@ def FormModificarEmpleado(request):
     }
 
     return render(request, 'FormModificarEmpleado.html', context)
+
+
+# Funcion para guardar datos modificados de empleados
+def ActualizarEmpleado(request):
+    id = request.POST['btn-modificar-empleado']
+
+    empleados = Empleados.objects.all()
+
+    empleado_a_actualizar = ""
+
+    for e in empleados:
+        if e.id == int(id):
+            empleado_a_actualizar = e
+
+    empleado_a_actualizar.dni = request.POST['dni']
+    empleado_a_actualizar.email = request.POST['email']
+    empleado_a_actualizar.nombre = request.POST['nombre']
+    empleado_a_actualizar.apellido= request.POST['apellido']
+    empleado_a_actualizar.telefono = request.POST['telefono']
+
+    empleado_a_actualizar.save()
+
+    return redirect('ModificarEmpleados')
