@@ -1,0 +1,13 @@
+{% extends "Base.html" %}
+
+
+{% block content %}
+<ul>
+    {% for emp in empresa_list %}
+    <li>
+        {{ emp.id }}: {{ emp.nombre}} <a href="{% url 'detail' emp.id %}">Ver</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+

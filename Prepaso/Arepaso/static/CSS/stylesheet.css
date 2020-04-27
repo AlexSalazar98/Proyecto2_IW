@@ -1,0 +1,23 @@
+body {
+    margin: 0 auto;
+    width: 1200px;
+    height: 500px;
+    border: solid 1px black;
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
+h1 {
+    color: aqua;
+    text-align: center;
+}
+
+h2 {
+    color: brown;
+}

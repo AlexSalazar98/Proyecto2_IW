@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>AppRepaso</title>
+    <link href = "{% static 'css/stylesheet.css' %}" rel = "stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>App repaso</h1>
+    <h2>{{ titulo_pagina }}</h2>
+</header>
+<nav>
+    <p>Aquí va la barra de navegación</p>
+</nav>
+<div id = "content">
+    {% block content %} {% endblock %}
+</div>
+<footer>
+    <hr>
+    <p>Este es el pie de página</p>
+</footer>
+</body>
+</html>
