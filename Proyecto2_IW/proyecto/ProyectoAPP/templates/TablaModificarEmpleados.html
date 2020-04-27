@@ -1,4 +1,4 @@
-{% extends 'Modificar.html' %}
+{% extends 'TablaModificar.html' %}
 
 
 {% block content_titulo %}
@@ -19,31 +19,29 @@
 
 {% block content_datos%}
 <tbody>
-{% for cliente in datos %}
+{% for empleados in datos %}
 <script src="/static/js/ConfirmarBorrar.js"></script>
 <tr>
-    <td>{{ cliente.empresa }}</td>
-    <td>{{ cliente.nombre }}</td>
-    <td>{{ cliente.telefono }}</td>
+    <td>{{ empleados.nombre }}</td>
+    <td>{{ empleados.apellido }}</td>
+    <td>{{ empleados.telefono }}</td>
     <td>
         <div class="EditarBorrar">
             <div class="Editar">
                 <form action="{% url 'PaginaPrincipal' %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" name="btn-edit-cliente" value="{{ cliente.id }}"><i class="material-icons button edit">edit</i></button>
+                    <button type="submit" name="btn-edit-empleados" value="{{ empleados.id }}"><i class="material-icons button edit">edit</i></button>
                 </form>
             </div>
             <div class="Borrar">
-                <form id="Borrar-Registro"  action="{% url 'BorrarCliente' %}" method="post" name="Borrar-Registro">
+                <form action="{% url 'BorrarEmpleado' %}" method="post">
                     {% csrf_token %}
-                    <button type="submit" onclick="ConfirmarBorrar()" name="btn-delete-cliente" value="{{ cliente.id }}"><i class="material-icons button delete">delete</i></button>
+                    <button type="submit" onclick="ConfirmarBorrar()" name="btn-delete-empleados" value="{{ empleados.id }}"><i class="material-icons button delete">delete</i></button>
                 </form>
-
             </div>
         </div>
     </td>
 </tr>
-
 {% endfor %}
 </tbody>
 {% endblock %}

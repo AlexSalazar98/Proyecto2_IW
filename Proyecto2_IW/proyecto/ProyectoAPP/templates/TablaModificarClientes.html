@@ -1,0 +1,49 @@
+{% extends 'TablaModificar.html' %}
+
+
+{% block content_titulo %}
+{{ titulo }}
+{% endblock %}
+
+{% block content_col1%}
+{{ col1 }}
+{% endblock %}
+
+{% block content_col2%}
+{{ col2 }}
+{% endblock %}
+
+{% block content_col3%}
+{{ col3 }}
+{% endblock %}
+
+{% block content_datos%}
+<tbody>
+{% for cliente in datos %}
+<script src="/static/js/ConfirmarBorrar.js"></script>
+<tr>
+    <td>{{ cliente.empresa }}</td>
+    <td>{{ cliente.nombre }}</td>
+    <td>{{ cliente.telefono }}</td>
+    <td>
+        <div class="EditarBorrar">
+            <div class="Editar">
+                <form action="{% url 'FormModificarClientes' cliente.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" name="btn-edit-cliente" value="{{ cliente.id }}"><i class="material-icons button edit">edit</i></button>
+                </form>
+            </div>
+            <div class="Borrar">
+                <form id="Borrar-Registro"  action="{% url 'BorrarCliente' %}" method="post" name="Borrar-Registro">
+                    {% csrf_token %}
+                    <button type="submit" onclick="ConfirmarBorrar()" name="btn-delete-cliente" value="{{ cliente.id }}"><i class="material-icons button delete">delete</i></button>
+                </form>
+
+            </div>
+        </div>
+    </td>
+</tr>
+
+{% endfor %}
+</tbody>
+{% endblock %}

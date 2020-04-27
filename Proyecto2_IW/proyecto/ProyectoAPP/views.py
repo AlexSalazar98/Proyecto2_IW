@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
+
+from .forms import *
 from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, \
     Nivel_Prioridad, Estado_Proyecto, Estado
+from django.views.generic import UpdateView, DetailView
 
 
 # Create your views here.
@@ -315,7 +318,7 @@ def ModificarClientes(request):
 
     }
 
-    return render(request, 'ModificarClientes.html', context)
+    return render(request, 'TablaModificarClientes.html', context)
 
 
 # Funcion para modificar los empleados
@@ -331,7 +334,7 @@ def ModificarEmpleados(request):
 
     }
 
-    return render(request, 'ModificarEmpleados.html', context)
+    return render(request, 'TablaModificarEmpleados.html', context)
 
 
 # Funcion para modificar los proyectos
@@ -347,7 +350,7 @@ def ModificarProyectos(request):
 
     }
 
-    return render(request, 'ModificarProyectos.html', context)
+    return render(request, 'TablaModificarProyectos.html', context)
 
 
 # Funcion para modificar los tareas
@@ -363,7 +366,7 @@ def ModificarTareas(request):
 
     }
 
-    return render(request, 'ModificarTareas.html', context)
+    return render(request, 'TablaModificarTareas.html', context)
 
 
 # Funcion para eliminar clientes
@@ -395,6 +398,7 @@ def BorrarEmpleados(request):
     # Recargamos la tabla de Empleaods
     return redirect('ModificarEmpleados')
 
+
 # Funcion para eliminar proyectos
 def BorrarProyectos(request):
     # Recuperamos el id del proyectos a borrar desde el HTML
@@ -409,6 +413,7 @@ def BorrarProyectos(request):
     # Recargamos la tabla de Proyectos
     return redirect('ModificarProyectos')
 
+
 # Funcion para eliminar tareas
 def BorrarTareas(request):
     # Recuperamos el id del tareas a borrar desde el HTML
@@ -422,3 +427,19 @@ def BorrarTareas(request):
 
     # Recargamos la tabla de Tareas
     return redirect('ModificarTareas')
+
+
+# def FormModificarClientes(request):
+# form = FormModCliente()
+
+# return render(request, 'FormModificarCliente.html', {'form': form})
+
+
+class FormModificarClientes(DetailView):
+    model = Clientes
+    template_name = 'Prueba.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(FormModificarClientes, self).get_context_data(**kwargs)
+        context['titulo_pagina'] = 'Detalles de la empresa'
+        return context

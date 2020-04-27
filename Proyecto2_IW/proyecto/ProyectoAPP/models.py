@@ -2,11 +2,14 @@ from django.db import models
 
 
 # Clase para la creacion de Clientes
+from django.urls import reverse
+
+
 class Clientes(models.Model):
     nombre = models.CharField(max_length=50)
     empresa = models.CharField(max_length=50)
     email = models.EmailField()
-    localizacion = models.TextField()
+    localizacion = models.CharField(max_length=50)
     telefono = models.IntegerField()
     numero_cuenta = models.CharField(max_length=24)
 
