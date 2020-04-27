@@ -665,9 +665,9 @@ legend{
 
 
 
-/* CSS PARA detalles_proyecto.html */
+/* CSS PARA detalles_proyecto.html y detalles_tareas.html */
 
-.detalles_proyecto {
+.detalles_proyecto, .detalles_tareas{
     margin-top: 30px;
     width: 825px;
     margin-left: auto;
@@ -716,7 +716,11 @@ legend{
     color: red;
 }
 
-.est-proyect{
+.Azul{
+    color: blue;
+}
+
+.est-proyect, .est-tareas{
     float: right;
     width: 30%;
     text-align: center;
@@ -739,6 +743,16 @@ legend{
     color: white;
     font-size: 17px;
     margin-left: 30px;
+}
+
+.hreftareas{
+    text-decoration: none;
+    color: red;
+    cursor: pointer;
+}
+
+.hreftareas:hover{
+    color: orange;
 }
 
 .variable{

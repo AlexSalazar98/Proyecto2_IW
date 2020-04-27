@@ -1,0 +1,64 @@
+{% extends "Base.html" %}
+
+{% block content %}
+<!-- Cuerpo central de la pagina -->
+
+<div class="detalles_tareas">
+    <div class="top">
+        <div class="titulo">
+            <h1>{{ tareas.nombre }}</h1>
+        </div>
+        <div class="est-tareas">
+            {% if tareas.estado_tarea.value == 'Abierta' %}
+            <label class="verde">{{ tareas.estado_tarea }}</label>
+            {% elif tareas.estado_tarea == 'Asignada' %}
+            <label class="naranja">{{ tareas.estado_tarea }}</label>
+            {% elif tareas.estado_tarea == 'En Proceso' %}
+            <label class="Azul">{{ tareas.estado_tarea }}</label>
+            {% else %}
+            <label class="rojo">{{ tareas.estado_tarea }}</label>
+            {% endif %}
+
+        </div>
+    </div>
+
+    <div class="infor-basica">
+        <fieldset class="datos-principales">
+            <legend><strong>Datos principales</strong></legend>
+            <div class="primera-linea">
+                <div class="fecha-ini">
+                    <label class="etiqueta"><strong>Fecha de inicio: </strong></label><label class="variable">{{ tareas.fecha_inicio|date:'d-m-Y' }}</label>
+                </div>
+                <div class="fecha-fin">
+                    <label class="etiqueta"><strong>Fecha de finalizacion: </strong></label><label class="variable">{{ tareas.fecha_fin|date:'d-m-Y' }}</label>
+                </div>
+            </div>
+            <div class="segunda-linea">
+                <div class="cliente">
+                    <label class="etiqueta"><strong>Responsable: </strong></label> <label class="variable">{{ tareas.responsable }}</label>
+                </div>
+                <div class="dep">
+                    <label class="etiqueta"><strong>Nivel Prioridad: </strong></label><label
+                        class="variable">{{ tareas.nivel_prioridad }}</label>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset class="datos-principales">
+            <legend><strong>Tareas a realizar</strong></legend>
+            <label class="etiqueta"><strong>Descripcion </strong></label><label
+                class="variable">{{ tareas.descripcion }}</label>
+        </fieldset>
+
+
+        <fieldset class="datos-principales">
+            <legend><strong>Notas empleados</strong></legend>
+            <label class="etiqueta"><strong>Notas empleados </strong></label><label
+                class="variable">{{ tareas.notas_adicionales_escritas_empleado }}</label>
+        </fieldset>
+
+    </div>
+</div>
+
+{% endblock %}

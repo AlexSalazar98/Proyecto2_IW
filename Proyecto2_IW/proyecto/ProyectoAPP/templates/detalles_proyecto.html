@@ -51,6 +51,7 @@
             <legend><strong>Tareas a realizar</strong></legend>
             <div class="conjuto">
                 <div class="lado-derecho">
+<<<<<<< HEAD
                     <form action="{% url 'PaginaPrincipal' %}" method="post">
                         {% csrf_token %}
                         <ul class="etiqueta">TAREAS
@@ -61,6 +62,13 @@
                             {% endfor %}
                         </ul>
                     </form>
+=======
+                    <ul class="etiqueta">TAREAS
+                        {% for a in tareas_a_realizar %}
+                        <li class="variable"><label><a href="{% url 'DetallesTareas' a.id_tarea %}" class="hreftareas" name="valortarea">{{ a.tarea }}</a></label></li>
+                        {% endfor %}
+                    </ul>
+>>>>>>> 46351eda69fe18d6e8c62d296ba7e05e9822a8e6
                 </div>
                 <div class="lado-izquierda">
                     <ul class="etiqueta">RESPONSABLE
@@ -70,7 +78,6 @@
                     </ul>
                 </div>
             </div>
-
         </fieldset>
 
 
