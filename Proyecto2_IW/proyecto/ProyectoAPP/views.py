@@ -430,8 +430,7 @@ def BorrarTareas(request):
     return redirect('ModificarTareas')
 
 
-<<<<<<< HEAD
-# Funcion para editar el cliente seleccionado
+# Funcion para cargar el cliente seleccionado
 def FormModificarClientes(request):
     id = request.POST['btn-edit-cliente']
 
@@ -449,15 +448,39 @@ def FormModificarClientes(request):
     }
 
     return render(request, 'FormModificarCliente.html', context)
-=======
-# Funcion para mostrar los datos completos de las tareas
+
+
+# Clase para mostrar los datos completos de las tareas
 class DetallesTareas(DetailView):
     model = Tareas
     template_name = 'detalles_tareas.html'
 
     def get_context_data(self, **kwargs):
         context = super(DetallesTareas, self).get_context_data(**kwargs)
-        context['tarsel'] = 'tarsel'
+        context['estado'] = str(Tareas.estado_tarea)
 
         return context
->>>>>>> 46351eda69fe18d6e8c62d296ba7e05e9822a8e6
+
+
+# Funcion para guardar datos modificados de clientes
+def ActualizarClientes(request):
+    id = request.POST['btn-modificar-cliente']
+
+    clientes = Clientes.objects.all()
+
+    cliente_a_actualizar = ""
+
+    for c in clientes:
+        if c.id == int(id):
+          cliente_a_actualizar = c
+
+    cliente_a_actualizar.nombre = request.POST['nombre']
+    cliente_a_actualizar.empresa = request.POST['Empresa']
+    cliente_a_actualizar.email = request.POST['Email']
+    cliente_a_actualizar.localizacion = request.POST['Localizacion']
+    cliente_a_actualizar.telefono = request.POST['Telefono']
+    cliente_a_actualizar.numero_cuenta = request.POST['Numero_Cuenta']
+
+    cliente_a_actualizar.save()
+
+    return redirect('ModificarClientes')

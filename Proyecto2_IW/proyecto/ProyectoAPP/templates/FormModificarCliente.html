@@ -4,7 +4,7 @@
 
 
 <div class="ModificarCliente">
-    <form id="Alta_Cliente" action="{% url 'NuevoCliente' %}" method="post">
+    <form id="Alta_Cliente" action="{% url 'ActualizarCliente' %}" method="post">
         {% csrf_token %}
         <div class="Titulo_Modificar_Cliente">
             <h1>Cliente</h1>
@@ -62,7 +62,9 @@
         </fieldset>
         <div class="botones-fc">
             <div class="btn-guardar-cc">
-                <button type="submit" class="Guardar-mfc" id="Guardar_Cambios_Cliente">Guardar Cambios</button>
+                <button type="submit" class="Guardar-mfc" id="Guardar_Cambios_Cliente" name="btn-modificar-cliente"
+                        value="{{ cliente.id }}">Guardar Cambios
+                </button>
             </div>
         </div>
     </form>
@@ -76,8 +78,9 @@
             </div>
         </div>
     </form>
+    <button onclick="history.back()" class="flotante"><img src="/static/imagenes/flecha.png"></button>
 </div>
 
-</div>
+
 
 {% endblock %}

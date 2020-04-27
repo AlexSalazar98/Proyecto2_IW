@@ -9,11 +9,11 @@
             <h1>{{ tareas.nombre }}</h1>
         </div>
         <div class="est-tareas">
-            {% if tareas.estado_tarea.value == 'Abierta' %}
+            {% if tarsel.estado_tarea.value == 'Abierta' %}
             <label class="verde">{{ tareas.estado_tarea }}</label>
-            {% elif tareas.estado_tarea == 'Asignada' %}
+            {% elif tarsel.estado_tarea == 'Asignada' %}
             <label class="naranja">{{ tareas.estado_tarea }}</label>
-            {% elif tareas.estado_tarea == 'En Proceso' %}
+            {% elif tarsel.estado_tarea == 'En Proceso' %}
             <label class="Azul">{{ tareas.estado_tarea }}</label>
             {% else %}
             <label class="rojo">{{ tareas.estado_tarea }}</label>
@@ -46,19 +46,18 @@
         </fieldset>
 
         <fieldset class="datos-principales">
-            <legend><strong>Tareas a realizar</strong></legend>
-            <label class="etiqueta"><strong>Descripcion </strong></label><label
-                class="variable">{{ tareas.descripcion }}</label>
+            <legend><strong>Descripcion de la tarea</strong></legend>
+            <label class="variable">{{ tareas.descripcion }}</label>
         </fieldset>
 
 
         <fieldset class="datos-principales">
             <legend><strong>Notas empleados</strong></legend>
-            <label class="etiqueta"><strong>Notas empleados </strong></label><label
-                class="variable">{{ tareas.notas_adicionales_escritas_empleado }}</label>
+            <label class="variable">{{ tareas.notas_adicionales_escritas_empleado }}</label>
         </fieldset>
 
     </div>
+    <button onclick="history.back()" class="flotante"><img src="/static/imagenes/flecha.png"></button>
 </div>
 
 {% endblock %}

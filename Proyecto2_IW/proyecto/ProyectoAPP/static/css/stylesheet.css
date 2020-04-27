@@ -727,7 +727,7 @@ legend{
     margin-top: 26px;
 }
 
-.est-proyect label{
+.est-proyect, .est-tareas label{
     font-size: 22px;
 }
 
@@ -1134,4 +1134,18 @@ input[type="number"]
     border:none;
     border-radius:4px;
     margin-top: 10px;
+}
+
+.flotante {
+    position:fixed;
+    bottom:320px;
+    right:10px;
+    width: 105px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.flotante img{
+    max-width: 100%;
+    max-height: 100%;
 }
