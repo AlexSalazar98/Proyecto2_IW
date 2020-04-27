@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.views.generic import DetailView
+
 from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, \
     Nivel_Prioridad, Estado_Proyecto, Estado
 
@@ -140,7 +142,8 @@ def DetallesProyecto(request):
             if str(a) == str(b.nombre):
                 conj = {
                     'tarea': a,
-                    'responsable': b.responsable
+                    'responsable': b.responsable,
+                    'id_tarea': b.id
                 }
                 lista_pasar.append(conj)
     lista_empleados = []
@@ -422,3 +425,15 @@ def BorrarTareas(request):
 
     # Recargamos la tabla de Tareas
     return redirect('ModificarTareas')
+
+
+# Funcion para mostrar los datos completos de las tareas
+class DetallesTareas(DetailView):
+    model = Tareas
+    template_name = 'detalles_tareas.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(DetallesTareas, self).get_context_data(**kwargs)
+        context['tarsel'] = 'tarsel'
+
+        return context

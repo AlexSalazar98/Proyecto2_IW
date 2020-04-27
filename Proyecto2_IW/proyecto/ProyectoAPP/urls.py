@@ -8,6 +8,7 @@ urlpatterns = [
     path('Registro/', views.LlamarFormulario, name="LlamarFormulario"),
     path('Registrar/', views.RecogerFormulario, name="RecogerFormulario"),
     path('DetallesProyecto/', views.DetallesProyecto, name="DetallesProyecto"),
+    path('DetallesProyecto/DetallesTareas/<int:pk>/', views.DetallesTareas.as_view(), name="DetallesTareas"),
     path('NuevoCliente/', views.Nuevo_Cliente, name="NuevoCliente"),
     path('NuevoEmpleado/', views.Nuevo_Empleado, name="NuevoEmpleado"),
     path('NuevaTarea/', views.Nueva_Tarea, name="NuevaTarea"),
