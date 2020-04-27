@@ -151,6 +151,23 @@ def DetallesProyecto(request):
     for a in pro_select.empleados.all():
         lista_empleados.append(a)
 
+
+# Recogemos los objetos necesaios para cargar la info necesaria
+    clientes = Clientes.objects.order_by('empresa')
+
+    responsable = Empleados.objects.order_by('nombre')
+
+    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
+
+    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
+
+    tareas = Tareas.objects.order_by('nombre')
+
+    departamento = Departamento.objects.order_by('nombre')
+
+    estado_tarea = Estado.objects.order_by('estado')
+
+
     # Creamos el context con lo que vamos a pasar al HTML de mostrar
     context = {
         'nombre': pro_select.nombre,
@@ -163,6 +180,14 @@ def DetallesProyecto(request):
         'empleados': lista_empleados,
         'departamento': pro_select.departamento,
         'estado': str(pro_select.estado),
+
+        'clientes': clientes,
+        'responsable': responsable,
+        'prioridad': prioridad,
+        'estado_tarea': estado_tarea,
+        'estado_proyecto': estado_proyecto,
+        'tareas': tareas,
+        'departamentos': departamento,
     }
 
     return render(request, 'detalles_proyecto.html', context)
@@ -310,12 +335,35 @@ def ProyectosPorCliente(request):
 def ModificarClientes(request):
     clientes = Clientes.objects.order_by('empresa')
 
+    # Recogemos los objetos necesaios para cargar la info necesaria
+    clientes = Clientes.objects.order_by('empresa')
+
+    responsable = Empleados.objects.order_by('nombre')
+
+    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
+
+    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
+
+    tareas = Tareas.objects.order_by('nombre')
+
+    departamento = Departamento.objects.order_by('nombre')
+
+    estado_tarea = Estado.objects.order_by('estado')
+
     context = {
         'datos': clientes,
         'titulo': "Clientes",
         'col1': "Empresa",
         'col2': "Persona Contacto",
-        'col3': "Telefono"
+        'col3': "Telefono",
+
+        'clientes': clientes,
+        'responsable': responsable,
+        'prioridad': prioridad,
+        'estado_tarea': estado_tarea,
+        'estado_proyecto': estado_proyecto,
+        'tareas': tareas,
+        'departamentos': departamento,
 
     }
 
@@ -326,12 +374,35 @@ def ModificarClientes(request):
 def ModificarEmpleados(request):
     empleados = Empleados.objects.order_by('nombre')
 
+     # Recogemos los objetos necesaios para cargar la info necesaria
+    clientes = Clientes.objects.order_by('empresa')
+
+    responsable = Empleados.objects.order_by('nombre')
+
+    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
+
+    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
+
+    tareas = Tareas.objects.order_by('nombre')
+
+    departamento = Departamento.objects.order_by('nombre')
+
+    estado_tarea = Estado.objects.order_by('estado')
+
     context = {
         'datos': empleados,
         'titulo': "Empleados",
         'col1': "Nombre",
         'col2': "Apellido",
-        'col3': "Telefono"
+        'col3': "Telefono",
+
+        'clientes': clientes,
+        'responsable': responsable,
+        'prioridad': prioridad,
+        'estado_tarea': estado_tarea,
+        'estado_proyecto': estado_proyecto,
+        'tareas': tareas,
+        'departamentos': departamento,
 
     }
 
@@ -342,12 +413,35 @@ def ModificarEmpleados(request):
 def ModificarProyectos(request):
     proyectos = Proyectos.objects.order_by('nombre')
 
+     # Recogemos los objetos necesaios para cargar la info necesaria
+    clientes = Clientes.objects.order_by('empresa')
+
+    responsable = Empleados.objects.order_by('nombre')
+
+    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
+
+    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
+
+    tareas = Tareas.objects.order_by('nombre')
+
+    departamento = Departamento.objects.order_by('nombre')
+
+    estado_tarea = Estado.objects.order_by('estado')
+
     context = {
         'datos': proyectos,
         'titulo': "Proyectos",
         'col1': "Nombre",
         'col2': "Cliente",
-        'col3': "Estado"
+        'col3': "Estado",
+
+        'clientes': clientes,
+        'responsable': responsable,
+        'prioridad': prioridad,
+        'estado_tarea': estado_tarea,
+        'estado_proyecto': estado_proyecto,
+        'tareas': tareas,
+        'departamentos': departamento,
 
     }
 
@@ -358,12 +452,35 @@ def ModificarProyectos(request):
 def ModificarTareas(request):
     tareas = Tareas.objects.order_by('nombre')
 
+     # Recogemos los objetos necesaios para cargar la info necesaria
+    clientes = Clientes.objects.order_by('empresa')
+
+    responsable = Empleados.objects.order_by('nombre')
+
+    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
+
+    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
+
+    tareas = Tareas.objects.order_by('nombre')
+
+    departamento = Departamento.objects.order_by('nombre')
+
+    estado_tarea = Estado.objects.order_by('estado')
+
     context = {
         'datos': tareas,
         'titulo': "Tareas",
         'col1': "Nombre",
         'col2': "Prioridad",
-        'col3': "Estado"
+        'col3': "Estado",
+
+        'clientes': clientes,
+        'responsable': responsable,
+        'prioridad': prioridad,
+        'estado_tarea': estado_tarea,
+        'estado_proyecto': estado_proyecto,
+        'tareas': tareas,
+        'departamentos': departamento,
 
     }
 
@@ -438,13 +555,37 @@ def FormModificarClientes(request):
 
     cliente_slec = ""
 
+# Recogemos los objetos necesaios para cargar la info necesaria
+    clientes = Clientes.objects.order_by('empresa')
+
+    responsable = Empleados.objects.order_by('nombre')
+
+    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
+
+    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
+
+    tareas = Tareas.objects.order_by('nombre')
+
+    departamento = Departamento.objects.order_by('nombre')
+
+    estado_tarea = Estado.objects.order_by('estado')
+
+
     for c in clientes:
         if int(id) == c.id:
             cliente_slec = c
             break
 
     context = {
-        'cliente': cliente_slec
+        'cliente': cliente_slec,
+
+        'clientes': clientes,
+        'responsable': responsable,
+        'prioridad': prioridad,
+        'estado_tarea': estado_tarea,
+        'estado_proyecto': estado_proyecto,
+        'tareas': tareas,
+        'departamentos': departamento,
     }
 
     return render(request, 'FormModificarCliente.html', context)

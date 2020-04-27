@@ -21,6 +21,11 @@
 
 	/*Estilo para la cabecera*/
 
+	.TituloNombreEmpre{
+	    text-decoration: none;
+	    cursor: pointer;
+	}
+
 	header{
 		margin-top: 20px;
 		height: 105px;
