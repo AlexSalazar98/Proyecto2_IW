@@ -1136,6 +1136,8 @@ input[type="number"]
     margin-top: 10px;
 }
 
+
+/* --------- BOTON FLOTANTE LADO DERECHA --------- */
 .flotante {
     position:fixed;
     bottom:320px;
@@ -1148,4 +1150,75 @@ input[type="number"]
 .flotante img{
     max-width: 100%;
     max-height: 100%;
+}
+
+
+
+/* --------- FORMULARIO MODIFICAR EMPLEADO --------- */
+
+.ModificarEmpleado{
+    margin: 0 auto;
+    font-family:arial;
+    width:450px;
+    padding:15px;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    /* background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ModificarEmpleado label{
+    margin-left: 30px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+.Titulo_Modificar_Empleado h1{
+    color: black;
+    text-align:center;
+    font-family: 'Vibur', cursive;
+    font-size: 40px;
+}
+
+#DNI_Empleado-f{
+    float: right;
+    width: 65%;
+    margin-top: 10px;
+}
+
+#Empresa-empleado-f{
+    float: right;
+    width: 65%;
+    margin-top: 10px;
+}
+
+.Mod-Empresa-empleado-f label{
+    float: left;
+    width: 20%;
+}
+
+#Apellido-empleado-f{
+    float: right;
+    width: 65%;
+    margin-top: 10px;
+}
+
+#Email-empleado-f{
+    float: right;
+    width: 65%;
+    margin-top: 10px;
+}
+
+#Tel-empleado-f{
+    float: right;
+    width: 63%;
+    margin-top: 10px;
+}
+
+.fieldset-mod-empleado{
+    padding-bottom: 12px;
+    border-radius: 20px;
 }

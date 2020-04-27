@@ -28,7 +28,7 @@
     <td>
         <div class="EditarBorrar">
             <div class="Editar">
-                <form action="{% url 'PaginaPrincipal' %}" method="post">
+                <form action="{% url 'FormModificarEmpleado' %}" method="post">
                     {% csrf_token %}
                     <button type="submit" name="btn-edit-empleados" value="{{ empleados.id }}"><i class="material-icons button edit">edit</i></button>
                 </form>

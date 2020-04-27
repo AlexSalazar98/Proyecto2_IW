@@ -4,7 +4,7 @@
 
 
 <div class="ModificarCliente">
-    <form id="Alta_Cliente" action="{% url 'ActualizarCliente' %}" method="post">
+    <form action="{% url 'ActualizarCliente' %}" method="post">
         {% csrf_token %}
         <div class="Titulo_Modificar_Cliente">
             <h1>Cliente</h1>

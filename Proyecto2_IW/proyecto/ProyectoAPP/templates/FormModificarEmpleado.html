@@ -1,0 +1,73 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+
+<div class="ModificarEmpleado">
+    <form action="{% url 'NuevoEmpleado' %}" method="post">
+        {% csrf_token %}
+        <div class="Titulo_Modificar_Empleado">
+            <h1>Empleado</h1>
+        </div>
+        <fieldset class="fieldset-mod-empleado">
+            <legend><strong>Datos del Empleado</strong></legend>
+            <div class="Registro_Personales">
+                <div>
+                    <label for="DNI_Empleado-f" class="DNI">DNI:</label>
+                    <div id="DNI_Empleado-f">
+                        <input type="text" name="DNI" id="DNI" required>
+                    </div>
+                </div>
+
+                <div class="Mod-Empresa-empleado-f">
+                    <label for="Empresa-empleado-f" class="Nombre">Nombre:</label>
+                    <div id="Empresa-empleado-f">
+                        <input type="text" name="nombre" id="Nombre" required>
+                    </div>
+                </div>
+
+                <div class="Mod-Empresa-empleado-f">
+                    <label for="Apellido-empleado-f" class="Apellido">Apellido:</label>
+                    <div id="Apellido-empleado-f">
+                        <input type="text" name="Apellido" id="Apellido" required>
+                    </div>
+                </div>
+
+                <div class="Mod-Empresa-empleado-f">
+                    <label for="Email_Empleado" class="Email">Email:</label>
+                    <div id="Email-empleado-f">
+                        <input type="email" name="Email" id="Email_Empleado" required>
+                    </div>
+                </div>
+
+                <div class="Mod-Empresa-empleado-f">
+                    <label for="Tel-empleado-f" class="Telefono">Telefono:</label>
+                    <div id="Tel-empleado-f">
+                        <input type="number" name="Telefono" id="Telefono" required>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="botones-fc">
+            <div class="btn-guardar-cc">
+                <button type="submit" class="Guardar-mfc" id="Guardar_Cambios_Cliente" name="btn-modificar-cliente"
+                        value="{{ cliente.id }}">Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </form>
+    <form action="{% url 'BorrarCliente' %}" method="post">
+        {% csrf_token %}
+        <div class="botones-fc">
+            <div class="btn-eliminar-c">
+                <button type="submit" class="Eliminar-mfc" id="Eliminar_Cliente" name="btn-delete-cliente"
+                        value="{{ cliente.id }}">Eliminar
+                </button>
+            </div>
+        </div>
+    </form>
+    <button onclick="history.back()" class="flotante"><img src="/static/imagenes/flecha.png"></button>
+</div>
+
+
+{% endblock %}

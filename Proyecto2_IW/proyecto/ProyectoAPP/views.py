@@ -472,7 +472,7 @@ def ActualizarClientes(request):
 
     for c in clientes:
         if c.id == int(id):
-          cliente_a_actualizar = c
+            cliente_a_actualizar = c
 
     cliente_a_actualizar.nombre = request.POST['nombre']
     cliente_a_actualizar.empresa = request.POST['Empresa']
@@ -484,3 +484,23 @@ def ActualizarClientes(request):
     cliente_a_actualizar.save()
 
     return redirect('ModificarClientes')
+
+
+# Funcion para cargar el empleado seleccionado
+def FormModificarEmpleado(request):
+    id = request.POST['btn-edit-empleados']
+
+    empleados = Empleados.objects.all()
+
+    empleado_slec = ""
+
+    for c in empleados:
+        if int(id) == c.id:
+            empleado_slec = c
+            break
+
+    context = {
+        'empleado': empleado_slec
+    }
+
+    return render(request, 'FormModificarEmpleado.html', context)
