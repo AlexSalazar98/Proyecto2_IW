@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="ModificarTarea">
-    <form action="{% url 'NuevaTarea' %}" method="post">
+    <form action="{% url 'ActualizarTarea' %}" method="post">
         {% csrf_token %}
         <div class="Titulo_Modificar_Tarea">
             <h1>Tarea</h1>
@@ -62,12 +62,12 @@
                 <div class="div-estado">
                     <label>Estado:</label>
                     <div class="est-sel">
-                        <select name="Estado" class="Estado" required>
+                        <select name="Estado_Tarea" class="Estado" required>
 
-                            <option name="estado" value="{{ est_actual.id }}"> {{ est_actual.estado }}</option>
+                            <option name="estado_tarea" value="{{ est_actual.id }}"> {{ est_actual.estado }}</option>
 
                             {% for est in estado_tarea %}
-                            <option name="estado" value="{{ est.id }}"> {{ est.estado }}</option>
+                            <option name="estado_tarea" value="{{ est.id }}"> {{ est.estado }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -91,17 +91,17 @@
         <div class="botones-fc">
             <div class="btn-guardar-cc">
                 <button type="submit" class="Guardar-mfc" name="btn-modificar-tarea"
-                        value="{{ empleado.id }}">Guardar Cambios
+                        value="{{ tarea.id }}">Guardar Cambios
                 </button>
             </div>
         </div>
     </form>
-    <form action="{% url 'BorrarEmpleado' %}" method="post">
+    <form action="{% url 'BorrarTarea' %}" method="post">
         {% csrf_token %}
         <div class="botones-fc">
             <div class="btn-eliminar-c">
                 <button type="submit" class="Eliminar-mfc" name="btn-delete-tarea"
-                        value="{{ empleado.id }}">Eliminar
+                        value="{{ tarea.id }}">Eliminar
                 </button>
             </div>
         </div>
