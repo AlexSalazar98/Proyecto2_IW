@@ -71,3 +71,88 @@
 
 
 {% endblock %}
+
+<!-- TAREAS -->
+
+<!-- Para cargar datos de los responsables en el pop-up de TAREAS -->
+{% block content_responsable %}
+<label>Responsable:</label>
+<select name="Responsable" class="Responsable" required>
+    {% for resp in responsable %}
+    <option name="responsable" value="{{ resp.id }}"> {{ resp.nombre }} {{ resp.apellido }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los prioridad en el pop-up de TAREAS -->
+{% block content_prioridad %}
+<label>Prioridad:</label>
+<select name="Prioridad" class="Prioridad" required>
+    {% for prio in prioridad %}
+    <option name="prioridad" value="{{ prio.nivel_prioridad }}"> {{ prio.nivel_prioridad }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los estado en el pop-up de TAREAS -->
+{% block content_estado %}
+<label>Estado:</label>
+<select name="Estado" class="Estado" required>
+    {% for est in estado_tarea %}
+    <option name="estado" value="{{ est.estado }}"> {{ est.estado }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+
+<!-- PROYECTO -->
+
+<!-- Para cargar datos de los cliente en el pop-up de PROYECTO -->
+{% block content_cliente %}
+<label>Cliente:</label>
+<select name="Cliente" class="Cliente" required>
+    {% for cli in clientes %}
+    <option name="cliente" value="{{ cli.id }}"> {{ cli.empresa }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los tareas en el pop-up de PROYECTO -->
+{% block content_tareas %}
+<label>Tareas:</label>
+<select name="Tareas" class="Tareas" required multiple="" size="3">
+    {% for tar in tareas %}
+    <option value="{{ tar.id }}"> {{ tar.nombre }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los empleados en el pop-up de PROYECTO -->
+{% block content_empleados %}
+<label class="Clase_Empleado">Empleados:</label>
+<select name="Empleados" class="Empleados" multiple size="3" required>
+    {% for resp in responsable %}
+    <option value="{{ resp.id }}"> {{ resp.nombre }} {{ resp.apellido }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los departamentos en el pop-up de PROYECTO -->
+{% block content_departamento %}
+<label>Departamento:</label>
+<select name="Departamento" class="Departamento" required>
+    {% for dep in departamentos %}
+    <option name="departamento" value="{{ dep.nombre }}"> {{ dep.nombre }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los estado en el pop-up de PROYECTO -->
+{% block content_estados %}
+<label>Estado:</label>
+<select name="Estado" class="Estado" required>
+    {% for est in estado_proyecto %}
+    <option name="estado" value="{{ est.estado }}"> {{ est.estado }}</option>
+    {% endfor %}
+</select>
+{% endblock %}

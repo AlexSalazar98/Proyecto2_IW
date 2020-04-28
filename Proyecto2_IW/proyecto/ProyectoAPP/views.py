@@ -151,8 +151,7 @@ def DetallesProyecto(request):
     for a in pro_select.empleados.all():
         lista_empleados.append(a)
 
-
-# Recogemos los objetos necesaios para cargar la info necesaria
+    # Recogemos los objetos necesaios para cargar la info necesaria
     clientes = Clientes.objects.order_by('empresa')
 
     responsable = Empleados.objects.order_by('nombre')
@@ -166,7 +165,6 @@ def DetallesProyecto(request):
     departamento = Departamento.objects.order_by('nombre')
 
     estado_tarea = Estado.objects.order_by('estado')
-
 
     # Creamos el context con lo que vamos a pasar al HTML de mostrar
     context = {
@@ -374,7 +372,7 @@ def ModificarClientes(request):
 def ModificarEmpleados(request):
     empleados = Empleados.objects.order_by('nombre')
 
-     # Recogemos los objetos necesaios para cargar la info necesaria
+    # Recogemos los objetos necesaios para cargar la info necesaria
     clientes = Clientes.objects.order_by('empresa')
 
     responsable = Empleados.objects.order_by('nombre')
@@ -413,7 +411,7 @@ def ModificarEmpleados(request):
 def ModificarProyectos(request):
     proyectos = Proyectos.objects.order_by('nombre')
 
-     # Recogemos los objetos necesaios para cargar la info necesaria
+    # Recogemos los objetos necesaios para cargar la info necesaria
     clientes = Clientes.objects.order_by('empresa')
 
     responsable = Empleados.objects.order_by('nombre')
@@ -452,7 +450,7 @@ def ModificarProyectos(request):
 def ModificarTareas(request):
     tareas = Tareas.objects.order_by('nombre')
 
-     # Recogemos los objetos necesaios para cargar la info necesaria
+    # Recogemos los objetos necesaios para cargar la info necesaria
     clientes = Clientes.objects.order_by('empresa')
 
     responsable = Empleados.objects.order_by('nombre')
@@ -555,7 +553,7 @@ def FormModificarClientes(request):
 
     cliente_slec = ""
 
-# Recogemos los objetos necesaios para cargar la info necesaria
+    # Recogemos los objetos necesaios para cargar la info necesaria
     clientes = Clientes.objects.order_by('empresa')
 
     responsable = Empleados.objects.order_by('nombre')
@@ -569,7 +567,6 @@ def FormModificarClientes(request):
     departamento = Departamento.objects.order_by('nombre')
 
     estado_tarea = Estado.objects.order_by('estado')
-
 
     for c in clientes:
         if int(id) == c.id:
@@ -662,9 +659,77 @@ def ActualizarEmpleado(request):
     empleado_a_actualizar.dni = request.POST['dni']
     empleado_a_actualizar.email = request.POST['email']
     empleado_a_actualizar.nombre = request.POST['nombre']
-    empleado_a_actualizar.apellido= request.POST['apellido']
+    empleado_a_actualizar.apellido = request.POST['apellido']
     empleado_a_actualizar.telefono = request.POST['telefono']
 
     empleado_a_actualizar.save()
 
     return redirect('ModificarEmpleados')
+
+
+# Funcion para cargar la tarea seleccionada
+def FormModificarTarea(request):
+    id = request.POST['btn-edit-tareas']
+
+    tarea = Tareas.objects.all()
+    empleados = Empleados.objects.order_by('nombre')
+    nivel_prioridad = Nivel_Prioridad.objects.all()
+    estado_tarea = Estado.objects.all()
+
+    tarea_slec = ""
+    resp_nombre = ""
+    resp_actual = ""
+    prio = ""
+    prio_actual = ""
+    est = ""
+    est_actual = ""
+
+
+    resto_resp = []
+    resto_prio = []
+    resto_est =  []
+
+    for t in tarea:
+        if int(id) == t.id:
+            tarea_slec = t
+            resp_nombre = t.responsable
+            prio = t.nivel_prioridad
+            est = t.estado_tarea
+            break
+
+    for e in empleados:
+        if str(resp_nombre) == str(e.nombre):
+            resp_actual = e
+        else:
+            resto_resp.append(e)
+
+    for n in nivel_prioridad:
+        if str(prio) == str(n.nivel_prioridad):
+            prio_actual = n
+        else:
+            resto_prio.append(n)
+
+    for es in estado_tarea:
+        if str(est) == es.estado:
+            est_actual = es
+        else:
+            resto_est.append(es)
+
+    context = {
+        'tarea': tarea_slec,
+        'resp_id': resp_actual.id,
+        'resp_nom': resp_actual.nombre,
+        'resp_ape': resp_actual.apellido,
+        'responsable': resto_resp,
+        'prio_actual': prio_actual,
+        'prioridad': resto_prio,
+        'est_actual': est_actual,
+        'estado_tarea': resto_est,
+
+        'estados_tarea': estado_tarea,
+        'prioridades': nivel_prioridad,
+        'responsables': empleados,
+
+    }
+
+    return render(request, 'FormModificarTarea.html', context)

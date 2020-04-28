@@ -1,0 +1,197 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<div class="ModificarTarea">
+    <form action="{% url 'NuevaTarea' %}" method="post">
+        {% csrf_token %}
+        <div class="Titulo_Modificar_Tarea">
+            <h1>Tarea</h1>
+        </div>
+        <fieldset class="fieldset-mod-tarea">
+            <legend><strong>Datos de la Tarea</strong></legend>
+            <div class="Registro_Personales">
+                <div>
+                    <label for="Nombre_Tarea" class="Nombre">Tarea:</label>
+                    <div id="nombre-tarea-f">
+                        <input type="text" name="Nombre_Tarea" id="Nombre_Tarea" value="{{ tarea.nombre }}" required>
+                    </div>
+                </div>
+
+                <div class="div-fit">
+                    <label for="Fecha_Inicio_Tarea" class="Fecha_Inicio">Fecha Inicio:</label>
+                    <div id="fi-tarea-f">
+                        <input type="date" name="Fecha_Inicio" id="Fecha_Inicio_Tarea" value="{{ tarea.fecha_inicio|date:'Y-m-d' }}" required>
+                    </div>
+                </div>
+                <div class="div-fit">
+                    <label for="Fecha_Fin_Tarea" class="Fecha_Fin">Fecha Fin:</label>
+                    <div id="ff-tarea-f">
+                        <input type="date" name="Fecha_Fin" id="Fecha_Fin_Tarea" value="{{ tarea.fecha_fin|date:'Y-m-d' }}" required>
+                    </div>
+                </div>
+                <div class="div-resp">
+                    <label>Responsable:</label>
+                    <div class="resp-sel">
+                        <select name="Responsable" class="Responsable" required>
+
+                            <option name="responsable" value="{{ resp_id }}" selected> {{ resp_nom }} {{ resp_ape }}</option>
+
+                            {% for resp in responsable %}
+                            <option name="responsable" value="{{ resp.id }}"> {{ resp.nombre }} {{ resp.apellido }}</option>
+                            {% endfor %}
+
+                        </select>
+                    </div>
+                </div>
+
+                <div class="div_prio">
+                    <label>Prioridad:</label>
+                    <div class="prio-sel">
+                        <select name="Prioridad" class="Prioridad" required>
+
+                            <option name="prioridad" value="{{ prio_actual.id }}"> {{ prio_actual.nivel_prioridad }}</option>
+
+                            {% for prio in prioridad %}
+                            <option name="prioridad" value="{{ prio.id }}"> {{ prio.nivel_prioridad }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="div-estado">
+                    <label>Estado:</label>
+                    <div class="est-sel">
+                        <select name="Estado" class="Estado" required>
+
+                            <option name="estado" value="{{ est_actual.id }}"> {{ est_actual.estado }}</option>
+
+                            {% for est in estado_tarea %}
+                            <option name="estado" value="{{ est.id }}"> {{ est.estado }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="Descripcion_Tarea-form" class="Descripcion_Tarea">Descripcion:</label>
+                    <div >
+                        <input type="text" name="Descripcion_Tarea" id="Descripcion_Tarea-form" value="{{ tarea.descripcion }}" required>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="Notas_Empleado-form" class="Notas_Empleado">Notas Empleado:</label>
+                    <div>
+                        <input type="text" name="Notas_Empleado" id="Notas_Empleado-form" value="{{ tarea.notas_adicionales_escritas_empleado }}" required>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="botones-fc">
+            <div class="btn-guardar-cc">
+                <button type="submit" class="Guardar-mfc" name="btn-modificar-tarea"
+                        value="{{ empleado.id }}">Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </form>
+    <form action="{% url 'BorrarEmpleado' %}" method="post">
+        {% csrf_token %}
+        <div class="botones-fc">
+            <div class="btn-eliminar-c">
+                <button type="submit" class="Eliminar-mfc" name="btn-delete-tarea"
+                        value="{{ empleado.id }}">Eliminar
+                </button>
+            </div>
+        </div>
+    </form>
+    <button onclick="history.back()" class="flotante"><img src="/static/imagenes/flecha.png"></button>
+</div>
+
+{% endblock %}
+
+<!-- TAREAS -->
+
+<!-- Para cargar datos de los responsables en el pop-up de TAREAS -->
+{% block content_responsable %}
+<label>Responsable:</label>
+<select name="Responsable" class="Responsable" required>
+    {% for resp in responsables %}
+    <option name="responsable" value="{{ resp.id }}"> {{ resp.nombre }} {{ resp.apellido }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los prioridad en el pop-up de TAREAS -->
+{% block content_prioridad %}
+<label>Prioridad:</label>
+<select name="Prioridad" class="Prioridad" required>
+    {% for prio in prioridades %}
+    <option name="prioridad" value="{{ prio.nivel_prioridad }}"> {{ prio.nivel_prioridad }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los estado en el pop-up de TAREAS -->
+{% block content_estado %}
+<label>Estado:</label>
+<select name="Estado" class="Estado" required>
+    {% for est in estados_tarea %}
+    <option name="estado" value="{{ est.estado }}"> {{ est.estado }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+
+<!-- PROYECTO -->
+
+<!-- Para cargar datos de los cliente en el pop-up de PROYECTO -->
+{% block content_cliente %}
+<label>Cliente:</label>
+<select name="Cliente" class="Cliente" required>
+    {% for cli in clientes %}
+    <option name="cliente" value="{{ cli.id }}"> {{ cli.empresa }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los tareas en el pop-up de PROYECTO -->
+{% block content_tareas %}
+<label>Tareas:</label>
+<select name="Tareas" class="Tareas" required multiple="" size="3">
+    {% for tar in tareas %}
+    <option value="{{ tar.id }}"> {{ tar.nombre }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los empleados en el pop-up de PROYECTO -->
+{% block content_empleados %}
+<label class="Clase_Empleado">Empleados:</label>
+<select name="Empleados" class="Empleados" multiple size="3" required>
+    {% for resp in responsable %}
+    <option value="{{ resp.id }}"> {{ resp.nombre }} {{ resp.apellido }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los departamentos en el pop-up de PROYECTO -->
+{% block content_departamento %}
+<label>Departamento:</label>
+<select name="Departamento" class="Departamento" required>
+    {% for dep in departamentos %}
+    <option name="departamento" value="{{ dep.nombre }}"> {{ dep.nombre }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los estado en el pop-up de PROYECTO -->
+{% block content_estados %}
+<label>Estado:</label>
+<select name="Estado" class="Estado" required>
+    {% for est in estado_proyecto %}
+    <option name="estado" value="{{ est.estado }}"> {{ est.estado }}</option>
+    {% endfor %}
+</select>
+{% endblock %}

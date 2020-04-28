@@ -1227,3 +1227,110 @@ input[type="number"]
     padding-bottom: 12px;
     border-radius: 20px;
 }
+
+
+/* --------- FORMULARIO MODIFICAR TAREA --------- */
+
+.ModificarTarea{
+    margin: 0 auto;
+    font-family:arial;
+    width:450px;
+    padding:15px;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    /* background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.fieldset-mod-tarea{
+    border-radius: 20px;
+}
+
+.ModificarTarea label{
+    margin-left: 30px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+.Titulo_Modificar_Tarea h1{
+    color: black;
+    text-align:center;
+    font-family: 'Vibur', cursive;
+    font-size: 40px;
+}
+
+#nombre-tarea-f{
+    float: right;
+    width: 61%;
+}
+
+#fi-tarea-f{
+    float: right;
+    width: 34%;
+    margin-top: 10px;
+}
+
+#ff-tarea-f{
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+}
+
+.div-fit{
+    display: inline-block;
+}
+
+.div-resp{
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.resp-sel{
+    float: right;
+    width: 24.9%;
+}
+
+.div_prio{
+    margin-top: 10px;
+}
+
+.prio-sel{
+    float: right;
+    width: 58%;
+}
+
+.div-estado{
+    margin-top: 10px;
+}
+
+.est-sel{
+    float: right;
+    width: 58%;
+}
+
+#Descripcion_Tarea-form{
+    display: list-item;
+    width: 86%;
+    height: 60px;
+    resize: none;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+
+#Notas_Empleado-form{
+    display: list-item;
+    width: 86%;
+    height: 60px;
+    resize: none;
+    margin: 0 auto;
+    margin-top: 10px;
+    overflow-y: scroll;
+}
+
+.Responsable{
+    width: 114px;
+}
