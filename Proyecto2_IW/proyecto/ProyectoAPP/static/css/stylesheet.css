@@ -212,7 +212,8 @@
 	table{
 		width: 97.7%;
 		margin-left: 15px;
-
+		border-radius: 5px;
+		border-color: rebeccapurple;
 	}
 
 	thead{
@@ -1150,6 +1151,8 @@ input[type="number"]
     width: 105px;
     height: 40px;
     border-radius: 5px;
+    background: linear-gradient(#955AE3, slateblue);
+    border: none;
 }
 
 .flotante img{

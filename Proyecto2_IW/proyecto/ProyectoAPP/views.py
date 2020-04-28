@@ -533,7 +533,7 @@ def BorrarProyectos(request):
 # Funcion para eliminar tareas
 def BorrarTareas(request):
     # Recuperamos el id del tareas a borrar desde el HTML
-    id = request.POST["btn-delete-tareas"]
+    id = request.POST["btn-delete-tarea"]
 
     # Obtenemos el objeto a borrar de BBDD filtrado por el id obtenido
     tareas_a_borrar = Tareas.objects.filter(id=id)
@@ -733,3 +733,98 @@ def FormModificarTarea(request):
     }
 
     return render(request, 'FormModificarTarea.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Funcion para guardar datos modificados de tareas
+def ActualizarTarea(request):
+    id = request.POST['btn-modificar-tarea']
+
+    tareas = Tareas.objects.all()
+
+    tarea_a_actualizar = ""
+
+    for t in tareas:
+        if t.id == int(id):
+            tarea_a_actualizar = t
+
+    tarea_a_actualizar.nombre = request.POST['Nombre_Tarea']
+    tarea_a_actualizar.descripcion = request.POST['Descripcion_Tarea']
+    tarea_a_actualizar.fecha_inicio = request.POST['Fecha_Inicio']
+    tarea_a_actualizar.fecha_fin = request.POST['Fecha_Fin']
+    tarea_a_actualizar.responsable = Empleados.objects.get(id=request.POST["Responsable"])
+    tarea_a_actualizar.nivel_prioridad = Nivel_Prioridad.objects.get(id=request.POST["Prioridad"])
+    tarea_a_actualizar.estado_tarea = Estado.objects.get(id=request.POST["Estado_Tarea"])
+    tarea_a_actualizar.notas_adicionales_escritas_empleado = request.POST['Notas_Empleado']
+
+    tarea_a_actualizar.save()
+
+    return redirect('ModificarTareas')
