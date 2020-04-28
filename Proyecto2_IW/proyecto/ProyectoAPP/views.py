@@ -734,28 +734,86 @@ def FormModificarTarea(request):
     return render(request, 'FormModificarTarea.html', context)
 
 
-<<<<<<< HEAD
 # Funcion para cargar el proyecto seleccionado
 def FormModificarProyecto(request):
     id = request.POST['btn-edit-proyectos']
 
+    proyectos = Proyectos.objects.all()
     tarea = Tareas.objects.all()
     empleados = Empleados.objects.order_by('nombre')
     nivel_prioridad = Nivel_Prioridad.objects.all()
-    estado_tarea = Estado_Proyecto.objects.all()
+    estado = Estado_Proyecto.objects.all()
     departamentos = Departamento.objects.all()
     cliente = Clientes.objects.all()
-=======
 
->>>>>>> a724c34a71c4cb92780925aca09d28dd94967982
+    pro_sel = ""
+    cli_actual = ""
+    dep_actual = ""
+    est_actual = ""
+    tar_actuales = []
+    emp_actuales = []
 
+    resto_cli = []
+    resto_dep = []
+    resto_est = []
+    resto_tar = []
+    resto_empl = []
 
+    for p in proyectos:
+        if int(p.id) == int(id):
+            pro_sel = p
+            cli_actual = p.cliente
+            dep_actual = p.departamento
+            est_actual = p.estado
+            tar_actuales = p.tareas_a_realizar.all()
+            emp_actuales = p.empleados.all()
 
+    for c in cliente:
+        if str(cli_actual) == c.empresa:
+            cli_actual = c
+        else:
+            resto_cli.append(c)
 
-<<<<<<< HEAD
+    for d in departamentos:
+        if str(dep_actual) == d.nombre:
+            dep_actual = d
+        else:
+            resto_dep.append(d)
+
+    for e in estado:
+        if str(est_actual) == e.estado:
+            est_actual = e
+        else:
+            resto_est.append(e)
+
+    for t in tarea:
+        resto_tar.append(t)
+
+    for t_a in tar_actuales:
+        resto_tar.remove(t_a)
+
+    for em in empleados:
+        resto_empl.append(em)
+
+    for emple in emp_actuales:
+        resto_empl.remove(emple)
+
     context = {
+
+        'pro': pro_sel,
+        'cli_actual': cli_actual,
+        'resto_cli': resto_cli,
+        'dep_actual': dep_actual,
+        'resto_dep': resto_dep,
+        'est_actual': est_actual,
+        'resto_est': resto_est,
+        'tar_actuales': tar_actuales,
+        'resto_tar': resto_tar,
+        'emp_actuales': emp_actuales,
+        'resto_empl': resto_empl,
+
         'tareas': tarea,
-        'estado_proyecto': estado_tarea,
+        'estado_proyecto': estado,
         'prioridades': nivel_prioridad,
         'responsable': empleados,
         'departamentos': departamentos,
@@ -764,69 +822,6 @@ def FormModificarProyecto(request):
     }
 
     return render(request, 'FormModificarProyecto.html', context)
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # Funcion para guardar datos modificados de tareas
@@ -853,4 +848,3 @@ def ActualizarTarea(request):
     tarea_a_actualizar.save()
 
     return redirect('ModificarTareas')
->>>>>>> a724c34a71c4cb92780925aca09d28dd94967982
