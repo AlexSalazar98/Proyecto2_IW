@@ -1328,9 +1328,105 @@ input[type="number"]
     resize: none;
     margin: 0 auto;
     margin-top: 10px;
-    overflow-y: scroll;
 }
 
 .Responsable{
     width: 114px;
+}
+
+
+/* --------- FORMULARIO MODIFICAR PROYECTO --------- */
+
+.ModificarProyecto{
+    margin: 0 auto;
+    font-family:arial;
+    width:450px;
+    padding:15px;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    /* background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.ModificarProyecto label{
+    margin-left: 30px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+.Titulo_Modificar_Proyecto h1{
+    color: black;
+    text-align:center;
+    font-family: 'Vibur', cursive;
+    font-size: 40px;
+}
+
+#Descripcion_Proyecto{
+    display: list-item;
+    width: 86%;
+    height: 60px;
+    resize: none;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+.conj-mp{
+    display: inline-block;
+    width: 100%;
+}
+
+.izq-mp{
+    float: left;
+    width: 50%;
+}
+
+.der-mp{
+    float: right;
+    width: 50%;
+}
+
+.sle{
+    margin-left: 30px;
+    margin-top: 8px;
+}
+
+.sle select{
+    width: 84%;
+    text-align: center;
+}
+
+.gen-p{
+    margin-top: 10px;
+    width: 100%;
+}
+
+.sel-mp-nom{
+    float: right;
+    width: 56%;
+}
+
+.sel-mp-fi{
+    float: right;
+    width: 56%;
+    margin-top: 8px;
+}
+
+.sel-mp-ff{
+    float: right;
+    width: 56%;
+    margin-top: 8px;
+}
+
+.sel-mp-p{
+    float: right;
+    width: 54%;
+    margin-top: 8px;
+}
+
+.sel-mp{
+    float: right;
+    width: 53%;
 }

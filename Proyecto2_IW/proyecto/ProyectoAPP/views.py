@@ -684,10 +684,9 @@ def FormModificarTarea(request):
     est = ""
     est_actual = ""
 
-
     resto_resp = []
     resto_prio = []
-    resto_est =  []
+    resto_est = []
 
     for t in tarea:
         if int(id) == t.id:
@@ -733,3 +732,30 @@ def FormModificarTarea(request):
     }
 
     return render(request, 'FormModificarTarea.html', context)
+
+
+# Funcion para cargar el proyecto seleccionado
+def FormModificarProyecto(request):
+    id = request.POST['btn-edit-proyectos']
+
+    tarea = Tareas.objects.all()
+    empleados = Empleados.objects.order_by('nombre')
+    nivel_prioridad = Nivel_Prioridad.objects.all()
+    estado_tarea = Estado_Proyecto.objects.all()
+    departamentos = Departamento.objects.all()
+    cliente = Clientes.objects.all()
+
+
+
+
+    context = {
+        'tareas': tarea,
+        'estado_proyecto': estado_tarea,
+        'prioridades': nivel_prioridad,
+        'responsable': empleados,
+        'departamentos': departamentos,
+        'clientes': cliente,
+
+    }
+
+    return render(request, 'FormModificarProyecto.html', context)

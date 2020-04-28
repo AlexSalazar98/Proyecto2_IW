@@ -1,0 +1,215 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+
+<div class="ModificarProyecto">
+    <form action="{% url 'NuevoProyecto' %}" method="post">
+        {% csrf_token %}
+        <div class="Titulo_Modificar_Proyecto">
+            <h1>Proyecto</h1>
+        </div>
+        <fieldset class="fieldset_Alta">
+            <legend><strong>Datos del Proyecto</strong></legend>
+            <div class="Registro_Personales">
+
+                <div class="gen-p">
+                    <label for="Nombre_Proyecto" class="Nombre_Proyecto">Nombre Proyecto:</label>
+                    <div class="sel-mp-nom">
+                        <input type="text" name="Nombre_Proyecto" id="Nombre_Proyecto" required>
+                    </div>
+                </div>
+
+                <div class="gen-p">
+                    <label for="Fecha_Inicio_Proyecto" class="Fecha_Inicio">Fecha Inicio:</label>
+                    <div class="sel-mp-fi">
+                        <input type="date" name="Fecha_Inicio" id="Fecha_Inicio_Proyecto" required>
+                    </div>
+                </div>
+
+                <div class="gen-p">
+                    <label for="Fecha_Fin_Proyecto" class="Fecha_Fin">Fecha Fin:</label>
+                    <div class="sel-mp-ff">
+                        <input type="date" name="Fecha_Fin" id="Fecha_Fin_Proyecto" required>
+                    </div>
+                </div>
+
+                <div class="gen-p">
+                    <label for="Presupuesto" class="Presupuesto">Presupuesto:</label>
+                    <div class="sel-mp-p">
+                        <input type="number" name="Presupuesto" id="Presupuesto" required>
+                    </div>
+                </div>
+
+                <div class="gen-p">
+                    <label>Cliente:</label>
+                    <div class="sel-mp">
+                        <select name="Cliente" class="Cliente" required>
+                            {% for cli in clientes %}
+                            <option name="cliente" value="{{ cli.id }}"> {{ cli.empresa }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="gen-p">
+                    <label>Departamento:</label>
+                    <div class="sel-mp">
+                        <select name="Departamento" class="Departamento" required>
+                            {% for dep in departamentos %}
+                            <option name="departamento" value="{{ dep.nombre }}"> {{ dep.nombre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="gen-p">
+                    <label>Estado:</label>
+                    <div class="sel-mp">
+                        <select name="Estado" required>
+                            {% for est in estado_proyecto %}
+                            <option name="estado" value="{{ est.estado }}"> {{ est.estado }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <div class="conj-mp">
+                    <div class="izq-mp">
+                        <label class="Clase_Empleado">Tareas:</label>
+                        <div class="sle">
+                            <select name="Tareas" class="Tareas" required multiple="" size="3">
+                                {% for tar in tareas %}
+                                <option value="{{ tar.id }}"> {{ tar.nombre }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="der-mp">
+                        <label class="Clase_Empleado">Empleados:</label>
+                        <div class="sle">
+                            <select name="Empleados" multiple size="3" required>
+                                {% for resp in responsable %}
+                                <option value="{{ resp.id }}"> {{ resp.nombre }} {{ resp.apellido }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="Descripcion_Proyecto" class="Descripcion_Proyecto">Descripcion:</label>
+                    <div>
+                        <input type="text" name="Descripcion_Proyecto" id="Descripcion_Proyecto" required> </input>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+        <div class="botones-fc">
+            <div class="btn-guardar-cc">
+                <button type="submit" class="Guardar-mfc" name="btn-modificar-tarea"
+                        value="{{ empleado.id }}">Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </form>
+    <form action="{% url 'BorrarEmpleado' %}" method="post">
+        {% csrf_token %}
+        <div class="botones-fc">
+            <div class="btn-eliminar-c">
+                <button type="submit" class="Eliminar-mfc" name="btn-delete-tarea"
+                        value="{{ empleado.id }}">Eliminar
+                </button>
+            </div>
+        </div>
+    </form>
+    <button onclick="history.back()" class="flotante"><img src="/static/imagenes/flecha.png"></button>
+</div>
+
+{% endblock %}
+
+<!-- TAREAS -->
+
+<!-- Para cargar datos de los responsables en el pop-up de TAREAS -->
+{% block content_responsable %}
+<label>Responsable:</label>
+<select name="Responsable" class="Responsable" required>
+    {% for resp in responsables %}
+    <option name="responsable" value="{{ resp.id }}"> {{ resp.nombre }} {{ resp.apellido }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los prioridad en el pop-up de TAREAS -->
+{% block content_prioridad %}
+<label>Prioridad:</label>
+<select name="Prioridad" class="Prioridad" required>
+    {% for prio in prioridades %}
+    <option name="prioridad" value="{{ prio.nivel_prioridad }}"> {{ prio.nivel_prioridad }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los estado en el pop-up de TAREAS -->
+{% block content_estado %}
+<label>Estado:</label>
+<select name="Estado" class="Estado" required>
+    {% for est in estados_tarea %}
+    <option name="estado" value="{{ est.estado }}"> {{ est.estado }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+
+<!-- PROYECTO -->
+
+<!-- Para cargar datos de los cliente en el pop-up de PROYECTO -->
+{% block content_cliente %}
+<label>Cliente:</label>
+<select name="Cliente" class="Cliente" required>
+    {% for cli in clientes %}
+    <option name="cliente" value="{{ cli.id }}"> {{ cli.empresa }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los tareas en el pop-up de PROYECTO -->
+{% block content_tareas %}
+<label>Tareas:</label>
+<select name="Tareas" class="Tareas" required multiple="" size="3">
+    {% for tar in tareas %}
+    <option value="{{ tar.id }}"> {{ tar.nombre }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los empleados en el pop-up de PROYECTO -->
+{% block content_empleados %}
+<label class="Clase_Empleado">Empleados:</label>
+<select name="Empleados" class="Empleados" multiple size="3" required>
+    {% for resp in responsable %}
+    <option value="{{ resp.id }}"> {{ resp.nombre }} {{ resp.apellido }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los departamentos en el pop-up de PROYECTO -->
+{% block content_departamento %}
+<label>Departamento:</label>
+<select name="Departamento" class="Departamento" required>
+    {% for dep in departamentos %}
+    <option name="departamento" value="{{ dep.nombre }}"> {{ dep.nombre }}</option>
+    {% endfor %}
+</select>
+{% endblock %}
+
+<!-- Para cargar datos de los estado en el pop-up de PROYECTO -->
+{% block content_estados %}
+<label>Estado:</label>
+<select name="Estado" class="Estado" required>
+    {% for est in estado_proyecto %}
+    <option name="estado" value="{{ est.estado }}"> {{ est.estado }}</option>
+    {% endfor %}
+</select>
+{% endblock %}

@@ -34,6 +34,7 @@ urlpatterns = [
     path('FormModificarClientes/', views.FormModificarClientes, name="FormModificarClientes"),
     path('FormModificarEmpleado/', views.FormModificarEmpleado, name="FormModificarEmpleado"),
     path('FormModificarTarea/', views.FormModificarTarea, name="FormModificarTarea"),
+    path('FormModificarProyecto/', views.FormModificarProyecto, name="FormModificarProyecto"),
 
     path('ActualizarCliente/', views.ActualizarClientes, name="ActualizarCliente"),
     path('ActualizarEmpleado/', views.ActualizarEmpleado, name="ActualizarEmpleado")
