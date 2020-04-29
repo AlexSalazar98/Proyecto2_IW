@@ -926,9 +926,9 @@ def ActualizarProyecto(request):
     actualizar_proyecto.save()
     return redirect('ModificarProyectos')
 
+
 # Funcion para Buscador
 def Buscador(request):
-
     # Recogemos los objetos necesaios para cargar la info necesaria en la pagina principal
     clientes = Clientes.objects.order_by('empresa')
     responsable = Empleados.objects.order_by('nombre')
@@ -938,8 +938,7 @@ def Buscador(request):
     departamento = Departamento.objects.order_by('nombre')
     estado_tarea = Estado.objects.order_by('estado')
 
-
-    nombre_proyecto = request.POST["Nombre_proyecto"]
+    nombre_proyecto = request.POST["Nombre_proyecto"].lower()
     fecha_inicio = request.POST["Fecha_inicio"]
     fecha_fin = request.POST["Fecha_fin"]
     estado_proyecto = request.POST["Estado"]
@@ -956,7 +955,7 @@ def Buscador(request):
         return redirect('PaginaPrincipal')
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto == ""):
         for p in todos_proyectos:
-            if str(p.nombre) == nombre_proyecto:
+            if str(p.nombre).lower() == nombre_proyecto:
                 proyectos.append(p)
         context = {
             'proyectos': proyectos,
@@ -1020,7 +1019,7 @@ def Buscador(request):
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto == ""):
         for p in todos_proyectos:
-            if str(p.nombre) == nombre_proyecto:
+            if str(p.nombre).lower() == nombre_proyecto:
                 proyectos.append(p)
 
         for p1 in proyectos:
@@ -1041,7 +1040,7 @@ def Buscador(request):
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto == ""):
         for p in todos_proyectos:
-            if str(p.nombre) == nombre_proyecto:
+            if str(p.nombre).lower() == nombre_proyecto:
                 proyectos.append(p)
 
         for p1 in proyectos:
@@ -1062,7 +1061,7 @@ def Buscador(request):
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto != ""):
         for p in todos_proyectos:
-            if str(p.nombre) == nombre_proyecto:
+            if str(p.nombre).lower() == nombre_proyecto:
                 proyectos.append(p)
 
         for p1 in proyectos:
@@ -1144,30 +1143,9 @@ def Buscador(request):
             'departamento': departamento,
         }
 
-    elif (nombre_proyecto == "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto != ""):
-        for p in todos_proyectos:
-            if str(p.fecha_fin) == fecha_fin:
-                proyectos.append(p)
-
-        for p1 in proyectos:
-            if str(p1.estado) == estado_proyecto:
-                proyectos1.append(p1)
-
-        context = {
-            'proyectos': proyectos1,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
-
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto == ""):
         for p in todos_proyectos:
-            if str(p.nombre) == nombre_proyecto:
+            if str(p.nombre).lower() == nombre_proyecto:
                 proyectos.append(p)
 
         for p1 in proyectos:
@@ -1192,7 +1170,7 @@ def Buscador(request):
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto != ""):
         for p in todos_proyectos:
-            if str(p.nombre) == nombre_proyecto:
+            if str(p.nombre).lower() == nombre_proyecto:
                 proyectos.append(p)
 
         for p1 in proyectos:
@@ -1217,7 +1195,7 @@ def Buscador(request):
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto != ""):
         for p in todos_proyectos:
-            if str(p.nombre) == nombre_proyecto:
+            if str(p.nombre).lower() == nombre_proyecto:
                 proyectos.append(p)
 
         for p1 in proyectos:
@@ -1267,7 +1245,7 @@ def Buscador(request):
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto != ""):
         for p in todos_proyectos:
-            if str(p.nombre) == nombre_proyecto:
+            if str(p.nombre).lower() == nombre_proyecto:
                 proyectos.append(p)
 
         for p1 in proyectos:
