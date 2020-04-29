@@ -4,7 +4,7 @@
 
 
 <div class="ModificarProyecto">
-    <form action="{% url 'NuevoProyecto' %}" method="post">
+    <form action="{% url 'ActualizarProyecto' %}" method="post">
         {% csrf_token %}
         <div class="Titulo_Modificar_Proyecto">
             <h1>Proyecto</h1>
@@ -48,7 +48,7 @@
                     <label>Cliente:</label>
                     <div class="sel-mp">
                         <select name="Cliente" class="Cliente" required>
-                            <option name="cliente" value="{{ cli.id }}" selected> {{ cli_actual.empresa }}</option>
+                            <option name="cliente" value="{{ cli_actual_id }}" selected> {{ cli_actual }}</option>
                             {% for cli in resto_cli %}
                             <option name="cliente" value="{{ cli.id }}"> {{ cli.empresa }}</option>
                             {% endfor %}
@@ -60,7 +60,7 @@
                     <label>Departamento:</label>
                     <div class="sel-mp">
                         <select name="Departamento" class="Departamento" required>
-                            <option name="departamento" value="{{ dep.nombre }}" selected> {{ dep_actual.nombre }}
+                            <option name="departamento" value="{{ dep_actual_id }}" selected> {{ dep_actual }}
                             </option>
                             {% for dep in resto_dep %}
                             <option name="departamento" value="{{ dep.nombre }}"> {{ dep.nombre }}</option>
@@ -73,7 +73,7 @@
                     <label>Estado:</label>
                     <div class="sel-mp">
                         <select name="Estado" required>
-                            <option name="estado" value="{{ est.estado }}" selected> {{ est_actual.estado }}</option>
+                            <option name="estado" value="{{ est_actual_id }}" selected> {{ est_actual }}</option>
                             {% for est in resto_est %}
                             <option name="estado" value="{{ est.estado }}"> {{ est.estado }}</option>
                             {% endfor %}
@@ -85,7 +85,7 @@
                     <div class="izq-mp">
                         <label class="Clase_Empleado">Tareas:</label>
                         <div class="sle">
-                            <select name="Tareas" class="Tareas" required multiple="" size="3">
+                            <select name="Tareas" class="Tareas" multiple="" size="3">
 
                                 {% for t_a in tar_actuales %}
                                 <option value="{{ t_a.id }}" selected> {{ t_a.nombre }}</option>
@@ -101,7 +101,7 @@
                     <div class="der-mp">
                         <label class="Clase_Empleado">Empleados:</label>
                         <div class="sle">
-                            <select name="Empleados" multiple size="3" required>
+                            <select name="Empleados" multiple size="3">
 
                                 {% for resp_a in emp_actuales %}
                                 <option value="{{ resp_a.id }}" selected> {{ resp_a.nombre }} {{ resp_a.apellido }}</option>
@@ -126,18 +126,18 @@
         </fieldset>
         <div class="botones-fc">
             <div class="btn-guardar-cc">
-                <button type="submit" class="Guardar-mfc" name="btn-modificar-tarea"
-                        value="{{ empleado.id }}">Guardar Cambios
+                <button type="submit" class="Guardar-mfc" name="btn-modificar-proyecto"
+                        value="{{ pro.id }}">Guardar Cambios
                 </button>
             </div>
         </div>
     </form>
-    <form action="{% url 'BorrarEmpleado' %}" method="post">
+    <form action="{% url 'BorrarProyecto' %}" method="post">
         {% csrf_token %}
         <div class="botones-fc">
             <div class="btn-eliminar-c">
-                <button type="submit" class="Eliminar-mfc" name="btn-delete-tarea"
-                        value="{{ empleado.id }}">Eliminar
+                <button type="submit" class="Eliminar-mfc" name="btn-delete-proyectos"
+                        value="{{ pro.id }}">Eliminar
                 </button>
             </div>
         </div>

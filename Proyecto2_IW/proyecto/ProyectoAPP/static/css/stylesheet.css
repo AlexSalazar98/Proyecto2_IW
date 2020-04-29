@@ -744,6 +744,24 @@ legend{
     border-radius: 9px;
 }
 
+.proyecto-fieldset{
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 9px;
+    height: 120px;
+    overflow-y: scroll;
+}
+
+.tarea-fieldset{
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 9px;
+    height: 205px;
+    overflow-y: scroll;
+}
+
 .etiqueta{
     font-style: italic;
     color: white;
@@ -908,13 +926,16 @@ input[type="number"]
   margin: 50px auto;
   border-radius: .25rem;
   background: whitesmoke;
-  overflow-y: scroll;
 }
 
 .TablaCliente thead tr:first-child {
   background: #ed1c40;
   color: #fff;
   border: none;
+}
+
+.cuerpo{
+    width: 96%;
 }
 
 .TablaCliente th:first-child,

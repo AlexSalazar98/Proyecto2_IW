@@ -254,7 +254,7 @@ def Nuevo_Proyecto(request):
     # Creamos un nuevo proyecto
     nuevo_proyecto = Proyectos()
 
-    # Recogemos sus datos de la BBDD
+    # Recogemos sus datos del HTML
     nuevo_proyecto.nombre = request.POST["Nombre_Proyecto"]
     nuevo_proyecto.fecha_inicio = request.POST["Fecha_Inicio"]
     nuevo_proyecto.fecha_fin = request.POST["Fecha_Fin"]
@@ -801,11 +801,14 @@ def FormModificarProyecto(request):
     context = {
 
         'pro': pro_sel,
-        'cli_actual': cli_actual,
+        'cli_actual': cli_actual.empresa,
+        'cli_actual_id': cli_actual.id,
         'resto_cli': resto_cli,
-        'dep_actual': dep_actual,
+        'dep_actual': dep_actual.nombre,
+        'dep_actual_id': dep_actual.id,
         'resto_dep': resto_dep,
-        'est_actual': est_actual,
+        'est_actual': est_actual.estado,
+        'est_actual_id': est_actual.id,
         'resto_est': resto_est,
         'tar_actuales': tar_actuales,
         'resto_tar': resto_tar,
@@ -848,3 +851,51 @@ def ActualizarTarea(request):
     tarea_a_actualizar.save()
 
     return redirect('ModificarTareas')
+
+
+# Funcion para actualizar el proyecto seleccionado
+def ActualizarProyecto(request):
+    # Recogemos el id del HTML
+    id = request.POST['btn-modificar-proyecto']
+
+    # Recogemos el objeto de la BBDD
+    proyectos = Proyectos.objects.all()
+
+    actualizar_proyecto = ""
+    for p in proyectos:
+        if int(p.id) == int(id):
+            actualizar_proyecto = p
+
+    # Recogemos sus datos del HTML
+    actualizar_proyecto.nombre = request.POST["Nombre_Proyecto"]
+    actualizar_proyecto.fecha_inicio = request.POST["Fecha_Inicio"]
+    actualizar_proyecto.fecha_fin = request.POST["Fecha_Fin"]
+    actualizar_proyecto.descripcion = request.POST["Descripcion_Proyecto"]
+    actualizar_proyecto.presupuesto = float(request.POST["Presupuesto"])
+    actualizar_proyecto.departamento = Departamento.objects.get(id=request.POST["Departamento"])
+    actualizar_proyecto.estado = Estado_Proyecto.objects.get(id=request.POST["Estado"])
+    actualizar_proyecto.cliente = Clientes.objects.get(id=request.POST["Cliente"])
+    tareas_recogidas = request.POST.getlist("Tareas")
+    empleados_recogidos = request.POST.getlist("Empleados")
+
+    # Limpiamos las posibles asignaciones que pueda tener el objeto
+    actualizar_proyecto.tareas_a_realizar.clear()
+    actualizar_proyecto.empleados.clear()
+
+    todas_las_tareas = Tareas.objects.all()
+    todos_los_empleados = Empleados.objects.all()
+
+    # Buscamos los objetos asignados nuevamente para añadirlos
+    for tr in tareas_recogidas:
+        for tlt in todas_las_tareas:
+            if int(tr) == int(tlt.id):
+                actualizar_proyecto.tareas_a_realizar.add(tlt)
+
+    for er in empleados_recogidos:
+        for tle in todos_los_empleados:
+            if int(er) == int(tle.id):
+                actualizar_proyecto.empleados.add(tle)
+
+    # Guardamos el nuevo proyecto en BBDD
+    actualizar_proyecto.save()
+    return redirect('ModificarProyectos')
