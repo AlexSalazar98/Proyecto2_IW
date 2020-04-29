@@ -582,38 +582,18 @@
     transform: scale(1);
 }
 
-.pop-up.active h1{
-    animation: entradaTitulo .8s ease .5s forwards;
-}
-
-@keyframes entradaTitulo{
-    from{
-        transform: translateY(-25px);
-        opacity: 0;
-    }
-    to{
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-
-
-
-
-
 
 .Alta{
     font-family:arial;
     width:450px;
     padding:15px;
-    background:#eee;
+    background: linear-gradient(to bottom, #bdc3c7, #2c3e7b);
     border-radius: 20px;
     margin-top: 10px;
 }
 
 .Titulo_Alta h1{
-    color:#999999;
+    color: black;
     text-align:center;
     font-family: 'Vibur', cursive;
     font-size: 40px;
@@ -831,16 +811,6 @@ legend{
     text-align: center;
 }
 
-#Alta_Proyecto select{
-    margin-left: 10px;
-    margin-top: 10px;
-}
-
-#Alta_Tarea select{
-    margin-left: 10px;
-    margin-top: 10px;
-}
-
 .Estado{
     width: auto;
 }
@@ -1006,6 +976,24 @@ input[type="number"]
     margin-left: 5px;
 }
 
+/* --------- BOTON FLOTANTE LADO DERECHA --------- */
+.flotante {
+    position:fixed;
+    bottom:320px;
+    right:10px;
+    width: 105px;
+    height: 40px;
+    border-radius: 5px;
+    background: linear-gradient(#955AE3, slateblue);
+    border: none;
+}
+
+.flotante img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
 
 /* --------- FORMULARIO MODIFICAR CLEINTE --------- */
 
@@ -1161,24 +1149,6 @@ input[type="number"]
     border:none;
     border-radius:4px;
     margin-top: 10px;
-}
-
-
-/* --------- BOTON FLOTANTE LADO DERECHA --------- */
-.flotante {
-    position:fixed;
-    bottom:320px;
-    right:10px;
-    width: 105px;
-    height: 40px;
-    border-radius: 5px;
-    background: linear-gradient(#955AE3, slateblue);
-    border: none;
-}
-
-.flotante img{
-    max-width: 100%;
-    max-height: 100%;
 }
 
 
@@ -1367,7 +1337,6 @@ input[type="number"]
     width:450px;
     padding:15px;
     background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
-    /* background-image: linear-gradient(to left top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1); */
     border-radius: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -1453,4 +1422,165 @@ input[type="number"]
 .sel-mp{
     float: right;
     width: 53%;
+}
+
+
+/* -------- POP-UP CLIENTES -------- */
+
+#Alta_Cliente label{
+    margin-left: 30px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+#Nombre_Cliente-n{
+    float: right;
+    width: 54%;
+}
+
+.Cre-Empresa-c {
+    display: inline-block;
+}
+
+.Cre-Empresa-c label{
+    float: left;
+    width: 50%;
+}
+
+#Empresa-c{
+    float: right;
+    width: 22%;
+    margin-top: 10px;
+}
+
+.Cre-Email-c {
+    display: inline-block;
+}
+
+.Cre-Email-c label{
+    float: left;
+    width: 50%;
+}
+
+#Email_Cliente-c{
+    float: right;
+    width: 16%;
+    margin-top: 10px;
+}
+
+.Cre-Loc-c {
+    display: inline-block;
+}
+
+.Cre-Loc-c label{
+    float: left;
+    width: 40%;
+}
+
+#Localizacion_Empresa_Cliente-c{
+    float: right;
+    width: 32%;
+    margin-top: 10px;
+}
+
+.Cre-Tel-c {
+    display: inline-block;
+}
+
+.Cre-Tel-c label{
+    float: left;
+    width: 50%;
+}
+
+#Telefono_Cliente-c{
+    float: right;
+    width: 18%;
+    margin-top: 10px;
+}
+
+.Cre-Cuenta-c {
+    display: inline-block;
+}
+
+.Cre-Cuenta-c label{
+    float: left;
+    width: 40%;
+}
+
+#Numero_Cuenta_Cliente-c{
+    float: right;
+    width: 37%;
+    margin-top: 10px;
+}
+
+
+/* -------- POP-UP EMPLEADO -------- */
+
+#Alta_Empleado label{
+    margin-left: 30px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+#DNI_Empleado-c{
+    float: right;
+    width: 65%;
+    margin-top: 10px;
+}
+
+#Empresa-empleado-c{
+    float: right;
+    width: 65%;
+    margin-top: 10px;
+}
+
+
+
+#Apellido-empleado-c{
+    float: right;
+    width: 65%;
+    margin-top: 10px;
+}
+
+#Email-empleado-c{
+    float: right;
+    width: 65%;
+    margin-top: 10px;
+}
+
+#Tel-empleado-c{
+    float: right;
+    width: 62%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+/* -------- POP-UP PROYECTO -------- */
+
+#Alta_Proyecto label{
+    margin-left: 30px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-variant: small-caps;
+}
+
+.sel-np{
+    float: right;
+    width: 53%;
+}
+
+/* -------- POP-UP PROYECTO -------- */
+
+#Alta_Tarea label{
+    margin-left: 30px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 15px;
+    font-weight: 700;
+    font-variant: small-caps;
 }

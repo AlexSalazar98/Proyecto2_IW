@@ -630,6 +630,13 @@ def FormModificarEmpleado(request):
 
     empleados = Empleados.objects.all()
 
+    tarea = Tareas.objects.all()
+    nivel_prioridad = Nivel_Prioridad.objects.all()
+    estado = Estado_Proyecto.objects.all()
+    departamentos = Departamento.objects.all()
+    cliente = Clientes.objects.all()
+    estado_tareas = Estado.objects.all()
+
     empleado_slec = ""
 
     for c in empleados:
@@ -638,7 +645,16 @@ def FormModificarEmpleado(request):
             break
 
     context = {
-        'empleado': empleado_slec
+        'empleado': empleado_slec,
+
+        'tareas': tarea,
+        'estado_proyecto': estado,
+        'prioridades': nivel_prioridad,
+        'responsable': empleados,
+        'departamentos': departamentos,
+        'clientes': cliente,
+        'estado_tarea': estado_tareas,
+
     }
 
     return render(request, 'FormModificarEmpleado.html', context)
@@ -675,6 +691,10 @@ def FormModificarTarea(request):
     empleados = Empleados.objects.order_by('nombre')
     nivel_prioridad = Nivel_Prioridad.objects.all()
     estado_tarea = Estado.objects.all()
+    clientes = Clientes.objects.order_by('empresa')
+    departamentos = Departamento.objects.all()
+    resp = Empleados.objects.order_by('nombre')
+    estado = Estado_Proyecto.objects.order_by('estado')
 
     tarea_slec = ""
     resp_nombre = ""
@@ -725,9 +745,13 @@ def FormModificarTarea(request):
         'est_actual': est_actual,
         'estado_tarea': resto_est,
 
-        'estados_tarea': estado_tarea,
+        'tareas': tarea,
+        'estado_proyecto': estado,
         'prioridades': nivel_prioridad,
-        'responsables': empleados,
+        'responsables': resp,
+        'departamentos': departamentos,
+        'clientes': clientes,
+        'estado_tareas': estado_tarea,
 
     }
 
@@ -745,6 +769,7 @@ def FormModificarProyecto(request):
     estado = Estado_Proyecto.objects.all()
     departamentos = Departamento.objects.all()
     cliente = Clientes.objects.all()
+    estado_tareas = Estado.objects.all()
 
     pro_sel = ""
     cli_actual = ""
@@ -821,6 +846,7 @@ def FormModificarProyecto(request):
         'responsable': empleados,
         'departamentos': departamentos,
         'clientes': cliente,
+        'estado_tarea': estado_tareas,
 
     }
 

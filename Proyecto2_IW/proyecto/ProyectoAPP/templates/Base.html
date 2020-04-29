@@ -131,31 +131,56 @@ Aqui comienza los PopUp
         <div class="Alta">
             <form id="Alta_Cliente" action="{% url 'NuevoCliente' %}" method="post">
                 {% csrf_token %}
-				<a href="#" class="btn-cerrar-popup" id="btn-cerrar-popup_Cliente"><img src="/static/imagenes/cerrar.png"></a>
+                <a href="#" class="btn-cerrar-popup" id="btn-cerrar-popup_Cliente"><img
+                        src="/static/imagenes/cerrar.png"></a>
                 <div class="Titulo_Alta">
                     <h1>Alta Cliente</h1>
                 </div>
                 <fieldset class="fieldset_Alta">
                     <legend><strong>Datos del Cliente</strong></legend>
                     <div class="Registro_Personales">
-                        <label for="Nombre_CLiente" class="Nombre">Nombre y Apellido:</label>
-                        <input type="text" name="nombre" id="Nombre_Cliente" required>
-                        <br>
-                        <label for="Empresa" class="Empresa">Empresa:</label>
-                        <input type="text" name="Empresa" id="Empresa" required>
-                        <br>
-                        <label for="Email_Cliente" class="Email">Email:</label>
-                        <input type="email" name="Email" id="Email_Cliente" required>
-                        <br>
-                        <label for="Localizacion_Empresa_Cliente" class="Localizacion">Localizacion:</label>
-                        <input type="text" name="Localizacion" id="Localizacion_Empresa_Cliente" required>
-                        <br>
-                        <label for="Telefono_Cliente" class="Telefono">Telefono:</label>
-                        <input type="number" name="Telefono" id="Telefono_Cliente" required>
-                        <br>
-                        <label for="Numero_Cuenta_Cliente" class="Numero_Cuenta">Numero Cuenta:</label>
-                        <input type="text" name="Numero_Cuenta" id="Numero_Cuenta_Cliente" required>
-                        <br>
+
+                        <div class="Cre-Nombre-c">
+                            <label for="Nombre_Cliente" class="Nombre">Nombre y Apellido:</label>
+                            <div id="Nombre_Cliente-n">
+                                <input type="text" name="nombre" id="Nombre_Cliente" required>
+                            </div>
+                        </div>
+
+                        <div class="Cre-Empresa-c">
+                            <label for="Empresa" class="Empresa">Empresa:</label>
+                            <div id="Empresa-c">
+                                <input type="text" name="Empresa" id="Empresa" required>
+                            </div>
+                        </div>
+
+                        <div class="Cre-Email-c">
+                            <label for="Email_Cliente" class="Email">Email:</label>
+                            <div id="Email_Cliente-c">
+                                <input type="email" name="Email" id="Email_Cliente" required>
+                            </div>
+                        </div>
+
+                        <div class="Cre-Loc-c">
+                            <label for="Localizacion_Empresa_Cliente" class="Localizacion">Localizacion:</label>
+                            <div id="Localizacion_Empresa_Cliente-c">
+                                <input type="text" name="Localizacion" id="Localizacion_Empresa_Cliente" required>
+                            </div>
+                        </div>
+
+                        <div class="Cre-Tel-c">
+                            <label for="Telefono_Cliente" class="Telefono">Telefono:</label>
+                            <div id="Telefono_Cliente-c">
+                                <input type="number" name="Telefono" id="Telefono_Cliente" required>
+                            </div>
+                        </div>
+
+                        <div class="Cre-Cuenta-c">
+                            <label for="Numero_Cuenta_Cliente" class="Numero_Cuenta">Numero Cuenta:</label>
+                            <div id="Numero_Cuenta_Cliente-c">
+                                <input type="text" name="Numero_Cuenta" id="Numero_Cuenta_Cliente" required>
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
                 <button type="submit" class="Guardar" id="Guardar_Cliente">Guardar</button>
@@ -172,28 +197,50 @@ Aqui comienza los PopUp
         <div class="Alta">
             <form id="Alta_Empleado" action="{% url 'NuevoEmpleado' %}" method="post">
                 {% csrf_token %}
-				<a href="#" id="btn-cerrar-popup_Empleado" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
+                <a href="#" id="btn-cerrar-popup_Empleado" class="btn-cerrar-popup"><img
+                        src="/static/imagenes/cerrar.png"></a>
                 <div class="Titulo_Alta">
                     <h1>Alta Empleado</h1>
                 </div>
                 <fieldset class="fieldset_Alta">
                     <legend><strong>Datos del Empleado</strong></legend>
                     <div class="Registro_Personales">
-                        <label for="DNI" class="DNI">DNI:</label>
-                        <input type="text" name="DNI" id="DNI" required>
-                        <br>
-                        <label for="Nombre" class="Nombre">Nombre:</label>
-                        <input type="text" name="nombre" id="Nombre" required>
-                        <br>
-                        <label for="Apellido" class="Apellido">Apellido:</label>
-                        <input type="text" name="Apellido" id="Apellido" required>
-                        <br>
-                        <label for="Email_Empleado" class="Email">Email:</label>
-                        <input type="email" name="Email" id="Email_Empleado" required>
-                        <br>
-                        <label for="Telefono" class="Telefono">Telefono:</label>
-                        <input type="number" name="Telefono" id="Telefono" required>
-                        <br>
+                        <div class="Registro_Personales">
+                            <div>
+                                <label for="DNI" class="DNI">DNI:</label>
+                                <div id="DNI_Empleado-c">
+                                    <input type="text" name="dni" id="DNI" required>
+                                </div>
+                            </div>
+
+                            <div class="Mod-Empresa-empleado-f">
+                                <label for="Nombre-empresa" class="Nombre">Nombre:</label>
+                                <div id="Empresa-empleado-c">
+                                    <input type="text" name="nombre" id="Nombre-empresa" required>
+                                </div>
+                            </div>
+
+                            <div class="Mod-Empresa-empleado-f">
+                                <label for="Apellido" class="Apellido">Apellido:</label>
+                                <div id="Apellido-empleado-c">
+                                    <input type="text" name="apellido" id="Apellido" required>
+                                </div>
+                            </div>
+
+                            <div class="Mod-Empresa-empleado-f">
+                                <label for="Email_Empleado" class="Email">Email:</label>
+                                <div id="Email-empleado-c">
+                                    <input type="email" name="email" id="Email_Empleado" required>
+                                </div>
+                            </div>
+
+                            <div class="Mod-Empresa-empleado-f">
+                                <label for="Telefono" class="Telefono">Telefono:</label>
+                                <div id="Tel-empleado-c">
+                                    <input type="number" name="telefono" id="Telefono" required>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
                 <button type="submit" class="Guardar" id="Guardar_Empleado">Guardar</button>
@@ -210,34 +257,51 @@ Aqui comienza los PopUp
         <div class="Alta">
             <form id="Alta_Tarea" action="{% url 'NuevaTarea' %}" method="post">
                 {% csrf_token %}
-				<a href="#" id="btn-cerrar-popup_Tarea" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
+                <a href="#" id="btn-cerrar-popup_Tarea" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
                 <div class="Titulo_Alta">
                     <h1>Alta Tarea</h1>
                 </div>
                 <fieldset class="fieldset_Alta">
                     <legend><strong>Datos de la Tarea</strong></legend>
                     <div class="Registro_Personales">
-                        <label for="Nombre_Tarea" class="Nombre">Tarea:</label>
-                        <input type="text" name="Nombre_Tarea" id="Nombre_Tarea" required>
-                        <br>
-                        <label for="Fecha_Inicio_Tarea" class="Fecha_Inicio">Fecha Inicio:</label>
-                        <input type="date" name="Fecha_Inicio" id="Fecha_Inicio_Tarea" required>
-                        <br>
-                        <label for="Fecha_Fin_Tarea" class="Fecha_Fin">Fecha Fin:</label>
-                        <input type="date" name="Fecha_Fin" id="Fecha_Fin_Tarea" required>
-                        <br>
-						{% block content_responsable %} {% endblock %}
-                        <br>
+                        <div>
+                            <label for="Nombre_Tarea" class="Nombre">Tarea:</label>
+                            <div id="nombre-tarea-f">
+                                <input type="text" name="Nombre_Tarea" id="Nombre_Tarea" required>
+                            </div>
+                        </div>
+
+                        <div class="div-fit">
+                            <label for="Fecha_Inicio_Tarea" class="Fecha_Inicio">Fecha Inicio:</label>
+                            <div id="fi-tarea-f">
+                                <input type="date" name="Fecha_Inicio" id="Fecha_Inicio_Tarea" required>
+                            </div>
+                        </div>
+                        <div class="div-fit">
+                            <label for="Fecha_Fin_Tarea" class="Fecha_Fin">Fecha Fin:</label>
+                            <div id="ff-tarea-f">
+                                <input type="date" name="Fecha_Fin" id="Fecha_Fin_Tarea" required>
+                            </div>
+                        </div>
+                        {% block content_responsable %} {% endblock %}
+
                         {% block content_prioridad %} {% endblock %}
-                        <br>
+
                         {% block content_estado %} {% endblock %}
-                        <br>
-                        <label for="Descripcion_Tarea" class="Descripcion_Tarea">Descripcion:</label>
-                        <textarea name="Descripcion_Tarea" id="Descripcion_Tarea" required> </textarea>
-                        <br>
-                        <label for="Notas_Empleado" class="Notas_Empleado">Notas Empleado:</label>
-                        <textarea type="text" name="Notas_Empleado" id="Notas_Empleado" required></textarea>
-                        <br>
+
+                        <div>
+                            <label for="Descripcion_Tarea-form" class="Descripcion_Tarea">Descripcion:</label>
+                            <div>
+                                <input type="text" name="Descripcion_Tarea" id="Descripcion_Tarea-form" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="Notas_Empleado-form" class="Notas_Empleado">Notas Empleado:</label>
+                            <div>
+                                <input type="text" name="Notas_Empleado" id="Notas_Empleado-form" required>
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
                 <button type="submit" class="Guardar" id="Guardar_Tarea">Guardar</button>
@@ -254,35 +318,54 @@ Aqui comienza los PopUp
         <div class="Alta">
             <form id="Alta_Proyecto" action="{% url 'NuevoProyecto' %}" method="post">
                 {% csrf_token %}
-				<a href="#" id="btn-cerrar-popup_Proyecto" class="btn-cerrar-popup"><img src="/static/imagenes/cerrar.png"></a>
+                <a href="#" id="btn-cerrar-popup_Proyecto" class="btn-cerrar-popup"><img
+                        src="/static/imagenes/cerrar.png"></a>
                 <div class="Titulo_Alta">
                     <h1>Alta Proyectos</h1>
                 </div>
                 <fieldset class="fieldset_Alta">
                     <legend><strong>Datos del Proyecto</strong></legend>
                     <div class="Registro_Personales">
-                        <label for="Nombre_Proyecto" class="Nombre_Proyecto">Nombre Proyecto:</label>
-                        <input type="text" name="Nombre_Proyecto" id="Nombre_Proyecto" required>
-                        <br>
-                        <label for="Fecha_Inicio_Proyecto" class="Fecha_Inicio">Fecha Inicio:</label>
-                        <input type="date" name="Fecha_Inicio" id="Fecha_Inicio_Proyecto" required>
-                        <br>
-                        <label for="Fecha_Fin_Proyecto" class="Fecha_Fin">Fecha Fin:</label>
-                        <input type="date" name="Fecha_Fin" id="Fecha_Fin_Proyecto" required>
-                        <br>
-                        <label for="Presupuesto" class="Presupuesto">Presupuesto:</label>
-                        <input type="number" name="Presupuesto" id="Presupuesto" required>
-                        <br>
-						{% block content_cliente %} {% endblock %}
-                        <br>
-                        {% block content_tareas %} {% endblock %}
-                        <br>
-                        {% block content_empleados %} {% endblock %}
-                        <br>
+
+                        <div class="gen-p">
+                            <label for="Nombre_Proyecto" class="Nombre_Proyecto">Nombre Proyecto:</label>
+                            <div class="sel-mp-nom">
+                                <input type="text" name="Nombre_Proyecto" id="Nombre_Proyecto" required>
+                            </div>
+                        </div>
+
+                        <div class="gen-p">
+                            <label for="Fecha_Inicio_Proyecto" class="Fecha_Inicio">Fecha Inicio:</label>
+                            <div class="sel-mp-fi">
+                                <input type="date" name="Fecha_Inicio" id="Fecha_Inicio_Proyecto" required>
+                            </div>
+                        </div>
+
+                        <div class="gen-p">
+                            <label for="Fecha_Fin_Proyecto" class="Fecha_Fin">Fecha Fin:</label>
+                            <div class="sel-mp-ff">
+                                <input type="date" name="Fecha_Fin" id="Fecha_Fin_Proyecto" required>
+                            </div>
+                        </div>
+
+                        <div class="gen-p">
+                            <label for="Presupuesto" class="Presupuesto">Presupuesto:</label>
+                            <div class="sel-mp-p">
+                                <input type="number" name="Presupuesto" id="Presupuesto" required>
+                            </div>
+                        </div>
+                        {% block content_cliente %} {% endblock %}
+
                         {% block content_departamento %} {% endblock %}
-                        <br>
+
                         {% block content_estados %} {% endblock %}
-                        <br>
+
+                        <div class="conj-mp">
+                            {% block content_tareas %} {% endblock %}
+
+                            {% block content_empleados %} {% endblock %}
+                        </div>
+
                         <label for="Descripcion_Proyecto" class="Descripcion_Proyecto">Descripcion:</label>
                         <textarea name="Descripcion_Proyecto" id="Descripcion_Proyecto" required> </textarea>
                     </div>
