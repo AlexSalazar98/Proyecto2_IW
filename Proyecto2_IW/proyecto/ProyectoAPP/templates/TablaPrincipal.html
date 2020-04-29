@@ -5,39 +5,43 @@
 
 <div id="content-Ppricipal">
 
-    <nav class="buscador">
+    <form action="{% url 'Buscador' %}" method="post">
+        {% csrf_token %}
+        <nav class="buscador">
 
-        <div class="btn-buscar">
-            <a href="https://www.google.com/">
-                <button type="button"><img src="/static/imagenes/buscar.png"></button>
-            </a>
-        </div>
+            <div class="btn-buscar">
+                <a href="#">
+                    <button type="submit"><img src="/static/imagenes/buscar.png"></button>
+                </a>
+            </div>
 
-        <div class="buscar-por-estado">
-            <label>Estado proyecto: </label>
-            <select name="Estado" class="Estado-buscador">
-                <option>ABIERTO</option>
-                <option>EN CURSO</option>
-                <OPTION>FINALIZADO</OPTION>
-            </select>
-        </div>
+            <div class="buscar-por-estado">
+                <label>Estado proyecto: </label>
+                <select name="Estado" class="Estado-buscador">
+                    <option selected value=""></option>
+                    <option value="Abierto">ABIERTO</option>
+                    <option value="En proceso">EN PROCESO</option>
+                    <OPTION value="Finalizado">FINALIZADO</OPTION>
+                </select>
+            </div>
 
-        <div class="buscar-por-fecha-fin">
-            <label>Fecha fin: </label>
-            <input type="date">
-        </div>
+            <div class="buscar-por-fecha-fin">
+                <label>Fecha fin: </label>
+                <input type="date" name="Fecha_fin">
+            </div>
 
-        <div class="buscar-por-fecha-inicio">
-            <label>Fecha inicio: </label>
-            <input type="date">
-        </div>
+            <div class="buscar-por-fecha-inicio">
+                <label>Fecha inicio: </label>
+                <input type="date" name="Fecha_inicio">
+            </div>
 
-        <div class="bucar-por-nombre">
-            <label>Nombre del proyecto: </label>
-            <input type="text">
-        </div>
+            <div class="bucar-por-nombre">
+                <label>Nombre del proyecto: </label>
+                <input type="text" name="Nombre_proyecto">
+            </div>
 
-    </nav>
+        </nav>
+    </form>
 
     <!-- Lado izquierdo de la página, muestra noticias sobre la empresa -->
     <aside id="lado-izquierda">

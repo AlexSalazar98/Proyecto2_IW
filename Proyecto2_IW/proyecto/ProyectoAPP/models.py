@@ -112,4 +112,4 @@ class Proyectos(models.Model):
     estado = models.ForeignKey(Estado_Proyecto, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.nombre} -- {self.tareas_a_realizar}"
+        return f"{self.nombre} -- {self.fecha_inicio}"
