@@ -329,31 +329,24 @@ def ProyectosPorCliente(request):
     return render(request, 'TablaPrincipal.html', context)
 
 
-# Funcion para modificar los clientes
-def ModificarClientes(request):
-    clientes = Clientes.objects.order_by('empresa')
+
+def DiccionarioTablas(datos, titulo, col1, col2, col3):
 
     # Recogemos los objetos necesaios para cargar la info necesaria
     clientes = Clientes.objects.order_by('empresa')
-
     responsable = Empleados.objects.order_by('nombre')
-
     prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
-
     estado_proyecto = Estado_Proyecto.objects.order_by('estado')
-
     tareas = Tareas.objects.order_by('nombre')
-
     departamento = Departamento.objects.order_by('nombre')
-
     estado_tarea = Estado.objects.order_by('estado')
 
     context = {
-        'datos': clientes,
-        'titulo': "Clientes",
-        'col1': "Empresa",
-        'col2': "Persona Contacto",
-        'col3': "Telefono",
+        'datos': datos,
+        'titulo': titulo,
+        'col1': col1,
+        'col2': col2,
+        'col3': col3,
 
         'clientes': clientes,
         'responsable': responsable,
@@ -362,8 +355,15 @@ def ModificarClientes(request):
         'estado_proyecto': estado_proyecto,
         'tareas': tareas,
         'departamentos': departamento,
-
     }
+
+    return context
+
+# Funcion para modificar los clientes
+def ModificarClientes(request):
+    clientes = Clientes.objects.order_by('empresa')
+
+    context = DiccionarioTablas(clientes, "Clientes", "Empresa", "Persona de contacto", "Telefono")
 
     return render(request, 'TablaModificarClientes.html', context)
 
@@ -372,37 +372,7 @@ def ModificarClientes(request):
 def ModificarEmpleados(request):
     empleados = Empleados.objects.order_by('nombre')
 
-    # Recogemos los objetos necesaios para cargar la info necesaria
-    clientes = Clientes.objects.order_by('empresa')
-
-    responsable = Empleados.objects.order_by('nombre')
-
-    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
-
-    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
-
-    tareas = Tareas.objects.order_by('nombre')
-
-    departamento = Departamento.objects.order_by('nombre')
-
-    estado_tarea = Estado.objects.order_by('estado')
-
-    context = {
-        'datos': empleados,
-        'titulo': "Empleados",
-        'col1': "Nombre",
-        'col2': "Apellido",
-        'col3': "Telefono",
-
-        'clientes': clientes,
-        'responsable': responsable,
-        'prioridad': prioridad,
-        'estado_tarea': estado_tarea,
-        'estado_proyecto': estado_proyecto,
-        'tareas': tareas,
-        'departamentos': departamento,
-
-    }
+    context = DiccionarioTablas(empleados, "Empleados", "Nombre", "Apellido", "Telefono")
 
     return render(request, 'TablaModificarEmpleados.html', context)
 
@@ -411,37 +381,7 @@ def ModificarEmpleados(request):
 def ModificarProyectos(request):
     proyectos = Proyectos.objects.order_by('nombre')
 
-    # Recogemos los objetos necesaios para cargar la info necesaria
-    clientes = Clientes.objects.order_by('empresa')
-
-    responsable = Empleados.objects.order_by('nombre')
-
-    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
-
-    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
-
-    tareas = Tareas.objects.order_by('nombre')
-
-    departamento = Departamento.objects.order_by('nombre')
-
-    estado_tarea = Estado.objects.order_by('estado')
-
-    context = {
-        'datos': proyectos,
-        'titulo': "Proyectos",
-        'col1': "Nombre",
-        'col2': "Cliente",
-        'col3': "Estado",
-
-        'clientes': clientes,
-        'responsable': responsable,
-        'prioridad': prioridad,
-        'estado_tarea': estado_tarea,
-        'estado_proyecto': estado_proyecto,
-        'tareas': tareas,
-        'departamentos': departamento,
-
-    }
+    context = DiccionarioTablas(proyectos, "Proyectos", "Nombre", "Cliente", "Estado")
 
     return render(request, 'TablaModificarProyectos.html', context)
 
@@ -450,37 +390,7 @@ def ModificarProyectos(request):
 def ModificarTareas(request):
     tareas = Tareas.objects.order_by('nombre')
 
-    # Recogemos los objetos necesaios para cargar la info necesaria
-    clientes = Clientes.objects.order_by('empresa')
-
-    responsable = Empleados.objects.order_by('nombre')
-
-    prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
-
-    estado_proyecto = Estado_Proyecto.objects.order_by('estado')
-
-    tareas = Tareas.objects.order_by('nombre')
-
-    departamento = Departamento.objects.order_by('nombre')
-
-    estado_tarea = Estado.objects.order_by('estado')
-
-    context = {
-        'datos': tareas,
-        'titulo': "Tareas",
-        'col1': "Nombre",
-        'col2': "Prioridad",
-        'col3': "Estado",
-
-        'clientes': clientes,
-        'responsable': responsable,
-        'prioridad': prioridad,
-        'estado_tarea': estado_tarea,
-        'estado_proyecto': estado_proyecto,
-        'tareas': tareas,
-        'departamentos': departamento,
-
-    }
+    context = DiccionarioTablas(tareas, "Tareas", "Nombre", "Prioridad", "Estado")
 
     return render(request, 'TablaModificarTareas.html', context)
 
@@ -595,6 +505,7 @@ class DetallesTareas(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(DetallesTareas, self).get_context_data(**kwargs)
+
         # Recogemos los objetos necesaios para cargar la info necesaria
         clientes = Clientes.objects.order_by('empresa')
 
@@ -609,8 +520,14 @@ class DetallesTareas(DetailView):
         departamento = Departamento.objects.order_by('nombre')
 
         estado_tarea = Estado.objects.order_by('estado')
-        # context['estado'] = str(Tareas.estado_tarea)
+
         context['clientes'] = clientes
+        context['responsable'] = responsable
+        context['prioridad'] = prioridad
+        context['estado_proyecto'] = estado_proyecto
+        context['tareas_p'] = tareas
+        context['departamento'] = departamento
+        context['estado_tarea'] = estado_tarea
 
         return context
 
@@ -996,49 +913,22 @@ def Buscador(request):
         for p in todos_proyectos:
             if str(p.fecha_inicio) == fecha_inicio:
                 proyectos.append(p)
-        context = {
-            'proyectos': proyectos,
 
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto == "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto == ""):
         for p in todos_proyectos:
             if str(p.fecha_fin) == fecha_fin:
                 proyectos.append(p)
-        context = {
-            'proyectos': proyectos,
 
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto == "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto != ""):
         for p in todos_proyectos:
             if str(p.estado) == estado_proyecto:
                 proyectos.append(p)
-        context = {
-            'proyectos': proyectos,
 
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto == ""):
         for p in todos_proyectos:
@@ -1049,17 +939,7 @@ def Buscador(request):
             if str(p1.fecha_inicio) == fecha_inicio:
                 proyectos1.append(p1)
 
-        context = {
-            'proyectos': proyectos1,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos1)
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto == ""):
         for p in todos_proyectos:
@@ -1070,17 +950,7 @@ def Buscador(request):
             if str(p1.fecha_fin) == fecha_fin:
                 proyectos1.append(p1)
 
-        context = {
-            'proyectos': proyectos1,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos1)
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto != ""):
         for p in todos_proyectos:
@@ -1091,17 +961,7 @@ def Buscador(request):
             if str(p1.estado) == estado_proyecto:
                 proyectos1.append(p1)
 
-        context = {
-            'proyectos': proyectos1,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos1)
 
     elif (nombre_proyecto == "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto == ""):
         for p in todos_proyectos:
@@ -1112,17 +972,7 @@ def Buscador(request):
             if str(p1.fecha_fin) == fecha_fin:
                 proyectos1.append(p1)
 
-        context = {
-            'proyectos': proyectos1,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos1)
 
     elif (nombre_proyecto == "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto != ""):
         for p in todos_proyectos:
@@ -1133,17 +983,7 @@ def Buscador(request):
             if str(p1.estado) == estado_proyecto:
                 proyectos1.append(p1)
 
-        context = {
-            'proyectos': proyectos1,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos1)
 
     elif (nombre_proyecto == "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto != ""):
         for p in todos_proyectos:
@@ -1154,17 +994,7 @@ def Buscador(request):
             if str(p1.estado) == estado_proyecto:
                 proyectos1.append(p1)
 
-        context = {
-            'proyectos': proyectos1,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos1)
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto == ""):
         for p in todos_proyectos:
@@ -1179,17 +1009,7 @@ def Buscador(request):
             if str(p2.fecha_fin) == fecha_fin:
                 proyectos2.append(p2)
 
-        context = {
-            'proyectos': proyectos2,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos2)
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto != ""):
         for p in todos_proyectos:
@@ -1204,17 +1024,7 @@ def Buscador(request):
             if str(p2.estado) == estado_proyecto:
                 proyectos2.append(p2)
 
-        context = {
-            'proyectos': proyectos2,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos2)
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto != ""):
         for p in todos_proyectos:
@@ -1229,17 +1039,7 @@ def Buscador(request):
             if str(p2.estado) == estado_proyecto:
                 proyectos2.append(p2)
 
-        context = {
-            'proyectos': proyectos2,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos2)
 
     elif (nombre_proyecto == "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto != ""):
         for p in todos_proyectos:
@@ -1254,17 +1054,7 @@ def Buscador(request):
             if str(p2.estado) == estado_proyecto:
                 proyectos2.append(p2)
 
-        context = {
-            'proyectos': proyectos2,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos2)
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto != ""):
         for p in todos_proyectos:
@@ -1283,16 +1073,6 @@ def Buscador(request):
             if str(p3.estado) == estado_proyecto:
                 proyectos3.append(p3)
 
-        context = {
-            'proyectos': proyectos3,
-
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos3)
 
     return render(request, 'TablaPrincipal.html', context)
