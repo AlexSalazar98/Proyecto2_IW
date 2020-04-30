@@ -587,7 +587,7 @@
     font-family:arial;
     width:450px;
     padding:15px;
-    background: linear-gradient(to bottom, #bdc3c7, #2c3e7b);
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     border-radius: 20px;
     margin-top: 10px;
 }
@@ -605,7 +605,7 @@
 
 .Guardar{
     width: 448px;
-    background:#0AC986;
+    background: green;
     display:inline-block;
     font-size:16px;
     height:50px;
@@ -1312,7 +1312,8 @@ input[type="number"]
     resize: none;
     margin: 0 auto;
     margin-top: 10px;
-    overflow-y: scroll;
+    border-radius: 10px;
+    padding:8px;
 }
 
 #Notas_Empleado-form{
@@ -1322,6 +1323,8 @@ input[type="number"]
     resize: none;
     margin: 0 auto;
     margin-top: 10px;
+    border-radius: 10px;
+    padding:8px;
 }
 
 .Responsable{
@@ -1364,6 +1367,7 @@ input[type="number"]
     resize: none;
     margin: 0 auto;
     margin-top: 10px;
+    border-radius: 10px;
 }
 
 .conj-mp{

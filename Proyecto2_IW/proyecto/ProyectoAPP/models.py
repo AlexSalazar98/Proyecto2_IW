@@ -18,7 +18,7 @@ class Clientes(models.Model):
 
 # Clase para categoria usuario (Jefe dep. / Gerente / Ingeniero)
 class Categoria(models.Model):
-    nombre = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=30, unique=True)
 
     def __str__(self):
         return f"{self.nombre}"
@@ -26,7 +26,7 @@ class Categoria(models.Model):
 
 # Clase para departamentos
 class Departamento(models.Model):
-    nombre = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=30, unique=True)
 
     def __str__(self):
         return f"{self.nombre}"
@@ -42,7 +42,7 @@ class Usuarios(models.Model):
     email = models.EmailField()
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
-    user = models.CharField(max_length=21)
+    user = models.CharField(max_length=21, unique=True)
     contraseña = models.CharField(max_length=10)
 
     def __str__(self):
@@ -51,7 +51,7 @@ class Usuarios(models.Model):
 
 # Clase para la creacion de Empleados
 class Empleados(models.Model):
-    dni = models.CharField(max_length=9)
+    dni = models.CharField(max_length=9, unique=True)
     nombre = models.CharField(max_length=10)
     apellido = models.CharField(max_length=10)
     email = models.EmailField()
@@ -78,7 +78,7 @@ class Nivel_Prioridad(models.Model):
 
 # Clase para la creacion de Tareas
 class Tareas(models.Model):
-    nombre = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=30, unique=True)
     descripcion = models.TextField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -100,7 +100,7 @@ class Estado_Proyecto(models.Model):
 
 # Clase para la creacion de Proyectos
 class Proyectos(models.Model):
-    nombre = models.CharField(max_length=30)
+    nombre = models.CharField(max_length=30, unique=True)
     descripcion = models.TextField()
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()

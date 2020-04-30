@@ -176,13 +176,13 @@ form .Contraseña{
     font-family:arial;
     width:450px;
     padding:15px;
-    background:#eee;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
     border-radius: 20px;
     margin-left: 30%;
 }
 
 .Titulo_Formulario h1{
-    color:#999999;
+    color: black;
     text-align:center;
     font-family: 'Vibur', cursive;
     font-size: 40px
@@ -194,7 +194,7 @@ form .Contraseña{
 
 .Entrar_Usuario{
     width: 448px;
-    background:#0AC986;
+    background: green;
     display:inline-block;
     font-size:16px;
     height:50px;
