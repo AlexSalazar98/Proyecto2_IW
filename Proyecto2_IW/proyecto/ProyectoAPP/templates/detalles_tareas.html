@@ -9,16 +9,15 @@
             <h1>{{ tareas.nombre }}</h1>
         </div>
         <div class="est-tareas">
-            {% if tarsel.estado_tarea.value == 'Abierta' %}
+            {% if tareas.estado_tarea.estado == 'Abierta' %}
             <label class="verde">{{ tareas.estado_tarea }}</label>
-            {% elif tarsel.estado_tarea == 'Asignada' %}
+            {% elif tareas.estado_tarea.estado == 'Asignada' %}
             <label class="naranja">{{ tareas.estado_tarea }}</label>
-            {% elif tarsel.estado_tarea == 'En Proceso' %}
+            {% elif tareas.estado_tarea.estado == 'En Proceso' %}
             <label class="Azul">{{ tareas.estado_tarea }}</label>
             {% else %}
             <label class="rojo">{{ tareas.estado_tarea }}</label>
             {% endif %}
-
         </div>
     </div>
 

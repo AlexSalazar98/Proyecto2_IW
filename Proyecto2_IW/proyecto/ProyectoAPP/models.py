@@ -6,7 +6,7 @@ from django.urls import reverse
 
 class Clientes(models.Model):
     nombre = models.CharField(max_length=50)
-    empresa = models.CharField(max_length=50)
+    empresa = models.CharField(max_length=50, unique=True)
     email = models.EmailField()
     localizacion = models.CharField(max_length=50)
     telefono = models.IntegerField()

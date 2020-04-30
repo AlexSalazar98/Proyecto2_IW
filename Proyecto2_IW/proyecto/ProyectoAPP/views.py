@@ -595,7 +595,22 @@ class DetallesTareas(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(DetallesTareas, self).get_context_data(**kwargs)
-        context['estado'] = str(Tareas.estado_tarea)
+        # Recogemos los objetos necesaios para cargar la info necesaria
+        clientes = Clientes.objects.order_by('empresa')
+
+        responsable = Empleados.objects.order_by('nombre')
+
+        prioridad = Nivel_Prioridad.objects.order_by('nivel_prioridad')
+
+        estado_proyecto = Estado_Proyecto.objects.order_by('estado')
+
+        tareas = Tareas.objects.order_by('nombre')
+
+        departamento = Departamento.objects.order_by('nombre')
+
+        estado_tarea = Estado.objects.order_by('estado')
+        # context['estado'] = str(Tareas.estado_tarea)
+        context['clientes'] = clientes
 
         return context
 
@@ -927,8 +942,7 @@ def ActualizarProyecto(request):
     return redirect('ModificarProyectos')
 
 
-# Funcion para Buscador
-def Buscador(request):
+def diccionarioBuscador(obj):
     # Recogemos los objetos necesaios para cargar la info necesaria en la pagina principal
     clientes = Clientes.objects.order_by('empresa')
     responsable = Empleados.objects.order_by('nombre')
@@ -938,6 +952,23 @@ def Buscador(request):
     departamento = Departamento.objects.order_by('nombre')
     estado_tarea = Estado.objects.order_by('estado')
 
+    context = {
+        'proyectos': obj,
+
+        'clientes': clientes,
+        'responsable': responsable,
+        'prioridad': prioridad,
+        'estado_tarea': estado_tarea,
+        'estado_proyecto': estado_proyecto,
+        'tareas': tareas,
+        'departamento': departamento,
+    }
+
+    return context
+
+
+# Funcion para Buscador
+def Buscador(request):
     nombre_proyecto = request.POST["Nombre_proyecto"].lower()
     fecha_inicio = request.POST["Fecha_inicio"]
     fecha_fin = request.POST["Fecha_fin"]
@@ -957,17 +988,9 @@ def Buscador(request):
         for p in todos_proyectos:
             if str(p.nombre).lower() == nombre_proyecto:
                 proyectos.append(p)
-        context = {
-            'proyectos': proyectos,
 
-            'clientes': clientes,
-            'responsable': responsable,
-            'prioridad': prioridad,
-            'estado_tarea': estado_tarea,
-            'estado_proyecto': estado_proyecto,
-            'tareas': tareas,
-            'departamento': departamento,
-        }
+        context = diccionarioBuscador(proyectos)
+
 
     elif (nombre_proyecto == "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto == ""):
         for p in todos_proyectos:
