@@ -1,5 +1,6 @@
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 from django.shortcuts import render, redirect
+from django.conf import settings
 
 from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, \
     Nivel_Prioridad, Estado_Proyecto, Estado
@@ -1075,9 +1076,11 @@ def recuperarcredenciales(request):
             user = u.user
             cont = u.contraseña
 
-        asunto = "CREDENCIALES"
-        mensaje = f"Tus credenciales son las siguientes. Usuario: {user} --- Contraseña: {cont}"
-        mail = EmailMessage(asunto, mensaje, to=['alex.salazar@opendeusto.es'])
-        mail.send()
+    asunto = "CREDENCIALES"
+    mensaje = f"Tus credenciales son las siguientes. Usuario: {user} --- Contraseña: {cont}"
+    email_from = settings.EMAIL_HOST_USER
+    email_to = [email]
+    send_mail(asunto, mensaje, email_from, email_to, fail_silently=False)
+
 
     return redirect('index')
