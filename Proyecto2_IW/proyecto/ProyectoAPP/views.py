@@ -1,7 +1,6 @@
 from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
 
-
 from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, \
     Nivel_Prioridad, Estado_Proyecto, Estado
 from django.views.generic import DetailView
@@ -902,55 +901,40 @@ def Buscador(request):
     if (nombre_proyecto == "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto == ""):
         return redirect('PaginaPrincipal')
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto == ""):
-        for p in todos_proyectos:
-            if str(p.nombre).lower() == nombre_proyecto:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)):
+            proyectos.append(p)
 
         context = diccionarioBuscador(proyectos)
 
-
     elif (nombre_proyecto == "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto == ""):
-        for p in todos_proyectos:
-            if str(p.fecha_inicio) == fecha_inicio:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(fecha_inicio__icontains=str(fecha_inicio)):
+            proyectos.append(p)
 
         context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto == "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto == ""):
-        for p in todos_proyectos:
-            if str(p.fecha_fin) == fecha_fin:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(fecha_fin__icontains=str(fecha_fin)):
+            proyectos.append(p)
 
         context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto == "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto != ""):
-        for p in todos_proyectos:
-            if str(p.estado) == estado_proyecto:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(estado=int(estado_proyecto)):
+            proyectos.append(p)
 
         context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto == ""):
-        for p in todos_proyectos:
-            if str(p.nombre).lower() == nombre_proyecto:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)).filter(fecha_inicio__icontains=str(fecha_inicio)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.fecha_inicio) == fecha_inicio:
-                proyectos1.append(p1)
-
-        context = diccionarioBuscador(proyectos1)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto == ""):
-        for p in todos_proyectos:
-            if str(p.nombre).lower() == nombre_proyecto:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)).filter(fecha_fin__icontains=str(fecha_fin)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.fecha_fin) == fecha_fin:
-                proyectos1.append(p1)
-
-        context = diccionarioBuscador(proyectos1)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto != ""):
         for p in todos_proyectos:

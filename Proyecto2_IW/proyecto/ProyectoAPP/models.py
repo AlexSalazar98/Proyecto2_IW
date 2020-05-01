@@ -111,5 +111,3 @@ class Proyectos(models.Model):
     departamento = models.ForeignKey(Departamento, on_delete=models.CASCADE)
     estado = models.ForeignKey(Estado_Proyecto, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f"{self.nombre} -- {self.fecha_inicio}"
