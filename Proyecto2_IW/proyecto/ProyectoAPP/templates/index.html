@@ -11,73 +11,99 @@
 </head>
 
 <body>
-    <header>
-        <div class="General">
-            <div class="Logo">
-                <img src="../static/imagenes/LogoEmpresa.png" class="Img_Logo">
-            </div>
-            <div class="Acceso">
-                <div class="Entrar">
-                    <img src="../static/imagenes/usuario.png">
-                    <a href="#" id="enlAbrirPopup">Entrar</a>
-                </div>
-                <div class="Registrar">
-                    <img src="../static/imagenes/registro.png">
-                    <a href="{% url 'LlamarFormulario' %}">Registrar</a>
-                </div>
-            </div>
+<header>
+    <div class="General">
+        <div class="Logo">
+            <img src="../static/imagenes/LogoEmpresa.png" class="Img_Logo">
         </div>
-    </header>
-    <div class="main">
-        <div class="Texto">
-            <h1>Gestiona proyectos sin Excel</h1>
-            <h2>Trabaja gestionando proyectos desde casa o en la oficina</h2>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)</p>
-        </div>
-        <div class="Foto">
-            <img src="../static/imagenes/trabajando_oficina.jpg" class="Foto_Radio">
+        <div class="Acceso">
+            <div class="Entrar">
+                <img src="../static/imagenes/usuario.png">
+                <a href="#" id="enlAbrirPopup">Entrar</a>
+            </div>
+            <div class="Registrar">
+                <img src="../static/imagenes/registro.png">
+                <a href="{% url 'LlamarFormulario' %}">Registrar</a>
+            </div>
         </div>
     </div>
+</header>
+<div class="main">
+    <div class="Texto">
+        <h1>Gestiona proyectos sin Excel</h1>
+        <h2>Trabaja gestionando proyectos desde casa o en la oficina</h2>
+        <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+            of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+            desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+            search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+            evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like)</p>
+    </div>
+    <div class="Foto">
+        <img src="../static/imagenes/trabajando_oficina.jpg" class="Foto_Radio">
+    </div>
+</div>
 
-    <!-- Aqui va el pop up para el login -->
-    <div class="overlay" id="overlay">
-    	<div class="pop-up" id="pop-up">
-    		
-		        <form class="form_Entrar" action="{% url 'entrar' %}" method="post">
-                    {% csrf_token %}
-		        	<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><img src="../static/imagenes/cerrar.png"></a>
-		            <div class="Titulo_mas_Logo">
-		                <h1>Iniciar Sesion</h1>
-		            </div>
-		            <fieldset class="fieldset_Entrar">
-		                <div class="Usuario">
-		                    <input type="text" name="Usuario" class="Control" placeholder="nombre.apellido" required>
-		                </div>
-		                <div class="Contraseña">
-		                    <input type="password" name="Contraseña" class="Control" placeholder="Contraseña" required>
-		                </div>
-                        <div class="contrasena_incorrecta">
-                            <label>{{ contrasena_incorrecta }}</label>
-                        </div>
-		                <div class="Resto">
-		                    <div class="Unido">
-		                        <label for="Sesion_Abierta">Mantener sesion abierta</label>
-		                        <input type="checkbox" name="Sesion_Abierta" id="Sesion_Abierta">
-		                    </div>
-		                    <a class="link" href="">¿Olvido su contraseña?</a>
-		                    <a class="link" href="{% url 'LlamarFormulario' %}">Registrarse</a>
-		                    <button type="submit" class="Entrar_Sesion">Entrar</button>
-		                </div>
-		            </fieldset>
-		        </form>
-    	</div>
+<!-- Aqui va el pop up para el email -->
+<div class="overlay-email" id="overlay-email">
+    <div class="pop-up-email" id="pop-up-email">
+
+        <form class="form_Entrar" action="{% url 'RecuperarCredenciales' %}" method="post">
+            {% csrf_token %}
+            <a href="#" id="btn-cerrar-popup-email" class="btn-cerrar-popup-email"><img
+                    src="../static/imagenes/cerrar.png"></a>
+
+            <div>
+                <h3>Email</h3>
+                <div>
+                    <input type="email" name="email" placeholder="Introduce tu email" required>
+                </div>
+
+                <div>
+                    <button>ENVIAR</button>
+                </div>
+            </div>
+        </form>
     </div>
-    <script src="/static/js/popup_index.js"></script>
+</div>
+
+
+<!-- Aqui va el pop up para el login -->
+<div class="overlay" id="overlay">
+    <div class="pop-up" id="pop-up">
+
+        <form class="form_Entrar" action="{% url 'entrar' %}" method="post">
+            {% csrf_token %}
+            <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><img src="../static/imagenes/cerrar.png"></a>
+            <div class="Titulo_mas_Logo">
+                <h1>Iniciar Sesion</h1>
+            </div>
+            <fieldset class="fieldset_Entrar">
+                <div class="Usuario">
+                    <input type="text" name="Usuario" class="Control" placeholder="nombre.apellido" required>
+                </div>
+                <div class="Contraseña">
+                    <input type="password" name="Contraseña" class="Control" placeholder="Contraseña" required>
+                </div>
+                <div class="contrasena_incorrecta">
+                    <label>{{ contrasena_incorrecta }}</label>
+                </div>
+                <div class="Resto">
+                    <div class="Unido">
+                        <label for="Sesion_Abierta">Mantener sesion abierta</label>
+                        <input type="checkbox" name="Sesion_Abierta" id="Sesion_Abierta">
+                    </div>
+                    <a class="link" href="#" id="enlAbrirPopup-email">¿Olvido su contraseña?</a>
+                    <a class="link" href="{% url 'LlamarFormulario' %}">Registrarse</a>
+                    <button type="submit" class="Entrar_Sesion">Entrar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<script src="/static/js/popup_index.js"></script>
+
 </body>
 
 </html>

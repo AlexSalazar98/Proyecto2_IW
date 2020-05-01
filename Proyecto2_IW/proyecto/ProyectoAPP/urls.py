@@ -41,7 +41,9 @@ urlpatterns = [
     path('ActualizarTarea/', views.ActualizarTarea, name="ActualizarTarea"),
     path('ActualizarProyecto/', views.ActualizarProyecto, name="ActualizarProyecto"),
 
-    path('Buscador/', views.Buscador, name="Buscador")
+    path('Buscador/', views.Buscador, name="Buscador"),
+
+    path('RecuperarCredenciales/', views.recuperarcredenciales, name="RecuperarCredenciales"),
 
 ]
 

@@ -1,9 +1,10 @@
+from django.core.mail import EmailMessage
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView
+
 
 from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, \
     Nivel_Prioridad, Estado_Proyecto, Estado
-from django.views.generic import UpdateView, DetailView
+from django.views.generic import DetailView
 
 
 # Create your views here.
@@ -329,9 +330,7 @@ def ProyectosPorCliente(request):
     return render(request, 'TablaPrincipal.html', context)
 
 
-
 def DiccionarioTablas(datos, titulo, col1, col2, col3):
-
     # Recogemos los objetos necesaios para cargar la info necesaria
     clientes = Clientes.objects.order_by('empresa')
     responsable = Empleados.objects.order_by('nombre')
@@ -358,6 +357,7 @@ def DiccionarioTablas(datos, titulo, col1, col2, col3):
     }
 
     return context
+
 
 # Funcion para modificar los clientes
 def ModificarClientes(request):
@@ -1076,3 +1076,24 @@ def Buscador(request):
         context = diccionarioBuscador(proyectos3)
 
     return render(request, 'TablaPrincipal.html', context)
+
+
+def recuperarcredenciales(request):
+    email = request.POST['email']
+
+    usuario = Usuarios.objects.all()
+
+    user = ""
+    cont = ""
+
+    for u in usuario:
+        if email == u.email:
+            user = u.user
+            cont = u.contraseña
+
+        asunto = "CREDENCIALES"
+        mensaje = f"Tus credenciales son las siguientes. Usuario: {user} --- Contraseña: {cont}"
+        mail = EmailMessage(asunto, mensaje, to=['alex.salazar@opendeusto.es'])
+        mail.send()
+
+    return redirect('index')
