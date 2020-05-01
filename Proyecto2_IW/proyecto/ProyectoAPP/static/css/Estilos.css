@@ -96,16 +96,16 @@ h2{
 
 .form_Entrar{
   font-family:arial;
-  width:450px;
+  width:465px;
   padding:15px;
-  background:#eee;
+  background-image:linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
   border-radius: 20px;
 /*  margin-top: 10px;
   margin-left: 30%;*/
 }
 
 .pop-up h1{
-  color:#999999;
+  color: black;
   text-align:center;
   font-family: 'Vibur', cursive;
   font-size: 50px;
@@ -138,7 +138,7 @@ form .Contraseña{
 
 .Entrar_Sesion{
     width: 375px;
-    background:#0AC986;
+    background: green;
     display:inline-block;
     font-size:16px;
     height:50px;
@@ -147,6 +147,30 @@ form .Contraseña{
     border:none;
     border-radius:4px;
     
+}
+
+.Control_Email{
+    width:358px;
+    height:50px;
+    padding:5px 7px 5px 15px;
+    background:#fff;
+    border:2px solid #ddd;
+    border-radius: 30px;
+    margin-left: 39px;
+    text-align: center;
+}
+
+.Email_Sesion{
+    width: 100%;
+    background: green;
+    display:inline-block;
+    font-size:16px;
+    height:61px;
+    color:#fff;
+    text-decoration:none;
+    border:none;
+    border-radius:4px;
+
 }
 
 .Resto{

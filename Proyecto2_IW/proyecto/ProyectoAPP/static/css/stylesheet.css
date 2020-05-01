@@ -29,7 +29,7 @@
 	header{
 		margin-top: 20px;
 		height: 105px;
-		border: solid 2px white;
+		border: solid 4px black;
 		border-radius: 13px;
 		text-align: center;
 	}
@@ -47,6 +47,8 @@
 		font-family: Brush Script MT;
 		color: red;
 		font-size: 60px;
+		background: black;
+		border-radius: 42px;
 	}
 
 	.logout {
@@ -94,7 +96,7 @@
 	}
 
 	.Menu li a{
-	    background-color: black;
+	    background-color: rgba(0, 0, 0, 0.8);
 	    color: white;
 	    text-decoration: none;
 	    padding: 10px 15px;
@@ -107,7 +109,6 @@
 	}
 
 	.Menu li a:hover{
-	    background-color: rgba(122, 121, 121, 0.781);
 	    color: orange;
 	}
 
@@ -213,7 +214,7 @@
 		width: 97.7%;
 		margin-left: 15px;
 		border-radius: 5px;
-		border-color: rebeccapurple;
+		border: 2px solid;
 	}
 
 	thead{
@@ -239,7 +240,7 @@
 		border: solid 1px black;
 		height: 450px;
 		float: right;
-		background-color: #DED5D5;
+		background: linear-gradient(45deg, #355c9f, #6c5b7b, #c06c84);
 		padding: 10px;
 		border-radius: 15px;
 	}
@@ -250,7 +251,7 @@
 		height: 450px;
 		padding: 10px;
 		border: solid 1px black;
-		background-color: rgb(250, 149, 227, 0.3);
+		background: linear-gradient(45deg, #355c9f, #6c5b7b, #c06c84);
 		overflow-y: scroll;
 	}
 
@@ -277,6 +278,17 @@
 		overflow-y: scroll;
 		height: 75%;
 		width: 97%;
+		color: white;
+	}
+
+	#tabla thead{
+	    height: 40px;
+	    font-weight: 900;
+	}
+
+	#tabla tbody{
+	    text-align: center;
+	    font-weight: 700;
 	}
 
 .VerDetallesProyecto {
@@ -291,6 +303,10 @@
   transition: all 0.5s;
   cursor: pointer;
   margin: 5px;
+}
+
+.hr{
+    border-top: solid black;
 }
 
 .VerDetallesProyecto span {
@@ -329,7 +345,7 @@
 		margin-top: 20px;
 		text-align: center;
 		font: arial;
-		color: black;
+		color: white;
 	}
 
 	.noticia{
@@ -646,6 +662,7 @@ legend{
     font-style: italic;
     margin-top: 10px;
     margin-left: 23px;
+    font-size: 23px;
 }
 
 
@@ -654,24 +671,24 @@ legend{
 /* CSS PARA detalles_proyecto.html y detalles_tareas.html */
 
 .detalles_proyecto, .detalles_tareas{
-    margin-top: 30px;
     width: 825px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 750px;
-    background-color: rgba(66, 63, 63, 0.9);
+    height: 780px;
+    margin: 0 auto;
+    margin-top: 30px;
     margin-bottom: 30px;
-    padding-top: 30px;
+    background-color: rgba(239, 214, 239, 1);
     border-radius: 10px;
+    border: 4px solid #ed1c40;
 }
 
 .top{
     width: 90%;
     height: 80px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(166, 181, 199, 0.8);
     border-radius: 13px;
     margin: 0 auto;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 .titulo{
@@ -715,6 +732,7 @@ legend{
 
 .est-proyect, .est-tareas label{
     font-size: 22px;
+    font-weight: 800;
 }
 
 .datos-principales{
@@ -722,6 +740,7 @@ legend{
     margin: 0 auto;
     padding: 15px;
     border-radius: 9px;
+    border: 2px solid;
 }
 
 .proyecto-fieldset{
@@ -731,6 +750,7 @@ legend{
     border-radius: 9px;
     height: 120px;
     overflow-y: scroll;
+    border: 2px solid;
 }
 
 .tarea-fieldset{
@@ -740,18 +760,24 @@ legend{
     border-radius: 9px;
     height: 205px;
     overflow-y: scroll;
+    border: solid 2px;
+}
+
+.EmpleadoAsignado{
+    margin-left: 45px;
 }
 
 .etiqueta{
     font-style: italic;
-    color: white;
-    font-size: 17px;
-    margin-left: 30px;
+    color: black;
+    font-size: 19px;
+    margin-left: 40px;
+    font-weight: 700;
 }
 
 .hreftareas{
     text-decoration: none;
-    color: red;
+    color: grey;
     cursor: pointer;
 }
 
@@ -761,12 +787,13 @@ legend{
 
 .variable{
     margin-left: 10px;
-    color: red;
-    font-style: Arial Black;
+    color: gray;
+    font-weight: 700;
 }
 
 .datos-principales legend{
-    margin-left: 4px;
+    margin-left: 23px;
+    font-size: 23px;
 }
 
 .primera-linea{
