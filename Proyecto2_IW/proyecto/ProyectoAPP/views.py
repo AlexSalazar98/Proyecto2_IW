@@ -891,13 +891,8 @@ def Buscador(request):
     fecha_fin = request.POST["Fecha_fin"]
     estado_proyecto = request.POST["Estado"]
 
-    todos_proyectos = Proyectos.objects.all()
-
     context = {}
     proyectos = []
-    proyectos1 = []
-    proyectos2 = []
-    proyectos3 = []
 
     if (nombre_proyecto == "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto == ""):
         return redirect('PaginaPrincipal')
@@ -926,139 +921,85 @@ def Buscador(request):
         context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto == ""):
-        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)).filter(fecha_inicio__icontains=str(fecha_inicio)):
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)
+                                          ).filter(fecha_inicio__icontains=str(fecha_inicio)):
             proyectos.append(p)
 
         context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto == ""):
-        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)).filter(fecha_fin__icontains=str(fecha_fin)):
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)
+                                          ).filter(fecha_fin__icontains=str(fecha_fin)):
             proyectos.append(p)
 
         context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin == "") and (estado_proyecto != ""):
-        for p in todos_proyectos:
-            if str(p.nombre).lower() == nombre_proyecto:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)).filter(estado=int(estado_proyecto)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.estado) == estado_proyecto:
-                proyectos1.append(p1)
-
-        context = diccionarioBuscador(proyectos1)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto == "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto == ""):
-        for p in todos_proyectos:
-            if str(p.fecha_inicio) == fecha_inicio:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(fecha_inicio__icontains=str(fecha_inicio)
+                                          ).filter(fecha_fin__icontains=str(fecha_fin)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.fecha_fin) == fecha_fin:
-                proyectos1.append(p1)
-
-        context = diccionarioBuscador(proyectos1)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto == "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto != ""):
-        for p in todos_proyectos:
-            if str(p.fecha_inicio) == fecha_inicio:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(fecha_inicio__icontains=str(fecha_inicio)
+                                          ).filter(estado=int(estado_proyecto)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.estado) == estado_proyecto:
-                proyectos1.append(p1)
-
-        context = diccionarioBuscador(proyectos1)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto == "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto != ""):
-        for p in todos_proyectos:
-            if str(p.fecha_fin) == fecha_fin:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(fecha_fin__icontains=str(fecha_fin)).filter(estado=int(estado_proyecto)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.estado) == estado_proyecto:
-                proyectos1.append(p1)
-
-        context = diccionarioBuscador(proyectos1)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto == ""):
-        for p in todos_proyectos:
-            if str(p.nombre).lower() == nombre_proyecto:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)
+                                          ).filter(fecha_inicio__icontains=str(fecha_inicio)
+                                                   ).filter(fecha_fin__icontains=str(fecha_fin)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.fecha_inicio) == fecha_inicio:
-                proyectos1.append(p1)
-
-        for p2 in proyectos1:
-            if str(p2.fecha_fin) == fecha_fin:
-                proyectos2.append(p2)
-
-        context = diccionarioBuscador(proyectos2)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin == "") and (estado_proyecto != ""):
-        for p in todos_proyectos:
-            if str(p.nombre).lower() == nombre_proyecto:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)
+                                          ).filter(fecha_inicio__icontains=str(fecha_inicio)
+                                                   ).filter(estado=int(estado_proyecto)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.fecha_inicio) == fecha_inicio:
-                proyectos1.append(p1)
-
-        for p2 in proyectos1:
-            if str(p2.estado) == estado_proyecto:
-                proyectos2.append(p2)
-
-        context = diccionarioBuscador(proyectos2)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio == "") and (fecha_fin != "") and (estado_proyecto != ""):
-        for p in todos_proyectos:
-            if str(p.nombre).lower() == nombre_proyecto:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)
+                                          ).filter(fecha_fin__icontains=str(fecha_fin)
+                                                   ).filter(estado=int(estado_proyecto)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.fecha_fin) == fecha_fin:
-                proyectos1.append(p1)
-
-        for p2 in proyectos1:
-            if str(p2.estado) == estado_proyecto:
-                proyectos2.append(p2)
-
-        context = diccionarioBuscador(proyectos2)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto == "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto != ""):
-        for p in todos_proyectos:
-            if str(p.fecha_inicio) == fecha_inicio:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(fecha_inicio__icontains=str(fecha_inicio)
+                                          ).filter(fecha_fin__icontains=str(fecha_fin)
+                                                   ).filter(estado=int(estado_proyecto)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.fecha_fin) == fecha_fin:
-                proyectos1.append(p1)
-
-        for p2 in proyectos1:
-            if str(p2.estado) == estado_proyecto:
-                proyectos2.append(p2)
-
-        context = diccionarioBuscador(proyectos2)
+        context = diccionarioBuscador(proyectos)
 
     elif (nombre_proyecto != "") and (fecha_inicio != "") and (fecha_fin != "") and (estado_proyecto != ""):
-        for p in todos_proyectos:
-            if str(p.nombre).lower() == nombre_proyecto:
-                proyectos.append(p)
+        for p in Proyectos.objects.filter(nombre__icontains=str(nombre_proyecto)
+                                          ).filter(fecha_inicio__icontains=str(fecha_inicio)
+                                                   ).filter(fecha_fin__icontains=str(fecha_fin)
+                                                            ).filter(estado=int(estado_proyecto)):
+            proyectos.append(p)
 
-        for p1 in proyectos:
-            if str(p1.fecha_inicio) == fecha_inicio:
-                proyectos1.append(p1)
-
-        for p2 in proyectos1:
-            if str(p2.fecha_fin) == fecha_fin:
-                proyectos2.append(p2)
-
-        for p3 in proyectos2:
-            if str(p3.estado) == estado_proyecto:
-                proyectos3.append(p3)
-
-        context = diccionarioBuscador(proyectos3)
+        context = diccionarioBuscador(proyectos)
 
     return render(request, 'TablaPrincipal.html', context)
 
@@ -1068,19 +1009,17 @@ def recuperarcredenciales(request):
 
     usuario = Usuarios.objects.all()
 
-    user = ""
-    cont = ""
+    mensaje = ""
 
     for u in usuario:
         if email == u.email:
-            user = u.user
-            cont = u.contraseña
+            mensaje = f"Tus credenciales son las siguientes. Usuario: {u.user} --- Contraseña: {u.contraseña}"
+        else:
+            mensaje = f"Este correo electrónico no esta registrado"
 
     asunto = "CREDENCIALES"
-    mensaje = f"Tus credenciales son las siguientes. Usuario: {user} --- Contraseña: {cont}"
     email_from = settings.EMAIL_HOST_USER
     email_to = [email]
     send_mail(asunto, mensaje, email_from, email_to, fail_silently=False)
-
 
     return redirect('index')
