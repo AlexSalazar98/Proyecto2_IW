@@ -140,15 +140,22 @@ def DetallesProyecto(request):
     for a in pro_select.tareas_a_realizar.all():
         for b in tareas:
             if str(a) == str(b.nombre):
+                print(b)
                 conj = {
                     'tarea': a,
                     'responsable': b.responsable,
                     'id_tarea': b.id
                 }
                 lista_pasar.append(conj)
-    lista_empleados = []
+    lista_empleados_der = []
+    lista_empleados_izq = []
+    contador = 1
     for a in pro_select.empleados.all():
-        lista_empleados.append(a)
+        contador +=1
+        if contador % 2 == 0:
+            lista_empleados_der.append(a)
+        else:
+            lista_empleados_izq.append(a)
 
     # Recogemos los objetos necesaios para cargar la info necesaria
     clientes = Clientes.objects.order_by('empresa')
@@ -174,7 +181,8 @@ def DetallesProyecto(request):
         'presupuesto': pro_select.presupuesto,
         'cliente': pro_select.cliente,
         'tareas_a_realizar': lista_pasar,
-        'empleados': lista_empleados,
+        'empleados_der': lista_empleados_der,
+        'empleados_izq': lista_empleados_izq,
         'departamento': pro_select.departamento,
         'estado': str(pro_select.estado),
 

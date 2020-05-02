@@ -25,15 +25,18 @@
             <legend><strong>Datos principales</strong></legend>
             <div class="primera-linea">
                 <div class="fecha-ini">
-                    <label class="etiqueta"><strong>Fecha de inicio: </strong></label><label class="variable">{{ fecha_inicio|date:'d-m-Y' }}</label>
+                    <label class="etiqueta"><strong>Fecha de inicio: </strong></label><label class="variable">
+                    {{ fecha_inicio|date:'d-m-Y' }}</label>
                 </div>
                 <div class="fecha-fin">
-                    <label class="etiqueta"><strong>Fecha de finalizacion: </strong></label><label class="variable">{{ fecha_fin|date:'d-m-Y' }}</label>
+                    <label class="etiqueta"><strong>Fecha de finalizacion: </strong></label><label class="variable">
+                    {{ fecha_fin|date:'d-m-Y' }}</label>
                 </div>
             </div>
             <div class="segunda-linea">
                 <div class="cliente">
-                    <label class="etiqueta"><strong>Cliente: </strong></label> <label class="variable">{{ cliente }}</label>
+                    <label class="etiqueta"><strong>Cliente: </strong></label> <label class="variable">
+                    {{ cliente }}</label>
                 </div>
                 <div class="dep">
                     <label class="etiqueta"><strong>Departamento: </strong></label><label
@@ -54,7 +57,8 @@
 
                     <ul class="etiqueta">TAREAS
                         {% for a in tareas_a_realizar %}
-                        <li class="variable"><label><a href="{% url 'DetallesTareas' a.id_tarea %}" class="hreftareas" >{{ a.tarea }}</a></label></li>
+                        <li class="variable"><label><a href="{% url 'DetallesTareas' a.id_tarea %}" class="hreftareas">
+                            {{ a.tarea }}</a></label></li>
                         {% endfor %}
                     </ul>
 
@@ -62,7 +66,7 @@
                 <div class="lado-izquierda">
                     <ul class="etiqueta">RESPONSABLE
                         {% for a in tareas_a_realizar %}
-                        <li class="variable">{{ a.responsable }}</li>
+                        <li class="variable">{{ a.responsable }} {{ a.responsable.apellido }}</li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -71,12 +75,24 @@
 
 
         <fieldset class="proyecto-fieldset">
+
             <legend><strong>Empleados asignados al proyecto</strong></legend>
-            {% for a in empleados %}
-            <div class="EmpleadoAsignado">
-                <label class="variable">&#8226; {{ a.nombre }} {{ a.apellido }} </label>
+            <div class="empl">
+
+                <div class="EmpleadoAsignado">
+                    {% for a in empleados_der %}
+                    <label class="variable">&#8226; {{ a.nombre }} {{ a.apellido }} </label><br>
+                    {% endfor %}
+                </div>
+
+
+                <div class="EmpleadoAsignado-izq">
+                    {% for a in empleados_izq %}
+                    <label class="variable">&#8226; {{ a.nombre }} {{ a.apellido }} </label><br>
+                    {% endfor %}
+                </div>
+
             </div>
-            {% endfor %}
         </fieldset>
 
         <fieldset class="proyecto-fieldset">
@@ -88,6 +104,7 @@
 
     </div>
     <button onclick="history.back()" class="flotante"><img src="/static/imagenes/flecha.png"></button>
+
 </div>
 
 {% endblock %}

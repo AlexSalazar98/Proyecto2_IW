@@ -792,8 +792,21 @@ legend{
     border: solid 2px;
 }
 
+.empl{
+    display: inline-block;
+    width:100%
+}
+
 .EmpleadoAsignado{
+    margin-left: 105px;
+    width: 31%;
+    float: left;
+}
+
+.EmpleadoAsignado-izq{
     margin-left: 45px;
+    width: 32%;
+    float: right;
 }
 
 .etiqueta{
@@ -802,6 +815,19 @@ legend{
     font-size: 19px;
     margin-left: 40px;
     font-weight: 700;
+}
+
+.etiqueta label {
+  animation-name: parpadeo;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes parpadeo {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1.0; }
 }
 
 .hreftareas{

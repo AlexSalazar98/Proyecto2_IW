@@ -26,15 +26,18 @@
             <legend><strong>Datos principales</strong></legend>
             <div class="primera-linea">
                 <div class="fecha-ini">
-                    <label class="etiqueta"><strong>Fecha de inicio: </strong></label><label class="variable">{{ tareas.fecha_inicio|date:'d-m-Y' }}</label>
+                    <label class="etiqueta"><strong>Fecha de inicio: </strong></label><label class="variable">
+                    {{ tareas.fecha_inicio|date:'d-m-Y' }}</label>
                 </div>
                 <div class="fecha-fin">
-                    <label class="etiqueta"><strong>Fecha de finalizacion: </strong></label><label class="variable">{{ tareas.fecha_fin|date:'d-m-Y' }}</label>
+                    <label class="etiqueta"><strong>Fecha de finalizacion: </strong></label><label class="variable">
+                    {{ tareas.fecha_fin|date:'d-m-Y' }}</label>
                 </div>
             </div>
             <div class="segunda-linea">
                 <div class="cliente">
-                    <label class="etiqueta"><strong>Responsable: </strong></label> <label class="variable">{{ tareas.responsable }}</label>
+                    <label class="etiqueta"><strong>Responsable: </strong></label> <label class="variable">
+                    {{ tareas.responsable }} {{ tareas.responsable.apellido }}</label>
                 </div>
                 <div class="dep">
                     <label class="etiqueta"><strong>Nivel Prioridad: </strong></label><label
@@ -60,7 +63,6 @@
 </div>
 
 {% endblock %}
-
 
 
 <!-- TAREAS -->

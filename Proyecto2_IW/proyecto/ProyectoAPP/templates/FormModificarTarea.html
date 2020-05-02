@@ -35,10 +35,10 @@
                     <div class="resp-sel">
                         <select name="Responsable" class="Responsable" required>
 
-                            <option name="responsable" value="{{ resp_id }}" selected> {{ resp_nom }} {{ resp_ape }}</option>
+                            <option name="responsable" value="{{ resp_id }}" selected>{{ resp_nom }} {{ resp_ape }}</option>
 
                             {% for resp in responsable %}
-                            <option name="responsable" value="{{ resp.id }}"> {{ resp.nombre }} {{ resp.apellido }}</option>
+                            <option name="responsable" value="{{ resp.id }}">{{ resp.nombre }} {{ resp.apellido }}</option>
                             {% endfor %}
 
                         </select>
@@ -50,10 +50,10 @@
                     <div class="prio-sel">
                         <select name="Prioridad" class="Prioridad" required>
 
-                            <option name="prioridad" value="{{ prio_actual.id }}"> {{ prio_actual.nivel_prioridad }}</option>
+                            <option name="prioridad" value="{{ prio_actual.id }}">{{ prio_actual.nivel_prioridad }}</option>
 
                             {% for prio in prioridad %}
-                            <option name="prioridad" value="{{ prio.id }}"> {{ prio.nivel_prioridad }}</option>
+                            <option name="prioridad" value="{{ prio.id }}">{{ prio.nivel_prioridad }}</option>
                             {% endfor %}
                         </select>
                     </div>

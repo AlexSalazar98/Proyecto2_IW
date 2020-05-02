@@ -39,7 +39,7 @@
                     <label for="Fecha_Nacimiento" class="Fecha_Nacimiento">Fecha Nacimiento:</label>
                     <input type="date" name="Fecha_Nacimiento" id="Fecha_Nacimiento" required>
                     <br>
-                    Departamento: <select name="Departamento" class="Departamento" required> {% for dep in departamentos %}
+                    Departamento: <select name="Departamento" class="Departamento" required>{% for dep in departamentos %}
                     <option> {{ dep.nombre }}</option> {% endfor %} </select>
                     <br>
                     Categoria: <select name="Categoria" class="Categoria" required> {% for cat in categoria %}

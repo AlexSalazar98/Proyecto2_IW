@@ -46,7 +46,7 @@ class Usuarios(models.Model):
     contraseña = models.CharField(max_length=10)
 
     def __str__(self):
-        return f"{self.nombre}"
+        return f"{self.nombre} {self.apellido1}"
 
 
 # Clase para la creacion de Empleados

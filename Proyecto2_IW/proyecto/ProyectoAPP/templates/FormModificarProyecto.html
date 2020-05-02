@@ -104,7 +104,8 @@
                             <select name="Empleados" multiple size="3">
 
                                 {% for resp_a in emp_actuales %}
-                                <option value="{{ resp_a.id }}" selected> {{ resp_a.nombre }} {{ resp_a.apellido }}</option>
+                                <option value="{{ resp_a.id }}" selected> {{ resp_a.nombre }} {{ resp_a.apellido }}
+                                </option>
                                 {% endfor %}
 
                                 {% for resp in resto_empl %}
@@ -118,7 +119,8 @@
                 <div>
                     <label for="Descripcion_Proyecto" class="Descripcion_Proyecto">Descripcion:</label>
                     <div>
-                        <textarea name="Descripcion_Proyecto" id="Descripcion_Proyecto" required>{{ pro.descripcion }}</textarea>
+                        <textarea name="Descripcion_Proyecto" id="Descripcion_Proyecto"
+                                  required>{{ pro.descripcion }}</textarea>
                     </div>
                 </div>
             </div>
