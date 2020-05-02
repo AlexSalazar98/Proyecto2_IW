@@ -1,9 +1,7 @@
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.conf import settings
-
-from ProyectoAPP.models import Usuarios, Departamento, Categoria, Clientes, Proyectos, Empleados, Tareas, \
-    Nivel_Prioridad, Estado_Proyecto, Estado
+from ProyectoAPP.models import *
 from django.views.generic import DetailView
 
 
@@ -44,7 +42,7 @@ def login(request):
         for us in listausrec:
             if us['usuario'] == usuario and us['contraseña'] == contraseña:
                 return redirect('PaginaPrincipal')
-                break
+            break
 
 
 # Funcion para mostrar la pagina principal de la aplicacion
@@ -237,10 +235,10 @@ def Nueva_Tarea(request):
     # Recogemos sus datos del HTML
     nueva_tarea.nombre = request.POST["Nombre_Tarea"]
     nueva_tarea.descripcion = request.POST["Descripcion_Tarea"]
-    nueva_tarea.estado_tarea = Estado.objects.get(estado=request.POST["Estado"])
+    nueva_tarea.estado_tarea = Estado.objects.get(id=request.POST["Estado_Tarea"])
     nueva_tarea.fecha_fin = request.POST["Fecha_Fin"]
     nueva_tarea.fecha_inicio = request.POST["Fecha_Inicio"]
-    nueva_tarea.nivel_prioridad = Nivel_Prioridad.objects.get(nivel_prioridad=request.POST["Prioridad"])
+    nueva_tarea.nivel_prioridad = Nivel_Prioridad.objects.get(id=request.POST["Prioridad"])
     nueva_tarea.notas_adicionales_escritas_empleado = request.POST["Notas_Empleado"]
     nueva_tarea.responsable = Empleados.objects.get(id=request.POST["Responsable"])
 
