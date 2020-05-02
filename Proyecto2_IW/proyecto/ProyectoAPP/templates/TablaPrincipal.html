@@ -56,9 +56,9 @@
         <div class="botones-clientes">
             <form action="{% url 'ProyectosPorClientes' %}" method="post">
                 {% csrf_token %}
-                <button type="submit" name="botones_cliente" value="Todos">Todos</button>
+                <button type="submit" name="botones_cliente" class="BotonesClientes" value="Todos"><span>Todos</span></button>
                 {% for n_cliente in clientes %}
-                <button type="submit" name="botones_cliente" value="{{ n_cliente.id }}">{{ n_cliente.empresa }}</button>
+                <button type="submit" name="botones_cliente" class="BotonesClientes" value="{{ n_cliente.id }}"><span>{{ n_cliente.empresa }}</span></button>
                 {% endfor %}
             </form>
         </div>
