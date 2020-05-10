@@ -36,3 +36,14 @@ enlCerrarPopupemail.addEventListener('click', function(){
 });
 
 
+function mostrarContrasena(){
+    var tipo = document.getElementById("password");
+    var icono = document.getElementById("ojo");
+    if(tipo.type == "password"){
+        tipo.type = "text";
+        icono.textContent = "visibility";
+    }else{
+        tipo.type = "password";
+        icono.textContent = "visibility_off";
+    }
+}

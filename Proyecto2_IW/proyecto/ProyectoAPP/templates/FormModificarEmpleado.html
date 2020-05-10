@@ -1,7 +1,7 @@
 {% extends 'Base.html' %}
 
 {% block content %}
-
+<script src="/static/js/ConfirmarBorrar.js"></script>
 
 <div class="ModificarEmpleado">
     <form action="{% url 'ActualizarEmpleado' %}" method="post">
@@ -56,7 +56,7 @@
             </div>
         </div>
     </form>
-    <form action="{% url 'BorrarEmpleado' %}" method="post">
+    <form action="{% url 'BorrarEmpleado' %}" onsubmit="return ConfirmarBorrar()" method="post">
         {% csrf_token %}
         <div class="botones-fc">
             <div class="btn-eliminar-c">

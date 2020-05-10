@@ -1,11 +1,12 @@
 function ConfirmarBorrar(){
 
     //var mensaje = confirm("¿Desea eliminar el registro?");
-    alert("Registro eliminado correctamente")
-    /*if (mensaje != false){
-        return document.getElementById('Borrar-Registro').submit();
+    //alert("Registro eliminado correctamente")
+    if (confirm("¿Desea eliminar el registro?")){
+        return true;
     }else{
-        return 0;
-    }*/
+        return false;
+    }
 
 }
+

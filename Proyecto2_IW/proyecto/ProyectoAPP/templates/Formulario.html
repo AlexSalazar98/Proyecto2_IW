@@ -6,13 +6,14 @@
 <head>
     <link rel="stylesheet" href="{% static 'css/Estilos.css' %}">
     <link rel="shortcut icon" href="/static/imagenes/Logo.jpg">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script type="text/javascript" src="/static/js/comprobar_cont_form.js"></script>
 </head>
 
 <body>
 <main>
     <div class="Alta_Usuario">
-        <form id="Alta_Registro" id="Formulario" action="{% url 'RecogerFormulario' %}" method="post">
+        <form id="Alta_Registro" id="Formulario" action="{% url 'RecogerFormulario' %}" onsubmit="return comprobarClave()" method="post">
             {% csrf_token %}
             <div class="Titulo_Formulario">
                 <h1>Formulario Registro</h1>
@@ -54,9 +55,11 @@
                     <br>
                     <label for="Contraseña">Contraseña</label>
                     <input type="password" name="Contraseña" id="Contraseña" required>
+                    <i id="ojo2" class="tiny material-icons ojo2" onclick="mostrarContrasena2()">visibility_off</i>
                     <br>
                     <label for="Repetir_Contraseña">Repetir Contraseña</label>
                     <input type="password" name="Repetir_Contraseña" id="Repetir_Contraseña" required>
+                    <i id="ojo3" class="tiny material-icons ojo3" onclick="mostrarContrasena3()">visibility_off</i>
                     <br>
                     <label for="Correo_Electronico">Correo Electronico</label>
                     <input type="email" name="Correo_Electronico" id="Correo_Electronico" required>
@@ -66,8 +69,7 @@
                 <label for="Acepto_Condiciones">Acepto Condiciones</label>
                 <input type="checkbox" name="Acepto_Condiciones" id="Acepto_Condiciones" required>
             </div>
-            <input type="button" class="Entrar_Usuario" id="Entrar_Usuario" onclick="comprobarClave()"
-                   value="Registrarse">
+            <input type="submit" class="Entrar_Usuario" id="Entrar_Usuario" value="Registrarse">
         </form>
 
     </div>

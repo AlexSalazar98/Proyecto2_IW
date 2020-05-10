@@ -8,6 +8,7 @@
     <title>PROJECT-M</title>
     <link rel="shortcut icon" href="../static/imagenes/Logo.jpg">
     <link rel="stylesheet" href="{% static 'css/Estilos.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
@@ -86,10 +87,9 @@
                     <input type="text" name="Usuario" class="Control" placeholder="nombre.apellido" required>
                 </div>
                 <div class="Contraseña">
-                    <input type="password" name="Contraseña" class="Control" placeholder="Contraseña" required>
-                </div>
-                <div class="contrasena_incorrecta">
-                    <label>{{ contrasena_incorrecta }}</label>
+                    <input type="password" id="password" name="Contraseña" class="Control" placeholder="Contraseña" required>
+                    <!-- <button class="btn btn-primary" type="button" onclick="mostrarContrasena()">Mostrar Contraseña</button> -->
+                    <i id="ojo" class="large material-icons ojo" onclick="mostrarContrasena()">visibility_off</i>
                 </div>
                 <div class="Resto">
                     <div class="Unido">

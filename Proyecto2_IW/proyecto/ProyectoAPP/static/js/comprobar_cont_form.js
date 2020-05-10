@@ -1,16 +1,15 @@
 function comprobarClave() {
 
     var cont1 = document.getElementById('Contraseña').value,
-	    cont2 = document.getElementById('Repetir_Contraseña').value;
-	    //Formulario = document.getElementById('Formulario');
+	    cont2 = document.getElementById('Repetir_Contraseña').value,
+	    apellido1 = document.getElementById('Apellido_1').required;
+
 
     if (cont1 != cont2)  {
         alert('Las contraseñas no coinciden');
-        /*Formulario.Contraseña.value = "";
-        Formulario.Repetir_Contraseña.value = "";
-        Formulario.Contraseña.focus();*/
+        return false;
     }else{
-        document.getElementById('Alta_Registro').submit();
+        return true;
     }
 }
 
@@ -26,4 +25,28 @@ function Usuario(){
         user[i].value = union;
      }
 
+}
+
+function mostrarContrasena2(){
+    var tipo = document.getElementById("Contraseña");
+    var icono = document.getElementById("ojo2");
+    if(tipo.type == "password"){
+        tipo.type = "text";
+        icono.textContent = "visibility";
+    }else{
+        tipo.type = "password";
+        icono.textContent = "visibility_off";
+    }
+}
+
+function mostrarContrasena3(){
+    var tipo = document.getElementById("Repetir_Contraseña");
+    var icono = document.getElementById("ojo3");
+    if(tipo.type == "password"){
+        tipo.type = "text";
+        icono.textContent = "visibility";
+    }else{
+        tipo.type = "password";
+        icono.textContent = "visibility_off";
+    }
 }

@@ -132,6 +132,18 @@ form .Contraseña{
     border-radius: 30px;
 }
 
+.Contraseña input{
+    position: absolute;
+    z-index: 0;
+}
+
+.ojo{
+    position: absolute;
+    margin-top: 21px;
+    margin-left: 340px;
+    cursor: pointer;
+}
+
 .Unido{
     margin-bottom: 10px;
 }
@@ -177,6 +189,7 @@ form .Contraseña{
     margin: 20px;
     display: inline-flex;
     flex-direction: column;
+    margin-top: 88px;
 }
 
 .link{
@@ -270,6 +283,34 @@ label{
 
 .Registro_Personales input, .Registro_Cuenta input{
     border-radius: 10px;
+}
+
+#Contraseña{
+    position: absolute;
+    z-index: 0;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+#ojo2{
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 123px;
+    cursor: pointer;
+}
+
+#Repetir_Contraseña{
+    position: absolute;
+    z-index: 0;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+#ojo3{
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 123px;
+    cursor: pointer;
 }
 
 legend{
