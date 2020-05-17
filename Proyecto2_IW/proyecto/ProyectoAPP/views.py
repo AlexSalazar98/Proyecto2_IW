@@ -2,7 +2,8 @@ from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.conf import settings
 from ProyectoAPP.models import *
-from django.views.generic import DetailView
+from django.views.generic import DetailView, View
+from django.http import JsonResponse
 
 
 # Create your views here.
@@ -39,10 +40,16 @@ def login(request):
         # Los añadimos a la lista para comprobar despues
         listausrec.append(user_com)
 
+        loginCorrecto = True
+
         for us in listausrec:
             if us['usuario'] == usuario and us['contraseña'] == contraseña:
+                loginCorrecto = False
                 return redirect('PaginaPrincipal')
             break
+
+        if loginCorrecto:
+            return redirect('index')
 
 
 # Funcion para mostrar la pagina principal de la aplicacion
@@ -151,7 +158,7 @@ def DetallesProyecto(request):
     lista_empleados_izq = []
     contador = 1
     for a in pro_select.empleados.all():
-        contador +=1
+        contador += 1
         if contador % 2 == 0:
             lista_empleados_der.append(a)
         else:
@@ -1029,3 +1036,25 @@ def recuperarcredenciales(request):
     send_mail(asunto, mensaje, email_from, email_to, fail_silently=False)
 
     return redirect('index')
+
+
+class NombProyecto(View):
+    def get(self, request):
+        plist = Proyectos.objects.all()
+        return JsonResponse(list(plist.values()), safe=False)
+
+
+class ActualizarCliente_AJAX(View):
+    def post(self, request, *args, **kwargs):
+        empresa = request.POST['Empresa']
+
+        for c in Clientes.objects.filter(empresa__icontains=str(empresa)):
+            c.nombre = request.POST['nombre']
+            c.email = request.POST['Email']
+            c.localizacion = request.POST['Localizacion']
+            c.telefono = request.POST['Telefono']
+            c.numero_cuenta = request.POST['Numero_Cuenta']
+            c.save()
+
+        return JsonResponse(empresa, safe=False)
+

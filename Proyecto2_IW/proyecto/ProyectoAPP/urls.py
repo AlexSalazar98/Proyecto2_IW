@@ -45,6 +45,10 @@ urlpatterns = [
 
     path('RecuperarCredenciales/', views.recuperarcredenciales, name="RecuperarCredenciales"),
 
+    path('NombProyecto/', views.NombProyecto.as_view(), name="NombProyecto"),
+
+    path('ActualizarClienteAJAX/', views.ActualizarCliente_AJAX.as_view(), name="ActualizarClienteAJAX"),
+
 ]
 
 

@@ -57,16 +57,16 @@
             <div>
                 <h1>RECUPERAR CREDENCIALES</h1>
             </div>
+            <div>
                 <div>
-                    <div>
-                        <input type="email" name="email" class="Control_Email" placeholder="Introduce tu email" required>
-                    </div>
-                    <br>
-                    <br>
-                    <div>
-                        <button class="Email_Sesion">ENVIAR</button>
-                    </div>
+                    <input type="email" name="email" class="Control_Email" placeholder="Introduce tu email" required>
                 </div>
+                <br>
+                <br>
+                <div>
+                    <button class="Email_Sesion">ENVIAR</button>
+                </div>
+            </div>
         </form>
     </div>
 </div>
@@ -87,8 +87,8 @@
                     <input type="text" name="Usuario" class="Control" placeholder="nombre.apellido" required>
                 </div>
                 <div class="Contraseña">
-                    <input type="password" id="password" name="Contraseña" class="Control" placeholder="Contraseña" required>
-                    <!-- <button class="btn btn-primary" type="button" onclick="mostrarContrasena()">Mostrar Contraseña</button> -->
+                    <input type="password" id="password" name="Contraseña" class="Control" placeholder="Contraseña"
+                           required>
                     <i id="ojo" class="large material-icons ojo" onclick="mostrarContrasena()">visibility_off</i>
                 </div>
                 <div class="Resto">
@@ -98,7 +98,7 @@
                     </div>
                     <a class="link" href="#" id="enlAbrirPopup-email">¿Olvido su contraseña?</a>
                     <a class="link" href="{% url 'LlamarFormulario' %}">Registrarse</a>
-                    <button type="submit" class="Entrar_Sesion">Entrar</button>
+                    <button type="submit" id="entrar" class="Entrar_Sesion">Entrar</button>
                 </div>
             </fieldset>
         </form>

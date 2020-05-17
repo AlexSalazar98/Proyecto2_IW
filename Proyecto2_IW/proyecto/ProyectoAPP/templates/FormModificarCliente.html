@@ -1,10 +1,10 @@
 {% extends 'Base.html' %}
 
 {% block content %}
-<script src="/static/js/ConfirmarBorrar.js"></script>
+
 
 <div class="ModificarCliente">
-    <form action="{% url 'ActualizarCliente' %}" method="post">
+    <form id="formulario" method="post">
         {% csrf_token %}
         <div class="Titulo_Modificar_Cliente">
             <h1>Cliente</h1>
@@ -23,7 +23,7 @@
                 <div class="Mod-Empresa-c">
                     <label for="Empresa-f" class="Empresa">Empresa:</label>
                     <div id="Empresa-f">
-                        <input type="text" name="Empresa" id="Empresa" value="{{ cliente.empresa }}" required>
+                        <input type="text" name="Empresa" id="Empresa" value="{{ cliente.empresa }}" required readonly>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                 <div class="Mod-Cuenta-c">
                     <label for="Numero_Cuenta_Cliente-f" class="Numero_Cuenta">Numero Cuenta:</label>
                     <div id="Numero_Cuenta_Cliente-f">
-                        <input type="text" name="Numero_Cuenta" id="Numero_Cuenta_Cliente"
+                        <input type="text" name="Numero_Cuenta" id="Numero_Cuenta_Cliente" onblur="enviar()"
                                value="{{ cliente.numero_cuenta }}" required>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
         </fieldset>
         <div class="botones-fc">
             <div class="btn-guardar-cc">
-                <button type="submit" class="Guardar-mfc" id="Guardar_Cambios_Cliente" name="btn-modificar-cliente"
+                <button type="button" class="Guardar-mfc" id="Guardar_Cambios_Cliente" name="btn-modificar-cliente"
                         value="{{ cliente.id }}">Guardar Cambios
                 </button>
             </div>
@@ -81,7 +81,7 @@
     <button onclick="history.back()" class="flotante"><img src="/static/imagenes/flecha.png"></button>
 </div>
 
-
+<script src="/static/js/ConfirmarBorrar.js"></script>
 
 {% endblock %}
 

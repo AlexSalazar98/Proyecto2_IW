@@ -66,3 +66,26 @@ enlCerrarPopup_Proyecto.addEventListener('click', function(){
 	overlay_Proyecto.classList.remove('active');
 	popup_Proyecto.classList.remove('active');
 });
+
+
+function NomProyectoRep(){
+
+    var nuevo_nombre = document.querySelector('#Nombre_Proyecto').value;
+
+    //console.log(nuevo_nombre.toLowerCase());
+
+    fetch("http://127.0.0.1:8000/ProyectoAPP/NombProyecto/")
+        .then((response) => response.json())
+        .then((json) => {
+
+            for (i = 0; i < json.length; i++){
+                //console.log(json[i].nombre.toLowerCase());
+                if(json[i].nombre.toLowerCase().indexOf(nuevo_nombre) !== -1){
+                    alert("El nombre escogido para el proyecto ya existe!");
+                    break;
+                }
+            };
+
+        });
+
+}
