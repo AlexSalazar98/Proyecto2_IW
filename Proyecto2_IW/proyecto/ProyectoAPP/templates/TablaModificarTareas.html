@@ -38,7 +38,7 @@
             <div class="Borrar">
                 <form action="{% url 'BorrarTarea' %}" onsubmit="return ConfirmarBorrar()" method="post">
                     {% csrf_token %}
-                    <button type="submit" name="btn-delete-tareas" value="{{ tareas.id }}">
+                    <button type="submit" name="btn-delete-tarea" value="{{ tareas.id }}">
                         <i class="material-icons button delete">delete</i>
                     </button>
                 </form>
