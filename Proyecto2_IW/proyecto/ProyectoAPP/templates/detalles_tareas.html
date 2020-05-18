@@ -3,6 +3,63 @@
 {% block content %}
 <!-- Cuerpo central de la pagina -->
 
+<!-- aqui va el de Empleado -->
+
+<div class="overlay" id="overlay_Responsable">
+    <div class="pop-up" id="pop-up_Responsable">
+        <div class="Alta">
+                <a href="#" id="btn-cerrar-popup_Responsable" class="btn-cerrar-popup"><img
+                        src="/static/imagenes/cerrar.png"></a>
+                <div class="Titulo_Alta">
+                    <h1>Responsable</h1>
+                </div>
+                <fieldset class="fieldset_Alta">
+                    <legend><strong>Datos del Responsable</strong></legend>
+                    <div class="Registro_Personales">
+                        <div class="Registro_Personales">
+                            <div>
+                                <label class="DNI">DNI:</label>
+                                <div id="DNI_Empleado-c">
+                                    <!--<input type="text" name="DNI" id="DNI" required>-->
+                                </div>
+                            </div>
+
+                            <div class="Mod-Empresa-empleado-f">
+                                <label class="Nombre">Nombre:</label>
+                                <div id="Empresa-empleado-c">
+                                    <!--<input type="text" name="nombre" id="Nombre-empresa" required>-->
+                                </div>
+                            </div>
+
+                            <div class="Mod-Empresa-empleado-f">
+                                <label class="Apellido">Apellido:</label>
+                                <div id="Apellido-empleado-c">
+                                    <!--<input type="text" name="Apellido" id="Apellido" required>-->
+                                </div>
+                            </div>
+
+                            <div class="Mod-Empresa-empleado-f">
+                                <label class="Email">Email:</label>
+                                <div id="Email-empleado-c">
+                                    <!--<input type="email" name="Email" id="Email_Empleado" required>-->
+                                </div>
+                            </div>
+
+                            <div class="Mod-Empresa-empleado-f">
+                                <label class="Telefono">Telefono:</label>
+                                <div id="Tel-empleado-c">
+                                    <!--<input type="number" name="Telefono" id="Telefono" required>-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+        </div>
+
+    </div>
+</div>
+
+<script src="/static/js/domResponsable.js"></script>
 <div class="detalles_tareas">
     <div class="top">
         <div class="titulo">
@@ -36,8 +93,10 @@
             </div>
             <div class="segunda-linea">
                 <div class="cliente">
-                    <label class="etiqueta"><strong>Responsable: </strong></label> <label class="variable">
-                    {{ tareas.responsable }} {{ tareas.responsable.apellido }}</label>
+                    <label class="etiqueta"><strong>Responsable: </strong></label>
+                    <label class="variable" id="domlabel" onclick="domResponsable({{tareas.responsable.id}})">
+                        <a href="#" id="DomResponsable">{{ tareas.responsable }} {{ tareas.responsable.apellido }}</a>
+                    </label>
                 </div>
                 <div class="dep">
                     <label class="etiqueta"><strong>Nivel Prioridad: </strong></label><label

@@ -1670,3 +1670,8 @@ input[type="number"]
     font-weight: 700;
     font-variant: small-caps;
 }
+
+#DomResponsable{
+    text-decoration: none;
+    cursor: pointer;
+}

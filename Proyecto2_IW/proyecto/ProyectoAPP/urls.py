@@ -49,6 +49,8 @@ urlpatterns = [
 
     path('ActualizarClienteAJAX/', views.ActualizarCliente_AJAX.as_view(), name="ActualizarClienteAJAX"),
 
+    path('DetalleResponsable/<int:pk>/', views.EmpleadoDetailView.as_view(), name="DetalleResponsable"),
+
 ]
 
 

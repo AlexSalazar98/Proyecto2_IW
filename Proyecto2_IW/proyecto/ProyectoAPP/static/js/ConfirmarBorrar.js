@@ -18,7 +18,7 @@ function enviar(){
     })
     .then(response => response.json())
     .then((data) => {
-        console.log(data);
+        //console.log(data);
         alert("Cliente modificado correctamente!")
     })
 

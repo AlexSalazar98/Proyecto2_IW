@@ -4,6 +4,7 @@ from django.conf import settings
 from ProyectoAPP.models import *
 from django.views.generic import DetailView, View
 from django.http import JsonResponse
+from django.forms.models import model_to_dict
 
 
 # Create your views here.
@@ -1058,3 +1059,7 @@ class ActualizarCliente_AJAX(View):
 
         return JsonResponse(empresa, safe=False)
 
+class EmpleadoDetailView(View):
+    def get(self, request, pk):
+        elist = Empleados.objects.get(pk=pk)
+        return JsonResponse(model_to_dict(elist))
