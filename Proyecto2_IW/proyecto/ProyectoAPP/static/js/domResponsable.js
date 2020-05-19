@@ -33,6 +33,7 @@ function domResponsable(pk){
         .then((json) => {
 
             console.log(json.nombre);
+            div_dni.innerHTML = "";
             input_dni.type = 'text';
             input_dni.value = json.dni;
             input_dni.setAttribute("id", "DNI");
