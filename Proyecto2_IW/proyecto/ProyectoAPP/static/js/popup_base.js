@@ -1,3 +1,4 @@
+// Recogemos variables del HTML
 var Cliente = document.getElementById('Cliente'),
 	overlay_Cliente = document.getElementById('overlay_Cliente'),
 	popup_Cliente = document.getElementById('pop-up_Cliente'),
@@ -20,7 +21,7 @@ var Cliente = document.getElementById('Cliente'),
 
 
 
-
+// EventListener para abrir los Pop-up
 Cliente.addEventListener('click', function(){
 	overlay_Cliente.classList.add('active');
 	popup_Cliente.classList.add('active');
@@ -45,7 +46,7 @@ Proyecto.addEventListener('click', function(){
 
 
 
-
+// EventListener para cerrar los Pop-up
 enlCerrarPopup_Cliente.addEventListener('click', function(){
 	overlay_Cliente.classList.remove('active');
 	popup_Cliente.classList.remove('active');
@@ -67,19 +68,19 @@ enlCerrarPopup_Proyecto.addEventListener('click', function(){
 	popup_Proyecto.classList.remove('active');
 });
 
-
+// Funcion para comprobar si esta repetido el nombre del proyecto
 function NomProyectoRep(){
 
     var nuevo_nombre = document.querySelector('#Nombre_Proyecto').value;
-
-    //console.log(nuevo_nombre.toLowerCase());
 
     fetch("http://127.0.0.1:8000/ProyectoAPP/NombProyecto/")
         .then((response) => response.json())
         .then((json) => {
 
             for (i = 0; i < json.length; i++){
-                //console.log(json[i].nombre.toLowerCase());
+                /* indexOf:
+                    Esta funcion compara dos valores y devuelve un numero en funcion del resultado de la comparacion.
+                */
                 if(json[i].nombre.toLowerCase().indexOf(nuevo_nombre) !== -1){
                     alert("El nombre escogido para el proyecto ya existe!");
                     break;

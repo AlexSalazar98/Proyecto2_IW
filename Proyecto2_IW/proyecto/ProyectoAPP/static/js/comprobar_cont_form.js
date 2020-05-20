@@ -1,9 +1,8 @@
+// Esta funcion nos permite comprobar que las claves coinciden al registrarse en la aplicacion
 function comprobarClave() {
 
     var cont1 = document.getElementById('Contraseña').value,
-	    cont2 = document.getElementById('Repetir_Contraseña').value,
-	    apellido1 = document.getElementById('Apellido_1').required;
-
+	    cont2 = document.getElementById('Repetir_Contraseña').value;
 
     if (cont1 != cont2)  {
         alert('Las contraseñas no coinciden');
@@ -13,20 +12,23 @@ function comprobarClave() {
     }
 }
 
+// Funcion de autocompletado del usuario para el loggin
 function Usuario(){
 
     var nombre = document.getElementById('Nombre').value,
         apellido = document.getElementById('Apellido_1').value,
         user = document.querySelectorAll(".User"),
 
+// Juntamos el nombre y apellido con un punto para montar el usuario
         union = nombre.toLowerCase() + "." + apellido.toLowerCase();
 
     for(var i = 0; i < user.length;i++){
         user[i].value = union;
-     }
+    }
 
 }
 
+// Funcion para mostrar la contraseña del formulario
 function mostrarContrasena2(){
     var tipo = document.getElementById("Contraseña");
     var icono = document.getElementById("ojo2");
@@ -39,6 +41,7 @@ function mostrarContrasena2(){
     }
 }
 
+// Funcion para mostrar repetir_contraseña del formulario
 function mostrarContrasena3(){
     var tipo = document.getElementById("Repetir_Contraseña");
     var icono = document.getElementById("ojo3");

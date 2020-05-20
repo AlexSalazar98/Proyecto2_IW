@@ -1017,7 +1017,7 @@ def Buscador(request):
 
     return render(request, 'TablaPrincipal.html', context)
 
-
+# Funcion para Recuperar Credenciales
 def recuperarcredenciales(request):
     email = request.POST['email']
 
@@ -1038,13 +1038,13 @@ def recuperarcredenciales(request):
 
     return redirect('index')
 
-
+# API para devolver proyectos
 class NombProyecto(View):
     def get(self, request):
         plist = Proyectos.objects.all()
         return JsonResponse(list(plist.values()), safe=False)
 
-
+# Clase actualizar cliente mediante AJAX
 class ActualizarCliente_AJAX(View):
     def post(self, request, *args, **kwargs):
         empresa = request.POST['Empresa']
@@ -1059,6 +1059,7 @@ class ActualizarCliente_AJAX(View):
 
         return JsonResponse(empresa, safe=False)
 
+# API para devolver empleados
 class EmpleadoDetailView(View):
     def get(self, request, pk):
         elist = Empleados.objects.get(pk=pk)

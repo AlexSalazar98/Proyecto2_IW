@@ -1,9 +1,6 @@
 from django.db import models
 
 # Clase para la creacion de Clientes
-from django.urls import reverse
-
-
 class Clientes(models.Model):
     nombre = models.CharField(max_length=50)
     empresa = models.CharField(max_length=50, unique=True)
@@ -68,7 +65,7 @@ class Estado(models.Model):
     def __str__(self):
         return f"{self.estado}"
 
-
+# Clase para la creacion de Nivel Prioridad
 class Nivel_Prioridad(models.Model):
     nivel_prioridad = models.CharField(max_length=15)
 
@@ -90,7 +87,7 @@ class Tareas(models.Model):
     def __str__(self):
         return f"{self.nombre}"
 
-
+# Clase para la creacion de Estado Proyectos
 class Estado_Proyecto(models.Model):
     estado = models.CharField(max_length=20)
 

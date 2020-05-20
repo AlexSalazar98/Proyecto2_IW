@@ -1,3 +1,4 @@
+// Funcion para abrir el Pop-up
 function abrir(){
 
     var overlay_Responsable = document.getElementById('overlay_Responsable'),
@@ -15,8 +16,9 @@ function abrir(){
 
 }
 
-
+// Funcion para mostrar los datos de un responsable modificando el dom
 function domResponsable(pk){
+    // Recogemos el ID del responsable y concatenamos la url
     var url = "http://127.0.0.1:8000/ProyectoAPP/DetalleResponsable/" + pk + "/";
 
     var div_dni = document.getElementById("DNI_Empleado-c"),

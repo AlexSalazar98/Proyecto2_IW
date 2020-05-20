@@ -2,7 +2,7 @@
 
 {% block content %}
 <script src="/static/js/ConfirmarBorrar.js"></script>
-
+<!-- Plantilla Formulario modificar tarea -->
 <div class="ModificarTarea">
     <form action="{% url 'ActualizarTarea' %}" method="post">
         {% csrf_token %}

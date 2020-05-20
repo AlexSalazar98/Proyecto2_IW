@@ -1,3 +1,4 @@
+// Recogemos variables del HTML
 var enlAbrirPopup = document.getElementById('enlAbrirPopup'),
 	overlay = document.getElementById('overlay'),
 	popup = document.getElementById('pop-up'),
@@ -10,17 +11,19 @@ var enlAbrirPopup = document.getElementById('enlAbrirPopup'),
 
 
 
-
+// EventListener para abrir el Pop-up
 enlAbrirPopup.addEventListener('click', function(){
 	overlay.classList.add('active');
 	popup.classList.add('active');
 });
 
+// EventListener para cerrar el Pop-up
 enlCerrarPopup.addEventListener('click', function(){
 	overlay.classList.remove('active');
 	popup.classList.remove('active');
 });
 
+// EventListener para abrir el Pop-up
 enlAbrirPopupemail.addEventListener('click', function(){
 
     overlay.classList.remove('active');
@@ -30,12 +33,13 @@ enlAbrirPopupemail.addEventListener('click', function(){
 	popupemail.classList.add('active');
 });
 
+// EventListener para cerrar el Pop-up
 enlCerrarPopupemail.addEventListener('click', function(){
 	overlayemail.classList.remove('active');
 	popupemail.classList.remove('active');
 });
 
-
+// Funcion para mostrar contraseña del loggin
 function mostrarContrasena(){
     var tipo = document.getElementById("password");
     var icono = document.getElementById("ojo");
