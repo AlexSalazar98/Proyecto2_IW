@@ -100,8 +100,6 @@ h2{
   padding:15px;
   background-image:linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
   border-radius: 20px;
-/*  margin-top: 10px;
-  margin-left: 30%;*/
 }
 
 .pop-up h1{
@@ -115,7 +113,6 @@ h2{
 form .Usuario{
     position: relative;
     margin:10px 15px;
-    /*opacity: 0;*/
 }
 
 form .Contraseña{
@@ -347,7 +344,6 @@ legend{
 .btn-cerrar-popup{
     display: block;
     text-align: right;
-    /*transition: .3s ease all;*/
 }
 
 .pop-up{
@@ -399,7 +395,6 @@ legend{
 .btn-cerrar-popup-email{
     display: block;
     text-align: right;
-    /*transition: .3s ease all;*/
 }
 
 .pop-up-email{
